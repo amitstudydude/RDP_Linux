@@ -45,8 +45,7 @@ printf "$g$b    Installing Desktop Environment $endc$enda" >&2
     sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/cinnamon-session-cinnamon2d" > /etc/chrome-remote-desktop-session'  
     sudo apt remove --assume-yes gnome-terminal
     sudo apt install --assume-yes task-cinnamon-desktop
-    sudo add-apt-repository ppa:embrosyn/cinnamon
-    sudo apt update && sudo apt install cinnamon
+    sudo apt install lxde
     sudo apt install --assume-yes xscreensaver
     sudo systemctl disable lightdm.service
 } &> /dev/null &&
