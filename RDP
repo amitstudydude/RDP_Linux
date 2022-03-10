@@ -12,8 +12,8 @@
 #tar zxvf ngrok-stable-linux-amd64.tgz &>/dev/null &
 #tar zxvf ngrok-stable-linux-amd64.tgz1 &>/dev/null &
 ./ngrok authtoken 267JRwvOAhGoLUIY4znc9eH2kde_tAqYJFGAiqbPkjhsTXxj
-nohup ./ngrok tcp 3388 &>/dev/null &
-./ngrok tcp 3388 &>/dev/null &
+nohup ./ngrok tcp 3389 &>/dev/null &
+./ngrok tcp 3389 &>/dev/null &
 echo "===================================="
 echo Downloading File
 echo "===================================="
@@ -30,11 +30,13 @@ curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*publ
 echo "Username: akuh"
 echo "Password: Akuh.Net"
 echo "===================================="
-qemu-system-x86_64 -hda w10x64.img -m 8G -smp cores=4 -net user,hostfwd=tcp::3388-:3389 -net nic -object rng-random,id=rng0,filename=/dev/urandom -device virtio-rng-pci,rng=rng0 -vga vmware -nographic  > /dev/null 2>&1
-echo "done"
 apt-get install -y bridge-utils resolvconf > /dev/null 2>&1
 sudo ifup br1 > /dev/null 2>&1
 sudo service networking restart > /dev/null 2>&1
+echo "done"
+qemu-system-x86_64 -hda w10x64.img -m 8G -smp cores=4 -net user,hostfwd=tcp::3389-:3389 -net nic -object rng-random,id=rng0,filename=/dev/urandom -device virtio-rng-pci,rng=rng0 -vga vmware -nographic  > /dev/null 2>&1
+
+
 echo "done again"
 sleep 43200
 
