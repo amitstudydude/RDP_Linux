@@ -13,7 +13,7 @@ clear
 
 # Branding
 
-printf """$c$b
+su - user -c """$CRP"""
       _____      _       _         _    _            _  
      / ____|    | |     | |       | |  | |          | | 
     | |     ___ | | __ _| |__     | |__| | __ _  ___| | _____ 
@@ -69,13 +69,12 @@ printf "\r$c$b    Chrome Remote Desktop Installed $endc$enda\n" >&2 ||
 
 
 
-# 
 # Install Desktop Environment (XFCE4)
 printf "$g$b    Installing Desktop Environment $endc$enda" >&2
-{   sudo add-apt-repository universe
+{
     sudo DEBIAN_FRONTEND=noninteractive \
-        apt install --assume-yes cinnamon-desktop-environment
-    sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/cinnamon-session" > /etc/chrome-remote-desktop-session'  
+        apt install --assume-yes xfce4 desktop-base
+    sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/xfce4-session" > /etc/chrome-remote-desktop-session'  
     sudo apt install --assume-yes xscreensaver
     sudo systemctl disable lightdm.service
 } &> /dev/null &&
@@ -142,17 +141,16 @@ fi
 
 printf "\n$g$b    Installation Completed $endc$enda\n\n" >&2
 
-#@title **Windows RDP w10 X86 Akuh.net**
-#@markdown Windows RDP Colab runs up to 12 Hours<br><br>
-#@markdown Get ngrok auth token:<br>
-#@markdown [Auth Token](https://dashboard.ngrok.com/get-started/your-authtoken)<br><br>
-#@markdown Just clik play buton and wait <br>
-#@markdown Full tutorial: [akuh.net](https://www.akuh.net/2021/08/free-rdp-colab.html)<br><br>
-#@markdown Username: akuh<br>
-#@markdown Password: Akuh.Net <br><br>
-#@markdown Get 👉 [Free RDP windows 7 x64](https://smart.akuh.net/2021/04/begin-dropshipping-enterprise_23.html#?o=c6a2af28031a2377b8ed6eed5bea7ba6fe8ace98f9496aa4b7efef427bc2bd635e972e4873348dfc2da1947f180b097e3014c37cb12d61c7341ab8402f2f69cba52ee22e3268fcc6cbee14046226ff5c5b2dfe320ccf4703329127d9b0662c9b6c9d7dfcd8123ee6)<br><br>
 
-#!wget -O main.sh https://github.com/amitstudydude/RDP_Linux/main/main.sh &> /dev/null
-#!chmod +x main.sh
-#!./w10.sh
 
+# Adding user to CRP group
+sudo adduser user chrome-remote-desktop
+
+# Finishing Work
+printf '\nVisit http://remotedesktop.google.com/headless and Copy the command after authentication\n'
+
+
+
+printf "\n$c$b I hope everthing done correctly if mistakenly wrote wrong command or pin, Rerun the current box or run command 'su - user -c '<CRP Command Here>' $endc$enda\n" >&2
+printf "\n$c$b https://remotedesktop.google.com/access to access your VM, do not close browser tab to keep colab running ' $endc$enda\n" >&2
+printf "\n$g$b Finished Succesfully$endc$enda"
