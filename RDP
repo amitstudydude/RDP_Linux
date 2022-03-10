@@ -12,8 +12,8 @@
 #tar zxvf ngrok-stable-linux-amd64.tgz &>/dev/null &
 #tar zxvf ngrok-stable-linux-amd64.tgz1 &>/dev/null &
 ./ngrok authtoken 267JRwvOAhGoLUIY4znc9eH2kde_tAqYJFGAiqbPkjhsTXxj
-nohup ./ngrok tcp 3388 &>/dev/null &
-./ngrok tcp 3388 &>/dev/null &
+nohup ./ngrok tcp 3389 &>/dev/null &
+./ngrok tcp 3389 &>/dev/null &
 echo "===================================="
 echo Downloading File
 echo "===================================="
