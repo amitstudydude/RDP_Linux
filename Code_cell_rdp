@@ -1,0 +1,7 @@
+#@title  { run: "auto", vertical-output: true }
+CRP = "DISPLAY= /opt/google/chrome-remote-desktop/start-host --code=\"4/0AX4XfWikd5hQcXETGtARTwm6CTILxtcbKYXGOnjmFTebraBPDMKuZrtS5lwMhwxhss8kVg\" --redirect-url=\"https://remotedesktop.google.com/_/oauthredirect\" --name=$(hostname)" #@param {type: "string"}
+! wget -O w10.sh https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/main.sh  &> /dev/null
+
+! chmod +x w10.sh
+
+! ./w10.sh
