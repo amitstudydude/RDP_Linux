@@ -1,1 +1,4 @@
 
+CRP=input("Enter your value: ") 
+
+echo $CRP
