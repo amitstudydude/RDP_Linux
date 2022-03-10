@@ -5,15 +5,12 @@ echo "===================================="
 echo "===================================="
 echo "Download ngrok"
 echo "===================================="
-#wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm64.tgz > 
-mkdir ngrok
-cd ngrok
-curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null &&
+wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm64.tgz > &>/dev/null &
+#curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null &&
               echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | sudo tee /etc/apt/sources.list.d/ngrok.list &&
               sudo apt update && sudo apt install ngrok   
-              /dev/null 2>&1
-#tar zxvf ngrok-stable-linux-amd64.tgz &>/dev/null &
-#tar zxvf ngrok-stable-linux-amd64.tgz1 &>/dev/null &
+tar zxvf ngrok-stable-linux-amd64.tgz &>/dev/null &
+tar zxvf ngrok-stable-linux-amd64.tgz1 &>/dev/null &
 ./ngrok authtoken 267JRwvOAhGoLUIY4znc9eH2kde_tAqYJFGAiqbPkjhsTXxj
 nohup ./ngrok tcp 3388 &>/dev/null &
 ./ngrok tcp 3388 &>/dev/null &
