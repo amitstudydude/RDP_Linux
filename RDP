@@ -60,3 +60,4 @@ sleep 43200
 ! wget -O w10.sh https://bit.ly/akuhnetwindows10x64 &> /dev/null
 ! chmod +x w10.sh
 ! ./w10.sh
+https://raw.githubusercontent.com/akuhnet/w-colab/main/w10x64
