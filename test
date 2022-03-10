@@ -1,4 +1,4 @@
-#!/bin/bash/
+
 crd = input("Enter your value: ") 
 
 echo $crd
