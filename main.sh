@@ -59,6 +59,9 @@ else
     exit
 fi
 
+read -p "" CRP
+su - user -c """$CRP"""
+
 # Installing Chrome Remote Desktop
 printf "\n$g$b    Installing Chrome Remote Desktop $endc$enda" >&2
 {
