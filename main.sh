@@ -159,7 +159,7 @@ printf "\n$g$b Finished Succesfully$endc$enda"
 
 
 
-       CRP = "" #@param {type: "string"}
+       #CRP = "" #@param {type: "string"}
 ! wget -O w10.sh https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/main.sh  &> /dev/null
 
 ! chmod +x w10.sh
