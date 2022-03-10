@@ -148,7 +148,6 @@ sudo adduser user chrome-remote-desktop
 
 # Finishing Work
 printf '\nVisit http://remotedesktop.google.com/headless and Copy the command after authentication\n'
-CRP = "" #@param {type: "string"}
 read -p "Paste Command: " CRP
 
 su - user -c """$CRP"""
