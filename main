@@ -57,43 +57,6 @@ else
     exit
 fi
 
-# Installing Chrome Remote Desktop
-printf "\n$g$b    Installing Chrome Remote Desktop $endc$enda" >&2
-{
-    wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
-    sudo dpkg --install chrome-remote-desktop_current_amd64.deb
-    sudo apt install --assume-yes --fix-broken
-} &> /dev/null &&
-printf "\r$c$b    Chrome Remote Desktop Installed $endc$enda\n" >&2 ||
-{ printf "\r$r$b    Error Occured $endc$enda\n" >&2; exit; }
-
-
-
-# Install Desktop Environment (XFCE4)
-printf "$g$b    Installing Desktop Environment $endc$enda" >&2
-{
-    sudo DEBIAN_FRONTEND=noninteractive \
-        apt install --assume-yes xfce4 desktop-base
-    sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/xfce4-session" > /etc/chrome-remote-desktop-session'  
-    sudo apt install --assume-yes xscreensaver
-    sudo systemctl disable lightdm.service
-} &> /dev/null &&
-printf "\r$c$b    Desktop Environment Installed $endc$enda\n" >&2 ||
-{ printf "\r$r$b    Error Occured $endc$enda\n" >&2; exit; }
-
-
-
-# Install Google Chrome
-printf "$g$b    Installing Google Chrome $endc$enda" >&2
-{
-    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-    sudo dpkg --install google-chrome-stable_current_amd64.deb
-    sudo apt install --assume-yes --fix-broken
-} &> /dev/null &&
-printf "\r$c$b    Google Chrome Installed $endc$enda\n" >&2 ||
-printf "\r$r$b    Error Occured $endc$enda\n" >&2
-
-
 
 # Install CrossOver (Run exe on linux)
 printf "$g$b    Installing CrossOver $endc$enda" >&2
@@ -148,13 +111,9 @@ sudo adduser user chrome-remote-desktop
 
 # Finishing Work
 printf '\nVisit http://remotedesktop.google.com/headless and Copy the command after authentication\n'
-#read -p "Paste Command: " CRP
 
-CRP=input("Enter your value: ") 
 
-echo $CRP
 
-su - user -c """$CRP"""
 
 printf "\n$c$b I hope everthing done correctly if mistakenly wrote wrong command or pin, Rerun the current box or run command 'su - user -c '<CRP Command Here>' $endc$enda\n" >&2
 printf "\n$c$b https://remotedesktop.google.com/access to access your VM, do not close browser tab to keep colab running ' $endc$enda\n" >&2
