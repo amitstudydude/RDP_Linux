@@ -17,7 +17,11 @@ nohup ./ngrok tcp 3389 &>/dev/null &
 echo "===================================="
 echo Downloading File
 echo "===================================="
-apt-get install qemu > /dev/null 2>&1
+apt-get install qemu-system-x86_64 > /dev/null 2>&1
+apt-get install -y bridge-utils resolvconf > /dev/null 2>&1
+sudo ifup br1 > /dev/null 2>&1
+sudo service networking restart > /dev/null 2>&1
+apt-get install -y qemu-kvm qemu virt-manager virt-viewer libvirt-bin > /dev/null 2>&1
 
 echo "===================================="
 echo "Wait"
