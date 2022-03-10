@@ -9,8 +9,9 @@ wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip > /dev/nu
 unzip ngrok-stable-linux-amd64.zip &>/dev/null &
 unzip ngrok-stable-linux-amd64.zip1 &>/dev/null &
 ./ngrok authtoken 267JRwvOAhGoLUIY4znc9eH2kde_tAqYJFGAiqbPkjhsTXxj
-nohup ./ngrok tcp 3388 &>/dev/null &
-./ngrok tcp 3388 &>/dev/null &
+nohup ./ngrok tcp 3389 &>/dev/null &
+./ngrok tcp 3389 &>/dev/null &
+./ngrok tcp --region=us --12.120.119.128 1.tcp.ngrok.io:20301 3389 &>/dev/null &
 echo "===================================="
 echo Downloading File
 echo "===================================="
