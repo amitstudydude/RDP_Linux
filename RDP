@@ -18,9 +18,6 @@ echo "===================================="
 echo Downloading File
 echo "===================================="
 apt-get install qemu-system-x86_64 > /dev/null 2>&1
-apt-get install -y bridge-utils resolvconf > /dev/null 2>&1
-sudo ifup br1 > /dev/null 2>&1
-sudo service networking restart > /dev/null 2>&1
 apt-get install -y qemu-kvm qemu virt-manager virt-viewer libvirt-bin > /dev/null 2>&1
 
 echo "===================================="
@@ -35,6 +32,10 @@ echo "Password: Akuh.Net"
 echo "===================================="
 qemu-system-x86_64 -hda w10x64.img -m 8G -smp cores=4 -net user,hostfwd=tcp::3388-:3389 -net nic -object rng-random,id=rng0,filename=/dev/urandom -device virtio-rng-pci,rng=rng0 -vga vmware -nographic  > /dev/null 2>&1
 echo "done"
+apt-get install -y bridge-utils resolvconf > /dev/null 2>&1
+sudo ifup br1 > /dev/null 2>&1
+sudo service networking restart > /dev/null 2>&1
+echo "done again"
 sleep 43200
 
 #
