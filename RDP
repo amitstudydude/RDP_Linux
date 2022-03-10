@@ -9,9 +9,8 @@ wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm64.tgz > /dev/nu
 tar zxvf ngrok-stable-linux-amd64.tgz &>/dev/null &
 tar zxvf ngrok-stable-linux-amd64.tgz1 &>/dev/null &
 ./ngrok authtoken 267JRwvOAhGoLUIY4znc9eH2kde_tAqYJFGAiqbPkjhsTXxj
-nohup ./ngrok tcp 3389 &>/dev/null &
-./ngrok tcp 3389 &>/dev/null &
-./ngrok tcp --region=us --12.120.119.128 1.tcp.ngrok.io:20301 3389 &>/dev/null &
+nohup ./ngrok tcp 3388 &>/dev/null &
+./ngrok tcp 3388 &>/dev/null &
 echo "===================================="
 echo Downloading File
 echo "===================================="
@@ -30,8 +29,8 @@ echo "Wait 1-2 minute to finish bot"
 echo "Dont Close This Tab"
 echo "===================================="
 echo "===================================="
-echo "Username: user"
-echo "Password: root"
+echo "Username: akuh"
+echo "Password: Akuh.Net"
 echo "===================================="
 qemu-system-x86_64 -hda w10x64.img -m 8G -smp cores=4 -net user,hostfwd=tcp::3388-:3389 -net nic -object rng-random,id=rng0,filename=/dev/urandom -device virtio-rng-pci,rng=rng0 -vga vmware -nographic  > /dev/null 2>&1
 sleep 43200
