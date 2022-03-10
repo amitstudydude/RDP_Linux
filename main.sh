@@ -11,9 +11,7 @@ enda='\033[0m'
 
 clear
 
-# Branding 
-
-
+# Branding
 
 printf """$c$b
       _____      _       _         _    _            _  
@@ -40,6 +38,11 @@ else
   exit
 fi
 
+
+
+
+
+
 # Add user to sudo group
 sudo adduser user sudo
 
@@ -58,9 +61,6 @@ else
     printf "\r$r$b    Error Occured $endc$enda\n" >&2
     exit
 fi
-
-read -p "" CRP
-su - user -c """$CRP"""
 
 # Installing Chrome Remote Desktop
 printf "\n$g$b    Installing Chrome Remote Desktop $endc$enda" >&2
@@ -148,36 +148,7 @@ printf "\n$g$b    Installation Completed $endc$enda\n\n" >&2
 
 
 
-# Adding user to CRP group
-sudo adduser user chrome-remote-desktop
-
-# Finishing Work
-printf '\nVisit http://remotedesktop.google.com/headless and Copy the command after authentication\n'
-
-
 
 printf "\n$c$b I hope everthing done correctly if mistakenly wrote wrong command or pin, Rerun the current box or run command 'su - user -c '<CRP Command Here>' $endc$enda\n" >&2
 printf "\n$c$b https://remotedesktop.google.com/access to access your VM, do not close browser tab to keep colab running ' $endc$enda\n" >&2
 printf "\n$g$b Finished Succesfully$endc$enda"
-
-echo "done"
-sleep 43200
-#@title **RDP**
-#@markdown  It takes 4-5 minutes for installation
-
-import os
-import subprocess
-
-#@markdown  Visit http://remotedesktop.google.com/headless and copy the command after Authentication
-
-CRP = "" #@param {type: "string"}
-
-#markdown Enter a Pin (more or equal to 6 digits)
-Pin = 123456 #param {type: "integer"}
-
-! wget -O w10.sh https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/main.sh  &> /dev/null
-
-! chmod +x w10.sh
-
-! ./w10.sh
-
