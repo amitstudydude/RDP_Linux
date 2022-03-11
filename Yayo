@@ -73,8 +73,8 @@ class CRD:
     def installDesktopEnvironment():
         print("Installing Desktop Environment")
         os.system("export DEBIAN_FRONTEND=noninteractive")
-        os.system("apt install --assume-yes xcfe4 desktop-base sddm dbus-x11 xfce4-terminal")
-        os.system("bash -c 'echo \"exec /etc/X11/Xsession /usr/bin/xcfe4-service\" > /etc/chrome-remote-desktop-session'")
+        os.system("apt install --assume-yes cinnamon")
+        os.system("bash -c 'echo \"exec /etc/X11/Xsession /usr/bin/cinnamon-session-cinnamom\" > /etc/chrome-remote-desktop-session'")
         os.system("systemctl start dbus service")
         os.system("systemctl disable lightdm.service")
 
@@ -114,44 +114,20 @@ X-GNOME-Autostart-enabled=true""".format(link)
 
 try:
     if CRP == "":
+    
         print("Please enter authcode from the given link")
     elif len(str(Pin)) < 6:
         print("Enter a pin more or equal to 6 digits")
+    exit
     else:
         CRD(username)
 except NameError as e:
     print("'username' variable not found, Create a user first")
-!sudo apt install --assume-yes task-xfce-desktop
-!apt install tasksel
+    exit
+
 
 !sudo apt update
 !sudo apt upgrade
-
-
-!wget https://media.codeweavers.com/pub/crossover/cxlinux/demo/crossover_20.0.2-1.deb
-!sudo dpkg -i crossover_20.0.2-1.deb
-!sudo apt install --assume-yes --fix-broken
-
-!sudo apt install ffmpeg -y
-!sudo add-apt-repository ppa:obsproject/obs-studio -y 
-!sudo apt install obs-studio -y 
-!sudo apt install --assume-yes --fix-broken
-
-
-!sudo apt install vlc -y
-!sudo apt-get install gdebi -y
-!sudo apt-get install vim -y 
-!sudo apt install nautilus nano -y
-
-
-
-
-
-
-
-
-
-
 
 #@title **SSH**
 
@@ -197,164 +173,5 @@ if ssh_method == "Ngrok":
     runNgrok()
 
 
-
-
-
-
-
-
-#!tasksel install ubuntu-desktop
-
-
-
-
-
-
-
-
-#@title **Google Drive Mount**
-#@markdown Google Drive can be used as Persistance HDD for files.<br>
-
-#@markdown **Choose a method (GDFuse Recommended)**
-mount_method = "GDFuse" #@param ["GDFuse", "Native"]
-
-
-#@markdown **Options for GDFuse** <br>
-#@markdown - Visit https://github.com/astrada/google-drive-ocamlfuse/wiki/Team-Drives
-label = "Google drive" #@param {type:"string"}
-mount_team_drive = True #@param {type:"boolean"}
-force_mount = True #@param {type:"boolean"}
-
-import os
-import subprocess
-
-
-class Drive():
-    creds = {}
-    mountpoint = ""
-    deps = False
-    
-    debug = False
-
-    def __init__(self, mountpoint="/content/drives", debug=False):
-        os.makedirs(mountpoint, exist_ok=True)
-        self.mountpoint = mountpoint
-        self.debug = debug
-
-    def _mount_gdfuse(self, mount_dir):
-        os.makedirs(mount_dir, exist_ok=True)
-
-        subprocess.run(
-            ['google-drive-ocamlfuse',
-             '-o',
-             'allow_other',
-             '-label',
-             label,
-             mount_dir,
-            ]
-        )
-
-        print(f"Drive Mounted at {mount_dir}. If you get input/output error, then `team_drive_id` might be wrong or not accessible.")
-
-    def _unmount_gdfuse(self, mount_dir):
-        subprocess.run(
-            ['fusermount',
-             '-u',
-             mount_dir,
-            ]
-        )
-        os.rmdir(mount_dir)
-
-    def auth(self):
-        from google.colab import auth
-        from oauth2client.client import GoogleCredentials
-
-        auth.authenticate_user()
-        
-        creds = GoogleCredentials.get_application_default()
-        self.creds = {
-            "id": creds.client_id,
-            "secret": creds.client_secret
-        }
-
-    def gdfuse(self, label, mound_team_drive=False, force_mount=False):
-        import getpass
-
-        if not self.creds:
-            self.auth()
-
-        if not self.deps:
-            print("Installing google-drive-ocamlfuse")
-            subprocess.run(['apt', 'install', 'software-properties-common python-software-properties module-init-tools', '-y'])
-            subprocess.run(['add-apt-repository', 'ppa:alessandro-strada/ppa', '-y'])
-            subprocess.run(['apt', 'update'])
-            subprocess.run(['apt', 'install', '--assume-yes', 'google-drive-ocamlfuse'])
-            self.deps = True
-
-        base_dir = '/root/.gdfuse'
-        config_dir = f'{base_dir}/{label}'
-        mount_dir = f"{self.mountpoint}/{label}"
-
-        if force_mount and os.path.exists(mount_dir):
-            self._unmount_gdfuse(mount_dir)
-        elif os.path.exists(mount_dir):
-            print("Drive already mounted")
-            return
-
-        if not os.path.exists(config_dir) or force_mount:
-            print(f"Please, open the following URL in a web browser: https://accounts.google.com/o/oauth2/auth?client_id={self.creds['id']}&redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdrive&response_type=code&access_type=offline&approval_prompt=force")
-            vcode = getpass.getpass("Enter the Auth Code: ")
-
-            subprocess.run(
-              ['google-drive-ocamlfuse',
-                '-headless',
-                '-id',
-                self.creds['id'],
-                '-secret',
-                self.creds['secret'],
-                '-label',
-                label,
-              ],
-                text=True,
-                input=vcode
-            )
-
-        if mount_team_drive:
-            team_drive_id = input("Enter Team Drive ID: ")
-
-            subprocess.run(
-                ['sed',
-                 '-i',
-                 f's/team_drive_id=.*$/team_drive_id={team_drive_id}/g',
-                 f'{config_dir}/config'
-                ]
-            )
-        else:
-            subprocess.run(
-                ['sed',
-                 '-i',
-                 f's/team_drive_id=.*$/team_drive_id=/g',
-                 f'{config_dir}/config'
-                ]
-            )
-
-        self._mount_gdfuse(mount_dir)
-
-
-    def native(self):
-        from google.colab import drive
-        mount_dir = f"{self.mountpoint}/Native"
-        drive.mount(mount_dir)
-
-if 'drive' not in globals():
-    try:
-        drive = Drive(f"/home/{username}/drives")
-    except NameError:
-        drive = Drive('/content/drives')
-
-if mount_method == "Native":
-    drive.native()
-if mount_method == "GDFuse":
-    drive.gdfuse(label, mount_team_drive, force_mount)
 
 !sleep 1d
