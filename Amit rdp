@@ -1,6 +1,7 @@
 
 
 
+
 #@title **Create User** { run: "auto", vertical-output: true }
 #@markdown Enter Username and Password
 
@@ -43,7 +44,7 @@ import subprocess
 
 #@markdown  Visit http://remotedesktop.google.com/headless and copy the command after Authentication
 
-CRP = "DISPLAY= /opt/google/chrome-remote-desktop/start-host --code=\"4/0AX4XfWhGIEqqYoks-3Kgec2BvU_1uCy3hOnMSb7IaaoYQbv4sDtJ4_MuCp1Wb4bNC2zYPg\" --redirect-url=\"https://remotedesktop.google.com/_/oauthredirect\" --name=$(hostname)" #@param {type:"string"}
+CRP = "" #@param {type:"string"}
 
 #@markdown Enter a Pin (more or equal to 6 digits)
 Pin = 123456 #@param {type: "integer"}
@@ -350,3 +351,5 @@ if mount_method == "Native":
     drive.native()
 if mount_method == "GDFuse":
     drive.gdfuse(label, mount_team_drive, force_mount)
+
+!sleep 1d
