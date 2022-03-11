@@ -203,7 +203,7 @@ if ssh_method == "Ngrok":
 
 
 
-!tasksel install ubuntu-desktop
+#!tasksel install ubuntu-desktop
 
 
 
