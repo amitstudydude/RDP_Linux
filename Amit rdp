@@ -1,5 +1,6 @@
 
 
+
 #@title **Create User** { run: "auto", vertical-output: true }
 #@markdown Enter Username and Password
 
@@ -89,7 +90,7 @@ class CRD:
         print("Finalizing")
         if Autostart:
             os.makedirs(f"/home/{user}/.config/autostart", exist_ok=True)
-            link = "https://colab.research.google.com/github/PradyumnaKrishna/Colab-Hacks/blob/master/Colab%20RDP/Colab%20RDP.ipynb"
+            link = "https://colab.research.google.com/drive/1nTzknv_PSGZf62WRwTZo33gJKx3XOvbe"
             colab_autostart = """[Desktop Entry]
 Type=Application
 Name=Colab
@@ -348,4 +349,4 @@ if 'drive' not in globals():
 if mount_method == "Native":
     drive.native()
 if mount_method == "GDFuse":
-    drive.gdfuse(label, mount_team_drive, force_moun
+    drive.gdfuse(label, mount_team_drive, force_mount)
