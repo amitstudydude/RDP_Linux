@@ -347,8 +347,5 @@ if 'drive' not in globals():
 if mount_method == "Native":
     drive.native()
 if mount_method == "GDFuse":
-    drive.gdfuse(label, mount_team_drive, force_mount)
-
-
-
-sleep (43200)
+    drive.gdfuse(label, mount_team_drive, force_moun
+!sleep 43200
