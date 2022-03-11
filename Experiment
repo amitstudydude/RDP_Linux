@@ -47,27 +47,6 @@ echo 'user:root' | sudo chpasswd
 # Change default shell from sh to bash
 sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
 
-# Initialisation of Installer
-printf "\n\n$c$b    Loading Installer $endc$enda" >&2
-if sudo apt-get update &> /dev/null
-then
-    printf "\r$g$b    Installer Loaded $endc$enda\n" >&2
-else
-    printf "\r$r$b    Error Occured $endc$enda\n" >&2
-    exit
-fi
-
-
-# Install other tools like nano
-sudo apt-get install gdebi -y &> /dev/null
-sudo apt-get install vim -y &> /dev/null
-printf "$g$b    Installing other Tools $endc$enda" >&2
-if sudo apt install nautilus nano -y &> /dev/null
-then
-    printf "\r$c$b    Other Tools Installed $endc$enda\n" >&2
-else
-    printf "\r$r$b    Error Occured $endc$enda\n" >&2
-fi
 
 
 
