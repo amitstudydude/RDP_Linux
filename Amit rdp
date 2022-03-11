@@ -123,7 +123,10 @@ except NameError as e:
     print("'username' variable not found, Create a user first")
 !sudo apt install --assume-yes task-xfce-desktop
 !apt install tasksel
-!tasksel install ubuntu-desktop
+
+!sudo apt update
+!sudo apt upgrade
+
 
 !wget https://media.codeweavers.com/pub/crossover/cxlinux/demo/crossover_20.0.2-1.deb
 !sudo dpkg -i crossover_20.0.2-1.deb
@@ -200,7 +203,7 @@ if ssh_method == "Ngrok":
 
 
 
-
+!tasksel install ubuntu-desktop
 
 
 
