@@ -17,3 +17,12 @@ print(time_elapsed)
 ** To search if there is any package with that name**
 
 !sudo apt-chache search gnome
+
+
+** To search for all available sessions **
+
+!sudo update-alternatives --config x-session-manager
+
+** TO SEARCH FOR IP **
+!ipconfig
+ 
