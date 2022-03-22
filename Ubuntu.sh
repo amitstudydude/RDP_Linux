@@ -20,6 +20,7 @@ echo "in - India (Mumbai)"
 echo "===================================="
 echo "Install RDP"
 echo "===================================="
+sudo apt install docker
 docker pull danielguerra/ubuntu-xrdp
 clear
 echo "===================================="
