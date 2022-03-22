@@ -10,7 +10,7 @@ unzip ngrok-stable-linux-amd64.zip &>/dev/null &
 unzip ngrok-stable-linux-amd64.zip1 &>/dev/null &
  
 ./ngrok authtoken 267JRwvOAhGoLUIY4znc9eH2kde_tAqYJFGAiqbPkjhsTXxj
-nohup ./ngrok tcp 3388 &>/dev/null &
+./ngrok tcp 3388 &>/dev/null &
 ./ngrok tcp 3388 &>/dev/null &
 echo "===================================="
 echo Downloading File From akuh.net
