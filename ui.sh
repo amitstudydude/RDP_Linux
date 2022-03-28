@@ -1,4 +1,5 @@
 #/bin/bash/
+rm ui.sh
 sudo passwd 
 sudo nano /etc/apt/sources.list
 sudo nano /etc/ssh/sshd_config
