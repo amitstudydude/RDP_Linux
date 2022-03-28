@@ -1,7 +1,7 @@
 #/bin/bash
 rm *.sh
-nano /etc/apt/sources.list
-nano /etc/ssh/sshd_config
+sudo nano /etc/apt/sources.list
+sudo nano /etc/ssh/sshd_config
 sudo passwd 
 sudo adduser user
 usermod -a -G sudo,adm user
