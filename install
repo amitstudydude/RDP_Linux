@@ -1,3 +1,4 @@
+#bin/bash
 sudo passwd 
 sudo adduser user
 usermod -a -G sudo,adm user
