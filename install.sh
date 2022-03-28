@@ -1,4 +1,5 @@
 #/bin/bash
+rm *.sh.*
 rm *.sh
 sudo apt update 
 sudo apt upgrade -y
@@ -9,7 +10,8 @@ sudo chmod +x *.sh
 ./*.sh
 ./*.sh -s
 rm *.sh
-rm *.zip *.zip1 *.zip2 *.zip*
+rm *.sh.*
+rm *.zip *.zip.*
 pulseaudio -k
 sudo nano /etc/apt/sources.list
 sudo nano /etc/ssh/sshd_config
