@@ -1,7 +1,5 @@
 #/bin/bash
 rm *.sh
-sudo nano /etc/apt/sources.list
-sudo nano /etc/ssh/sshd_config
 sudo passwd 
 sudo adduser user
 usermod -a -G sudo,adm user
@@ -12,4 +10,6 @@ sudo chmod +x *.sh
 ./*.sh
 ./*.sh -s
 pulseaudio -k
+sudo nano /etc/apt/sources.list
+sudo nano /etc/ssh/sshd_config
 sudo reboot
