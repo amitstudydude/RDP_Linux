@@ -13,12 +13,4 @@ rm *.sh
 rm *.sh.*
 rm *.zip *.zip.*
 pulseaudio -k
-sudo nano /etc/apt/sources.list
-sudo nano /etc/ssh/sshd_config
-sudo su
-sudo passwd 
-sudo adduser user
-usermod -a -G sudo,adm user
-sudo apt update 
-sudo apt upgrade -y
 sudo reboot
