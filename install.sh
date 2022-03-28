@@ -1,5 +1,6 @@
 #/bin/bash
 rm *.sh.*
+rm install.sh
 rm *.sh
 sudo apt update 
 sudo apt upgrade -y
