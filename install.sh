@@ -4,7 +4,6 @@ rm install.sh
 rm *.sh
 sudo apt update 
 sudo apt upgrade -y
-sudo add-apt-repository ppa:alessandro-strada/ppa
 sudo apt install google-drive-ocamlfuse
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
