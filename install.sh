@@ -4,7 +4,7 @@ rm install.sh
 rm *.sh
 sudo apt update 
 sudo apt upgrade -y
-sudo apt install ubuntu-desktop -y
+sudo apt install ubuntu-desktop gnome -y
 wget https://www.c-nergy.be/downloads/xrdp-installer-1.2.2.zip 
 sudo unzip *.zip
 sudo chmod +x *.sh
