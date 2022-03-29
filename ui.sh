@@ -6,6 +6,7 @@ sudo passwd
 sudo adduser user
 sudo usermod -a -G sudo,adm user
 sudo apt update 
+sudo add-apt-repository ppa:alessandro-strada/ppa
 sudo apt upgrade -y
 wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/install.sh
 sudo chmod +x install.sh
