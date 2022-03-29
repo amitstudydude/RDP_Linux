@@ -13,6 +13,6 @@ sudo unzip *.zip
 sudo chmod +x *.sh
 ./*.sh
 ./*.sh -s
+sudo rm *.* *
 wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/after.sh
-pulseaudio -k
 sudo reboot
