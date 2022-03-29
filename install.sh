@@ -10,8 +10,5 @@ sudo unzip *.zip
 sudo chmod +x *.sh
 ./*.sh
 ./*.sh -s
-rm *.sh
-rm *.sh.*
-rm *.zip *.zip.*
 pulseaudio -k
 sudo reboot
