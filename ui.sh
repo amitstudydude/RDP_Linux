@@ -1,12 +1,12 @@
 #/bin/bash/
 rm ui.sh
 sudo passwd 
+sudo add-apt-repository ppa:alessandro-strada/ppa --assume-yes -y
 #sudo nano /etc/apt/sources.list
 #sudo nano /etc/ssh/sshd_config
 sudo adduser user
 sudo usermod -a -G sudo,adm user
 sudo apt update 
-sudo add-apt-repository ppa:alessandro-strada/ppa
 sudo apt upgrade -y
 wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/install.sh
 sudo chmod +x install.sh
