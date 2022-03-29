@@ -1,7 +1,7 @@
 #/bin/bash/
 rm ui.sh
 sudo passwd 
-sudo add-apt-repository ppa:alessandro-strada/ppa --assume-yes -y
+sudo add-apt-repository ppa:alessandro-strada/ppa -y
 #sudo nano /etc/apt/sources.list
 #sudo nano /etc/ssh/sshd_config
 sudo adduser user
