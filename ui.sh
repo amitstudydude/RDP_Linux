@@ -22,5 +22,5 @@ bash ./*.sh
 bash ./*.sh -s
 sudo rm *
 wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/after.sh
-sudo reboot
+
 
