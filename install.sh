@@ -12,5 +12,6 @@ sudo unzip *.zip
 bash ./*.sh
 bash ./*.sh -s
 sudo rm *
+sudo apt install xrdp -y
 wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/after.sh
 sudo reboot
