@@ -1,2 +1,2 @@
 #! /bin/bash
-sudo su && sudo apt update && apt upgrade -y && apt install ubuntu-desktop gnome xrdp -y && bash ui.sh
+sudo apt update && sudo apt upgrade -y && sudo apt install ubuntu-desktop gnome xrdp -y && sudo bash ui.sh
