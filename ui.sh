@@ -5,6 +5,7 @@ yes root | sudo passwd
 #sudo nano /etc/ssh/sshd_config
 yes root | sudo adduser root
 sudo usermod -a -G sudo,adm root
+sudo apt --fix-broken install -y
 sudo add-apt-repository ppa:alessandro-strada/ppa -y
 sudo apt update 
 sudo apt upgrade -y
