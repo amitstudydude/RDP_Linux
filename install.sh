@@ -1,6 +1,5 @@
 #/bin/bash
-sudo rm *.sh
-sudo rm install.sh
+sudo rm *
 sudo apt update 
 sudo apt upgrade -y
 sudo apt install google-drive-ocamlfuse
@@ -10,9 +9,8 @@ sudo apt install ./*.deb -y
 sudo apt install ubuntu-desktop gnome -y
 wget https://www.c-nergy.be/downloads/xrdp-installer-1.2.2.zip 
 sudo unzip *.zip
-sudo chmod +x *.sh
-./*.sh
-./*.sh -s
-sudo rm *.* *
+bash ./*.sh
+bash ./*.sh -s
+sudo rm *
 wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/after.sh
 sudo reboot
