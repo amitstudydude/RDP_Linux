@@ -2,6 +2,7 @@
 rm *
 sudo service gdm3 stop
 sudo systemctl disable gdm3 service
+sudo dpkg --configure -a
 yes root | sudo passwd 
 #sudo nano /etc/apt/sources.list
 #sudo nano /etc/ssh/sshd_config
