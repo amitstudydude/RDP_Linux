@@ -8,7 +8,6 @@ sudo usermod -a -G sudo,adm root
 sudo apt --fix-broken install -y
 sudo add-apt-repository ppa:alessandro-strada/ppa -y
 sudo apt update 
-sudo apt upgrade -y
 clear
 wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/install.sh
 bash *.sh
