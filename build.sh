@@ -1,4 +1,5 @@
 #! /bin/bash/
+rm *
 sudo apt update
 sudo apt upgrade -y
 wget https://raw.githubusercontent.com/pimlie/ubuntu-mainline-kernel.sh/master/ubuntu-mainline-kernel.sh
