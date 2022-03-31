@@ -7,5 +7,5 @@ wget https://download.nomachine.com/download/7.9/Linux/nomachine_7.9.2_1_amd64.d
 printf "y" | sudo bash *.sh -i
 sudo apt install *.deb
 sudo rm *.sh
-#wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/ui.sh
+wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/ui.sh
 sudo reboot
