@@ -1,5 +1,0 @@
-! wget -O w10.sh https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/main  &> /dev/null
-
-! chmod +x w10.sh
-
-! ./w10.sh
