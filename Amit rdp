@@ -1,1 +1,20 @@
+sudo useradd -m user && sudo adduser user sudo && echo 'user:user' | sudo chpasswd
+wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
+sudo dpkg --install chrome-remote-desktop_current_amd64.deb
+sudo apt install --assume-yes --fix-broken
+            
+            
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg --install google-chrome-stable_current_amd64.deb
+sudo apt install --assume-yes --fix-broken || sudo adduser user chrome-remote-desktop
+sudo apt-get install xfce4 xfce4-goodies xfce4-terminal  firefox -y
+sudo rm *
+sudo apt update && sudo apt upgrade -y && sudo apt install ubuntu-desktop
+sleep 1d
+${{ CRP }} -pin=123456  
+            
+            
+
+           
+
 
