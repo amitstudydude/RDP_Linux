@@ -1,3 +1,0 @@
-wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/ui.sh
-chmod +x ui.sh
-./ui.sh
