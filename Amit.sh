@@ -8,3 +8,5 @@ sudo service lightdm stop
 sudo service dbus start
 read -p "" CRP
 su -user -c $CRP -pin=123456
+sudo service chrome-remote-desktop start
+sudo apt update && apt upgrade -y
