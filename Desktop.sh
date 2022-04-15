@@ -16,9 +16,10 @@ jobs:
     steps:
     - name: Creating User to Login
       run: |
-           sudo useradd -m runner && sudo adduser runner sudo && echo 'runner:runner' | sudo chpasswd
-     
-      
+           sudo useradd -m user && sudo adduser user sudo && echo 'user:user' | sudo chpasswd
+           sudo su user
+           sudo adduser user docker
+           
     - name: Installing Desktop Environment (wait for 10 min)
       run: |
            
@@ -34,6 +35,8 @@ jobs:
     - name: Start Chrome Remote Desktop
       run: |
            ${{ github.event.inputs.auth }} -pin=123456
+           sudo service chrome-remote-desktop start || sudo adduser user chrome-remote-desktop
+           
            sudo apt-get install xfce4 xfce4-goodies xfce4-terminal  firefox -y && sudo apt update && sudo apt upgrade -y
            sudo apt update && sudo apt upgrade -y && sudo apt install ubuntu-desktop gnome -y
            sleep 1d
