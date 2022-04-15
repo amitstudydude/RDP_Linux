@@ -1,4 +1,4 @@
-name: main
+name: 3
 on: 
   workflow_dispatch:
    inputs:
@@ -16,15 +16,12 @@ jobs:
     steps:
     - name: Creating User to Login
       run: |
-           sudo useradd -m Ubuntu && sudo adduser Ubuntu sudo && echo 'Ubuntu:Ubuntu' | sudo chpasswd
+           sudo useradd -m runner && sudo adduser runner sudo && echo 'runner:runner' | sudo chpasswd
      
       
     - name: Installing Desktop Environment (wait for 10 min)
       run: |
-           echo "root:root" | sudo passwd
-           echo "PasswordAuthentication yes" > /etc/ssh/sshd_config
-           echo "PermitUserEnvironment yes" >> /etc/ssh/sshd_config
-           echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
+           
            wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
           
            sudo apt install --assume-yes --fix-broken ./*.deb 
