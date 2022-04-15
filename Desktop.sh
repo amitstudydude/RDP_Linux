@@ -16,7 +16,7 @@ jobs:
     steps:
     - name: Creating User to Login
       run: |
-           sudo useradd -m ubuntu && sudo adduser ubuntu sudo && echo 'ubuntu:ubuntu' | sudo chpasswd
+           yes root | sudo passwd && sudo useradd -m ubuntu && sudo adduser ubuntu sudo && echo 'ubuntu:ubuntu' | sudo chpasswd
      
       
     - name: Installing Desktop Environment (wait for 10 min)
