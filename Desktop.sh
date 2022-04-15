@@ -35,7 +35,6 @@ jobs:
     - name: Start Chrome Remote Desktop
       run: |
            ${{ github.event.inputs.auth }} -pin=123456
-           sudo service chrome-remote-desktop start || sudo adduser user chrome-remote-desktop
            
            sudo apt-get install xfce4 xfce4-goodies xfce4-terminal  firefox -y && sudo apt update && sudo apt upgrade -y
            sudo apt update && sudo apt upgrade -y && sudo apt install ubuntu-desktop gnome -y
