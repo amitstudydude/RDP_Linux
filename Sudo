@@ -1,0 +1,11 @@
+sudo apt-mark unhold libcublas-dev && sudo apt-mark unhold libcublas10 && sudo apt-mark unhold libcudnn7 && sudo apt-mark unhold libcudnn7-dev && sudo apt-mark unhold libnccl-dev && sudo apt-mark unhold libnccl2
+
+sudo apt-get update
+
+sudo apt-get upgrade -y
+
+sudo apt-get dist-upgrade
+
+sudo apt install update-manager-core
+
+sudo do-release-upgrade
