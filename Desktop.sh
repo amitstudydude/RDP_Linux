@@ -16,11 +16,11 @@ jobs:
     steps:
     - name: Creating User to Login
       run: |
-           yes root | sudo passwd && sudo useradd -m ubuntu && sudo adduser ubuntu sudo && echo 'ubuntu:ubuntu' | sudo chpasswd
+           sudo useradd -m ubuntu && sudo adduser ubuntu sudo && echo 'ubuntu:ubuntu' | sudo chpasswd || yes root | sudo passwd 
      
       
     - name: Installing Desktop Environment (wait for 10 min)
-      run: 
+      run: |
            
            wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
           
