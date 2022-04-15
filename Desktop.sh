@@ -21,7 +21,7 @@ jobs:
       
     - name: Installing Desktop Environment (wait for 10 min)
       run: |
-           echo "root:root" | chpasswd
+           echo "root:root" | sudo passwd
            echo "PasswordAuthentication yes" > /etc/ssh/sshd_config
            echo "PermitUserEnvironment yes" >> /etc/ssh/sshd_config
            echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
