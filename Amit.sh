@@ -4,6 +4,7 @@ sudo apt install --assume-yes --fix-broken ./*.deb
 sudo adduser user chrome-remote-desktop
 sudo rm *.deb
 sudo apt install xfce4 xfce4-goodies xfce4-terminal -y
+clear
 sudo service lightdm stop
 sudo service dbus start
 read -p "" CRP
