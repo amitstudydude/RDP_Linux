@@ -12,5 +12,5 @@ sudo apt install xfce4 xfce4-goodies xfce4-terminal -y
 #sudo service lightdm stop
 #sudo service dbus start
 sudo service chrome-remote-desktop start
-sudo apt update && apt upgrade -y
+sudo apt update && sudo apt upgrade -y
 sleep 1d
