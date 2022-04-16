@@ -25,9 +25,9 @@ jobs:
            wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
            sudo apt install --assume-yes --fix-broken ./*.deb 
            ${{ github.event.inputs.auth }} -pin=123456
-           sudo apt-get install cinnamon -y && sudo apt update && sudo apt upgrade -y
-           sudo apt update && sudo apt upgrade -y && sudo apt install ubuntu-desktop gnome -y
-           sudo service game start
+           sudo apt-get install cinnamon -y 
+           sudo apt install ubuntu-desktop gnome -y && sudo apt update && sudo apt upgrade -y
+           sudo service gdm3 start
            sleep 1d
           
             
