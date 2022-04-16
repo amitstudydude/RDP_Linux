@@ -5,13 +5,8 @@ sudo apt install --fix-broken ./*.deb
 sudo usermod -a -G sudo,adm user
 sudo adduser user chrome-remote-desktop
 sudo rm *.deb
-read -p "" CRP
-command = f"{CRP} -pin=123456"
-su -user -c '{command}'
-${{CRP}} -pin=123456
-sudo apt install xfce4 xfce4-goodies xfce4-terminal -y
-#sudo service lightdm stop
-#sudo service dbus start
-sudo service chrome-remote-desktop start
 sudo apt update && sudo apt upgrade -y
-sleep 1d
+sudo apt install xfce4 xfce4-goodies xfce4-terminal -y
+sudo service lightdm stop
+sudo service dbus start
+sudo service chrome-remote-desktop start
