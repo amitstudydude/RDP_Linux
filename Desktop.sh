@@ -18,26 +18,16 @@ jobs:
       run: |
            sudo useradd -m user && sudo adduser user sudo && echo 'user:user' | sudo chpasswd
            sudo su user
-           sudo adduser user docker
-           
-    - name: Installing Desktop Environment (wait for 10 min)
+           sudo adduser user docker      
+    - name: Start Chrome Remote Desktop
       run: |
            
            wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
-          
            sudo apt install --assume-yes --fix-broken ./*.deb 
-           sudo apt-get install xfce4 xfce4-goodies xfce4-terminal  firefox -y
-           sudo rm * 
-    
-            
-            
-            
-    - name: Start Chrome Remote Desktop
-      run: |
            ${{ github.event.inputs.auth }} -pin=123456
-           
-           sudo apt-get install xfce4 xfce4-goodies xfce4-terminal  firefox -y && sudo apt update && sudo apt upgrade -y
+           sudo apt-get install cinnamon -y && sudo apt update && sudo apt upgrade -y
            sudo apt update && sudo apt upgrade -y && sudo apt install ubuntu-desktop gnome -y
+           sudo service game start
            sleep 1d
           
             
