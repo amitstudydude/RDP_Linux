@@ -5,6 +5,8 @@ CRP = "" #@param {type: "string"}
 !sudo apt install --fix-broken ./*.deb
 !sudo adduser user chrome-remote-desktop
 !sudo rm *.deb
+command = f"{CRP} -pin=123456"
+os.system(f"su - user -c '{command}'")
 os.system("${{CRP}} -pin=123456")
 !sudo apt install xfce4 xfce4-goodies xfce4-terminal -y
 #sudo service lightdm stop
