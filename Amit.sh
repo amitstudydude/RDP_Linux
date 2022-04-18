@@ -16,3 +16,12 @@ ngrok
 
 
 wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip && unzip *.zip && ./ngrok authtoken 26tMe4najGriSTiFSCpzVi56UzF_Gdsp5taJ7CeA4PGVrTVj && echo https://dashboard.ngrok.com/cloud-edge/endpoints && ./ngrok tcp 3389    
+
+
+
+
+sudo rm /etc/apt/sources.list
+sudo rm *
+wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/sources.list
+sudo mv sources.list /etc/apt
+sudo apt update
