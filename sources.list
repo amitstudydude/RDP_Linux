@@ -47,20 +47,20 @@ deb [trusted=yes] http://security.ubuntu.com/ubuntu/ bionic-security universe
 deb-src [trusted=yes] http://security.ubuntu.com/ubuntu/ bionic-security universe
 deb [trusted=yes] http://security.ubuntu.com/ubuntu/ bionic-security multiverse
 deb-src [trusted=yes] http://security.ubuntu.com/ubuntu/ bionic-security multiverse
-deb [trusted=yes] https://cloud.r-project.org/bin/linux/ubuntu bionic-cran40/
-deb [trusted=yes] https://deb.debian.org/debian bullseye main
-deb [trusted=yes] https://deb.debian.org/debian bullseye-updates main
-deb [trusted=yes] https://deb.debian.org/debian-security bullseye-security main
-deb [trusted=yes] https://ftp.debian.org/debian stretch main
-deb [trusted=yes] https://ftp.debian.org/debian stretch-backports main
-deb [trusted=yes] https://ftp.debian.org/debian stretch-updates main
-deb-src [trusted=yes] https://deb.debian.org/debian bullseye main
-deb-src [trusted=yes] https://deb.debian.org/debian bullseye-updates main
-deb-src [trusted=yes] https://deb.debian.org/debian-security bullseye-security main
-deb-src [trusted=yes] https://ftp.debian.org/debian stretch main
-deb-src [trusted=yes] https://ftp.debian.org/debian stretch-backports main
-deb-src [trusted=yes] https://ftp.debian.org/debian stretch-updates main
-deb [trusted=yes] https://cli.github.com/packages bullseye main
-deb-src [trusted=yes] https://cli.github.com/packages bullseye main
-deb [trusted=yes] [arch=amd64] https://apt.releases.hashicorp.com bullseye main
-deb-src [trusted=yes] [arch=amd64] https://apt.releases.hashicorp.com bullseye main
+deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran40/
+deb https://deb.debian.org/debian bullseye main
+deb  https://deb.debian.org/debian bullseye-updates main
+deb https://deb.debian.org/debian-security bullseye-security main
+deb https://ftp.debian.org/debian stretch main
+deb https://ftp.debian.org/debian stretch-backports main
+deb https://ftp.debian.org/debian stretch-updates main
+deb-src https://deb.debian.org/debian bullseye main
+deb-src https://deb.debian.org/debian bullseye-updates main
+deb-src https://deb.debian.org/debian-security bullseye-security main
+deb-src https://ftp.debian.org/debian stretch main
+deb-src https://ftp.debian.org/debian stretch-backports main
+deb-src https://ftp.debian.org/debian stretch-updates main
+deb https://cli.github.com/packages bullseye main
+deb-src https://cli.github.com/packages bullseye main
+deb [arch=amd64] https://apt.releases.hashicorp.com bullseye main
+deb-src [arch=amd64] https://apt.releases.hashicorp.com bullseye main
