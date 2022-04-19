@@ -1,7 +1,7 @@
 #!/bin/bash
 read -p "" CRP
 read -p "" PIN
-su user && eval $CRP $PIN
+su user eval $CRP $PIN
 cd /workspace/*/
 rm *.sh
 sudo apt update
