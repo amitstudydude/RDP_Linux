@@ -10,7 +10,7 @@ eval $CRP --pin=123456
 sudo service chrome-remote-desktop start
 sudo apt install firefox -y
 sudo apt install xfce4 -y 
-sudo apt install gdm3 -y
+sudo apt install xrdp -y
 sudo apt upgrade -y
 eval $CRP --pin=123456
 sudo service chrome-remote-desktop start
