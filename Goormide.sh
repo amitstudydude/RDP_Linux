@@ -1,6 +1,5 @@
 #!/bin/bash
-cd
-sudo su user
+su user
 read -p "" CRP
 eval $CRP --pin=123456
 cd /workspace/*/
