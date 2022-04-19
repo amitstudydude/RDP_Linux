@@ -1,6 +1,6 @@
 #!/bin/bash
 #read -p "" CRP
-rm *.sh
+rm *.sh *.deb
 wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/Goorm.sh
 eval $CRP --pin=123456
 sudo apt update
