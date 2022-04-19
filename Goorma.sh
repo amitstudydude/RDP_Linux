@@ -10,9 +10,17 @@ sudo adduser user chrome-remote-desktop
 printf "123456\n123456" | eval $CRP 
 sudo service chrome-remote-desktop start
 sudo apt install xfce4 -y
+printf "123456\n123456" | eval $CRP
+sudo service chrome-remote-desktop start
 sudo apt install xrdp -y 
+printf "123456\n123456" | eval $CRP
+sudo service chrome-remote-desktop start
 sudo apt install gnome -y
+printf "123456\n123456" | eval $CRP
+sudo service chrome-remote-desktop start
 sudo apt install firefox -y
+printf "123456\n123456" | eval $CRP
+sudo service chrome-remote-desktop start
 pulseaudio -k
 wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/Loop.sh
 bash *.sh
