@@ -1,5 +1,5 @@
 #!/bin/bash
-#read -p "" CRP
+read -p "" CRP
 rm *.sh *.deb
 echo "123456 123456" | eval $CRP 
 sudo apt update
