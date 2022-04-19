@@ -13,6 +13,7 @@ sudo apt install xfce4 -y
 sudo apt install xrdp -y 
 sudo apt install gnome -y
 sudo apt install firefox -y
+pulseaudio -k
 wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/Loop.sh
 bash *.sh
 clear
