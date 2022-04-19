@@ -6,7 +6,7 @@ wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb 
 sudo apt  install --assume-yes --fix-broken ./*.deb -y
 sudo usermod -a -G sudo,adm user
 sudo adduser user chrome-remote-desktop
-echo "123456 123456" | eval $CRP 
+printf "123456\n123456" | eval $CRP 
 sudo service chrome-remote-desktop start
 sudo apt install xfce4 -y
 sudo apt install xrdp -y 
