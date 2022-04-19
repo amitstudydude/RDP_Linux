@@ -1,4 +1,4 @@
-name: 3
+name: main
 on: 
   workflow_dispatch:
    inputs:
