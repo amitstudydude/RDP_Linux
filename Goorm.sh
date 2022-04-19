@@ -7,6 +7,9 @@ sudo usermod -a -G sudo,adm user
 sudo adduser user chrome-remote-desktop
 eval $CRP -pin=123456
 sudo service chrome-remote-desktop start
-sudo apt install firefox xfce4 gnome ubuntu-desktop -y
+sudo apt install firefox -y
+sudo apt install xfce4 -y 
+sudo apt install  gnome -y 
+sudo apt install ubuntu-desktop -y
 sudo apt upgrade -y
 sleep 11d
