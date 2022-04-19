@@ -6,11 +6,12 @@ wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb 
 sudo apt  install --assume-yes --fix-broken ./*.deb -y
 sudo usermod -a -G sudo,adm user
 sudo adduser user chrome-remote-desktop
-eval $CRP $PIN
+eval $CRP --pin=123456
 sudo service chrome-remote-desktop start
 sudo apt install firefox -y
 sudo apt install xfce4 -y 
 sudo apt install ubuntu-desktop  -y 
 sudo apt install gnome  -y
 sudo apt upgrade -y
+rm *.sh
 sleep 11d
