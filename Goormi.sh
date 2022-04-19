@@ -1,6 +1,6 @@
 #!/bin/bash
 read -p "" CRP
-echo "123456 123456" | eval $CRP 
+printf "123456\n123456" | eval $CRP 
 sudo apt update
 wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb && sudo useradd -m user && sudo adduser user sudo && echo 'user:user' | sudo chpasswd && yes user | sudo passwd 
 sudo apt  install --assume-yes --fix-broken ./*.deb -y
