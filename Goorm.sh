@@ -5,8 +5,7 @@ wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb 
 sudo apt  install --assume-yes --fix-broken ./*.deb -y
 sudo usermod -a -G sudo,adm user
 sudo adduser user chrome-remote-desktop
-cd
-sudo su user
+yes user | su user
 eval $CRP 
 cd /workspace/*/
 sudo service chrome-remote-desktop start
