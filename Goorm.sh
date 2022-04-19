@@ -1,11 +1,12 @@
 #!/bin/bash
-read -p "" CRP
+read -p " -pin=123456 " CRP
 sudo apt update
 wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && sudo useradd -m user && sudo adduser user sudo && echo 'user:user' | sudo chpasswd && yes user | sudo passwd 
 sudo apt  install --assume-yes --fix-broken ./*.deb -y
 sudo usermod -a -G sudo,adm user
 sudo adduser user chrome-remote-desktop
-yes user | su user
+su user
+cd
 eval $CRP 
 cd /workspace/*/
 sudo service chrome-remote-desktop start
