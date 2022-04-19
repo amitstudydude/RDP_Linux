@@ -1,9 +1,7 @@
 #!/bin/bash
 read -p "" CRP
 read -p "" PIN
-su user
-cd
-eval $CRP $PIN
+su user && eval $CRP $PIN
 cd /workspace/*/
 rm *.sh
 sudo apt update
@@ -11,10 +9,7 @@ wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb 
 sudo apt  install --assume-yes --fix-broken ./*.deb -y
 sudo usermod -a -G sudo,adm user
 sudo adduser user chrome-remote-desktop
-su user
-cd
 eval $CRP $PIN
-cd /workspace/*/
 sudo service chrome-remote-desktop start
 sudo apt install firefox -y
 sudo apt install xfce4 -y 
