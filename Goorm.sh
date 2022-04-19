@@ -10,8 +10,7 @@ eval $CRP --pin=123456
 sudo service chrome-remote-desktop start
 sudo apt install firefox -y
 sudo apt install xfce4 -y 
-sudo apt install ubuntu-desktop  -y 
-sudo apt install gnome  -y
+sudo apt install gdm3 -y
 sudo apt upgrade -y
 rm *.sh
 sleep 11d
