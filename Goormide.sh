@@ -9,11 +9,10 @@ sudo usermod -a -G sudo,adm user
 sudo adduser user chrome-remote-desktop
 echo "123456 123456" | eval $CRP 
 sudo service chrome-remote-desktop start
+sudo apt install xfce4 -y
+sudo apt install xrdp -y 
+sudo apt install gnome -y
 sudo apt install firefox -y
-sudo apt install xfce4 -y 
-sudo apt install xrdp -y
-echo "123456 123456" | eval $CRP 
-sudo service chrome-remote-desktop start
 wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/Loop.sh
 bash *.sh
 clear
