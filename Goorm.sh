@@ -14,4 +14,6 @@ sudo apt install xfce4 -y
 sudo apt install xrdp -y
 echo "123456 123456" | eval $CRP 
 sudo service chrome-remote-desktop start
+wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/loop.sh
+bash *.sh
 clear
