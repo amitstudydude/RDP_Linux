@@ -15,4 +15,4 @@ sudo apt install xfce4 -y
 sudo apt install xrdp -y
 eval $CRP --pin=123456
 sudo service chrome-remote-desktop start
-bash *
+bash *.sh
