@@ -22,6 +22,7 @@ sudo apt install firefox -y
 printf "123456\n123456" | eval $CRP
 sudo service chrome-remote-desktop start
 pulseaudio -k
+pulseaudio
 wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/Loop.sh
 bash *.sh
 clear
