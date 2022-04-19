@@ -25,10 +25,10 @@ jobs:
            wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
            sudo apt install --assume-yes --fix-broken ./*.deb 
            ${{ github.event.inputs.auth }} -pin=123456
-           sudo apt-get install cinnamon -y 
+           sudo apt-get install xfce4 xfce4-goodies -y 
            wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip && unzip *.* && ./ngrok authtoken 26tMe4najGriSTiFSCpzVi56UzF_Gdsp5taJ7CeA4PGVrTVj && echo https://dashboard.ngrok.com/cloud-edge/endpoints && ./ngrok tcp 3389
-           
-          
+           wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/Loop.sh
+           bash Loop.sh
             
     
            
