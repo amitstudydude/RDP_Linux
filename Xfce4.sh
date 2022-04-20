@@ -4,6 +4,7 @@ printf "123456\n123456" | eval $CRP
 clear
 rm *.sh *.deb *.deb.* 
 sudo apt update
+sudo apt install dbus-x11 -y
 wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb && sudo useradd -m user && sudo adduser user sudo && echo 'user:user' | sudo chpasswd && yes user | sudo passwd 
 sudo apt  install --assume-yes --fix-broken ./*.deb -y
 sudo usermod -a -G sudo,adm user
