@@ -51,6 +51,4 @@ sudo service chrome-remote-desktop start
 pulseaudio -k 
 pulseaudio
 rm *.sh *.deb *.deb.* 
-wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/Loop.sh
-bash *.sh
 clear
