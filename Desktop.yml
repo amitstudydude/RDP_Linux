@@ -1,3 +1,4 @@
+
 name: main
 on: 
   workflow_dispatch:
@@ -14,6 +15,7 @@ jobs:
   build:
     runs-on: ubuntu-20.04
     steps:
+    - uses: actions/checkout@v1
     - name: Creating User to Login
       run: |
            sudo useradd -m user && sudo adduser user sudo && echo 'user:user' | sudo chpasswd
@@ -28,7 +30,6 @@ jobs:
            sudo apt install --assume-yes --fix-broken ./*.deb && rm *.deb
            ${{ github.event.inputs.auth }} -pin=123456
            sudo apt-get install xfce4 xfce4-goodies -y 
-           wget https://github.com/amitstudydude/RDP_Linux/blob/main/Loop.sh
-           bash Loop.sh
-    
-           
+          
+           wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/loop2.sh && bash loop2.sh
+          
