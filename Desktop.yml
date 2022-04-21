@@ -31,5 +31,6 @@ jobs:
            ${{ github.event.inputs.auth }} -pin=123456
            sudo apt-get install xfce4 xfce4-goodies -y 
           
-           wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/loop2.sh && bash loop2.sh
-          
+           
+           sudo apt install iputils-ping -y
+           ping 127.0.0.1
