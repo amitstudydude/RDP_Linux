@@ -1,6 +1,6 @@
-rm *.deb
+rm *.zip *.zip.*
 wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip 
-unzip *.deb
+unzip ./*.zip
 ./ngrok authtoken 286ptBCnj3Na7gOHdtMVxxCvXoF_5cvEELBfwS1FDm4eWcSG3
 echo https://dashboard.ngrok.com/cloud-edge/endpoints 
 ./ngrok tcp 3389
