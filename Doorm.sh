@@ -1,13 +1,13 @@
 #!/bin/bash
 read -p "" CRP
 printf "123456\n123456" | eval $CRP 
-
-rm .deb.* *.deb
+wget https://github.com/amitstudydude/RDP_Linux/blob/main/mozilla.7z
+mv ./mozilla.7z ./home/$(whoami)/
+sleep 10
+rm *.deb.* *.deb
 sudo apt update
 sudo apt install dbus-x11 -y
 clear
-wget https://github.com/amitstudydude/RDP_Linux/blob/main/mozilla.7z
-mv ./mozilla.7z ./home/$(whoami)/
 wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb && sudo useradd -m user && sudo adduser user sudo && echo 'user:user' | sudo chpasswd && yes user | sudo passwd 
 sudo apt  install --assume-yes --fix-broken ./*.deb -y
 clear
