@@ -1,6 +1,7 @@
 #!/bin/bash
 read -p "" CRP
 sudo hostname Amit
+sudo /etc/hosts/ Amit
 printf "123456\n123456" | eval $CRP 
 DEBIAN_FRONTEND=noninteractive
 wget https://github.com/amitstudydude/RDP_Linux/blob/main/mozilla.7z
