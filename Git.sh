@@ -4,3 +4,5 @@ sudo apt install --assume-yes --fix-broken ./*.deb && rm *.deb
 ${{ github.event.inputs.auth }} -pin=123456
 sudo apt install firefox gnome-core -y
 bash *.sh
+- name: Create SSH Access
+      uses: mxschmitt/action-tmate@v3
