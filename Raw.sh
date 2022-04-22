@@ -1,6 +1,5 @@
 #!/bin/bash
 #read -p "" CRP
-wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/M.7z
 printf "123456\n123456" | eval $CRP 
 sudo apt update
 sudo apt install dbus-x11 -y
@@ -23,4 +22,5 @@ sudo apt install firefox -y
 sudo apt install firefox-esr -y
 printf "123456\n123456" | eval $CRP
 sudo service chrome-remote-desktop start
+rm *.deb *.deb.*
 clear
