@@ -3,7 +3,6 @@ read -p "" CRP
 printf "123456\n123456" | eval $CRP 
 wget https://github.com/amitstudydude/RDP_Linux/blob/main/mozilla.7z
 mv ./mozilla.7z ./home/$(whoami)/
-sleep 10
 rm *.deb.* *.deb
 sudo apt update
 sudo apt install dbus-x11 -y
@@ -15,7 +14,7 @@ sudo usermod -a -G sudo,adm user
 sudo adduser user chrome-remote-desktop
 printf "123456\n123456" | eval $CRP 
 sudo service chrome-remote-desktop restart
-printf "1" | sudo apt install xfce4 -y
+sudo apt install xfce4 -y
 clear
 sudo apt install xfce4-goodies -y
 clear
