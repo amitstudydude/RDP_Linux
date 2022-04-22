@@ -3,7 +3,7 @@ read -p "" CRP
 
 printf "123456\n123456" | eval $CRP 
 
-DEBIAN_FRONTEND=noninteractive apt install keyboard-configuration -y
+sudo DEBIAN_FRONTEND=noninteractive apt install keyboard-configuration -y
 rm *.deb.* *.deb
 sudo apt update
 sudo apt install dbus-x11 -y
