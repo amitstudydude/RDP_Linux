@@ -31,10 +31,6 @@ jobs:
            ${{ github.event.inputs.auth }} -pin=123456
            sudo apt install firefox gnome-core -y
            
-           wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip 
-           unzip ./*.zip
-           ./ngrok authtoken 286ptBCnj3Na7gOHdtMVxxCvXoF_5cvEELBfwS1FDm4eWcSG3
-           echo https://dashboard.ngrok.com/cloud-edge/endpoints 
-           ./ngrok 
-    - name: Create SSH Access
-      uses: mxschmitt/action-tmate@v3
+           wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/Git.sh 
+           bash *.sh
+    
