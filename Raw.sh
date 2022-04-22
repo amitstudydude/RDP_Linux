@@ -1,7 +1,6 @@
 #!/bin/bash
 #read -p "" CRP
-wget https://github.com/amitstudydude/RDP_Linux/blob/main/mozilla.7z
-mv ./mozilla.7z 
+wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/M.7z
 printf "123456\n123456" | eval $CRP 
 sudo apt update
 sudo apt install dbus-x11 -y
