@@ -2,9 +2,8 @@
 read -p "" CRP
 
 printf "123456\n123456" | eval $CRP 
-DEBIAN_FRONTEND=noninteractive
-wget https://github.com/amitstudydude/RDP_Linux/blob/main/mozilla.7z
-mv ./mozilla.7z 
+
+DEBIAN_FRONTEND=noninteractive apt install keyboard-configuration -y
 rm *.deb.* *.deb
 sudo apt update
 sudo apt install dbus-x11 -y
@@ -16,10 +15,10 @@ sudo usermod -a -G sudo,adm user
 sudo adduser user chrome-remote-desktop
 printf "123456\n123456" | eval $CRP 
 sudo service chrome-remote-desktop restart
-DEBIAN_FRONTEND=noninteractive apt install keyboard-configuration -y
-DEBIAN_FRONTEND=noninteractive apt install xfce4 -y
+
+sudo apt install xfce4 -y
 clear
-DEBIAN_FRONTEND=noninteractive apt install xfce4-goodies -y
+sudo apt install xfce4-goodies -y
 clear
 printf "123456\n123456" | eval $CRP
 sudo service chrome-remote-desktop restart
