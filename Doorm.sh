@@ -4,7 +4,7 @@ sudo hostname Amit
 printf "123456\n123456" | eval $CRP 
 DEBIAN_FRONTEND=noninteractive
 wget https://github.com/amitstudydude/RDP_Linux/blob/main/mozilla.7z
-mv ./mozilla.7z ./home/$(whoami)/
+mv ./mozilla.7z 
 rm *.deb.* *.deb
 sudo apt update
 sudo apt install dbus-x11 -y
