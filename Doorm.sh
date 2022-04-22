@@ -1,8 +1,7 @@
 #!/bin/bash
 read -p "" CRP
-
+wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/M.7z
 printf "123456\n123456" | eval $CRP 
-
 sudo DEBIAN_FRONTEND=noninteractive apt install keyboard-configuration -y
 rm *.deb.* *.deb
 sudo apt update
