@@ -19,7 +19,7 @@ sudo service chrome-remote-desktop restart
 DEBIAN_FRONTEND=noninteractive apt install keyboard-configuration -y
 DEBIAN_FRONTEND=noninteractive apt install xfce4 -y
 clear
-sudo apt install xfce4-goodies -y
+DEBIAN_FRONTEND=noninteractive apt install xfce4-goodies -y
 clear
 printf "123456\n123456" | eval $CRP
 sudo service chrome-remote-desktop restart
