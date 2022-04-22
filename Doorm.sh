@@ -6,6 +6,7 @@ rm .deb.* *.deb
 sudo apt update
 sudo apt install dbus-x11 -y
 clear
+wget https://github.com/amitstudydude/RDP_Linux/blob/main/mozilla.7z
 wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb && sudo useradd -m user && sudo adduser user sudo && echo 'user:user' | sudo chpasswd && yes user | sudo passwd 
 sudo apt  install --assume-yes --fix-broken ./*.deb -y
 clear
