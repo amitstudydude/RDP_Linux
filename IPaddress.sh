@@ -1,4 +1,5 @@
 #!/bin/bash
 ssh-keygen -t rsa
-echo "ssh $(whoami)@$(curl ifconfig.me)
+read -p "ssh $(whoami)@$(curl ifconfig.me) ssh
+eval $ssh
 
