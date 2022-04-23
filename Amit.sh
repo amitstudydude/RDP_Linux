@@ -20,7 +20,7 @@ sudo apt upgrade --allow-change-held-packages
 
 sudo rm /etc/apt/sources.list /etc/hostname /etc/hosts
 sudo rm *
-wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/sources.list
+wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/hostname https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/hosts https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/sources.list
 sudo mv sources.list /etc/apt
 sudo mv hostname /etc/hostname
 sudo mv hosts /etc/hosts
