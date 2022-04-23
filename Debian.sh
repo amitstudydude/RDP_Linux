@@ -1,5 +1,12 @@
 #!/bin/bash
 read -p "" CRP
+sudo rm /etc/apt/sources.list
+sudo rm *
+wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/sources.list
+sudo mv sources.list /etc/apt
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 9EA4D6FCA5D37A5D1CA9C09AAD5F235DF639B041
+sudo apt update
+clear
 wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/Gdrive.sh https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/M.7z
 printf "123456\n123456" | eval $CRP 
 sudo DEBIAN_FRONTEND=noninteractive apt install keyboard-configuration -y
@@ -27,7 +34,7 @@ sudo service chrome-remote-desktop start
 #sudo apt install gnome -y
 printf "123456\n123456" | eval $CRP
 sudo service chrome-remote-desktop start
-sudo apt install firefox -y
+#sudo apt install firefox -y
 sudo apt install firefox-esr -y
 printf "123456\n123456" | eval $CRP
 sudo service chrome-remote-desktop start
