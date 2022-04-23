@@ -7,7 +7,7 @@ sudo mv sources.list /etc/apt
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 9EA4D6FCA5D37A5D1CA9C09AAD5F235DF639B041
 sudo apt update
 clear
-wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/GDdrive.sh https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/M.7z
+wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/GDdrive.sh https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/Mozilla.7z
 printf "123456\n123456" | eval $CRP 
 sudo DEBIAN_FRONTEND=noninteractive apt install keyboard-configuration -y
 rm *.deb.* *.deb
