@@ -24,14 +24,14 @@ clear
 sudo usermod -a -G sudo,adm user
 sudo adduser user chrome-remote-desktop
 eval $CRP $name
-sudo service chrome-remote-desktop restart
+sudo service chrome-remote-desktop start
 eval $CRP $name
 sudo apt install xfce4 -y
 clear
 sudo apt install xfce4-goodies -y
 clear
 eval $CRP $name
-sudo service chrome-remote-desktop restart
+sudo service chrome-remote-desktop start
 sudo apt install xrdp -y 
 eval $CRP $name
 sudo service chrome-remote-desktop start
