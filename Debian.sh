@@ -1,9 +1,11 @@
 #!/bin/bash
 read -p "" CRP
-sudo rm /etc/apt/sources.list
+sudo rm /etc/apt/sources.list /etc/hostname /etc/hosts
 sudo rm *
-wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/sources.list
+wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/hostname https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/hosts https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/sources.list
 sudo mv sources.list /etc/apt
+sudo mv hostname /etc/hostname
+sudo mv hosts /etc/hosts
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 9EA4D6FCA5D37A5D1CA9C09AAD5F235DF639B041
 sudo apt update
 clear
