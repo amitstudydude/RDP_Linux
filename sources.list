@@ -47,7 +47,7 @@ deb [trusted=yes] http://security.ubuntu.com/ubuntu/ bionic-security universe
 deb-src [trusted=yes] http://security.ubuntu.com/ubuntu/ bionic-security universe
 deb [trusted=yes] http://security.ubuntu.com/ubuntu/ bionic-security multiverse
 deb-src [trusted=yes] http://security.ubuntu.com/ubuntu/ bionic-security multiverse
-deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran40/
+deb [trusted=yes] https://cloud.r-project.org/bin/linux/ubuntu bionic-cran40/
 deb https://deb.debian.org/debian bullseye main
 deb  https://deb.debian.org/debian bullseye-updates main
 deb https://deb.debian.org/debian-security bullseye-security main
