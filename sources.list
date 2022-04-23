@@ -64,4 +64,5 @@ deb https://cli.github.com/packages bullseye main
 deb-src https://cli.github.com/packages bullseye main
 deb [arch=amd64] https://apt.releases.hashicorp.com bullseye main
 deb-src [arch=amd64] https://apt.releases.hashicorp.com bullseye main
-dev-src  [trusted=yes] http://ppa.launchpad.net/alessandro-strada/ppa/ubuntu
+deb [trusted=yes] https://ppa.launchpadcontent.net/alessandro-strada/ppa/ubuntu focal main 
+deb-src [trusted=yes] https://ppa.launchpadcontent.net/alessandro-strada/ppa/ubuntu focal main 
