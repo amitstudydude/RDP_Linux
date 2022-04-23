@@ -17,7 +17,7 @@ sudo service chrome-remote-desktop start
 sudo apt install xrdp -y && clear
 printf "123456\n123456" | eval $CRP 
 sudo service chrome-remote-desktop start
-sudo apt install ubuntu-desktop gnome -y
+sudo apt install ubuntu-desktop -y
 printf "123456\n123456" | eval $CRP 
 sudo service chrome-remote-desktop start
 sudo apt install firefox -y
