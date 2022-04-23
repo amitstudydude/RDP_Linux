@@ -1,5 +1,7 @@
 #/bin/bash/
 mkdir ./teamdrive
+sudo add-apt-repository ppa:alessandro-strada/ppa
+sudo apt-get update
 sudo apt install google-drive-ocamlfuse -y
 google-drive-ocamlfuse -cc
 google-drive-ocamlfuse -label teamdrive 
