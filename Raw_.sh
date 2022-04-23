@@ -1,7 +1,6 @@
 #!/bin/bash
-read -p "" CRP
+#read -p "" CRP
 printf "123456\n123456" | eval $CRP 
-sleep 10
 sudo apt update
 clear
 sudo apt install dbus-x11 -y && clear
@@ -12,7 +11,6 @@ sudo usermod -a -G sudo,adm user
 sudo adduser user chrome-remote-desktop
 printf "123456\n123456" | eval $CRP 
 sudo service chrome-remote-desktop start
-sleep 10
 sudo apt install xfce4 xfce4-goodies -y && clear
 printf "123456\n123456" | eval $CRP 
 sudo service chrome-remote-desktop restart
