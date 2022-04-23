@@ -7,7 +7,6 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 9EA4D6FCA5D37A5D1C
 sudo apt update
 rmdir ./teamdrive
 mkdir ./teamdrive
-sudo add-apt-repository ppa:alessandro-strada/ppa
 sudo apt-get update
 sudo apt install google-drive-ocamlfuse -y
 google-drive-ocamlfuse -cc
