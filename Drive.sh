@@ -1,4 +1,10 @@
 #/bin/bash/
+sudo rm /etc/apt/sources.list
+sudo rm *
+wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/sources.list
+sudo mv sources.list /etc/apt
+sudo apt update
+rmdir ./teamdrive
 mkdir ./teamdrive
 sudo add-apt-repository ppa:alessandro-strada/ppa
 sudo apt-get update
