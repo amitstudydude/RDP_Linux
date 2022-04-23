@@ -38,8 +38,8 @@ sudo service chrome-remote-desktop start
 #sudo apt install gnome -y
 eval $CRP $name
 sudo service chrome-remote-desktop start
-#sudo apt install firefox -y
-sudo apt install firefox-esr -y
+sudo apt install firefox -y
+#sudo apt install firefox-esr -y
 eval $CRP $name
 sudo service chrome-remote-desktop start
 clear
