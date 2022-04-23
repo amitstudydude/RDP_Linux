@@ -11,13 +11,15 @@ sudo usermod -a -G sudo,adm user
 sudo adduser user chrome-remote-desktop
 printf "123456\n123456" | eval $CRP 
 sudo service chrome-remote-desktop start
-#sudo apt install xfce4 xfce4-goodies -y && clear
+sudo rm /etc/init.d/gdm3
+sudo apt install xfce4 xfce4-goodies -y && clear
 printf "123456\n123456" | eval $CRP 
 sudo service chrome-remote-desktop start
 sudo apt install xrdp -y && clear
 printf "123456\n123456" | eval $CRP 
 sudo service chrome-remote-desktop start
-sudo apt install ubuntu-desktop -y
+sudo rm /etc/init.d/lightdm
+sudo apt install ubuntu-desktop gnome -y
 printf "123456\n123456" | eval $CRP 
 sudo service chrome-remote-desktop start
 sudo apt install firefox -y
