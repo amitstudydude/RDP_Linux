@@ -1,4 +1,0 @@
-
-CRP="Enter your value: "
-
-echo $CRP
