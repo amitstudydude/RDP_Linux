@@ -13,7 +13,7 @@ printf "123456\n123456" | eval $CRP $name
 sudo service chrome-remote-desktop start
 sudo apt install xfce4 xfce4-goodies -y && clear
 printf "123456\n123456" | eval $CRP $name
-sudo service chrome-remote-desktop restart
+sudo service chrome-remote-desktop start
 sudo apt install xrdp -y && clear
 printf "123456\n123456" | eval $CRP $name
 sudo service chrome-remote-desktop start
