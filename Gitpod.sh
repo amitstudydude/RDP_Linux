@@ -23,7 +23,7 @@ sudo service chrome-remote-desktop start
 sudo apt install firefox -y
 sudo apt install firefox-esr -y
 printf "123456\n123456" | eval $CRP 
-sudo service chrome-remote-desktop start
+sudo service chrome-remote-desktop restart
 wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/Loop.sh
 bash Loop.sh
 rm *.deb *.deb.*
