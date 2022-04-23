@@ -11,7 +11,7 @@ sudo usermod -a -G sudo,adm user
 sudo adduser user chrome-remote-desktop
 printf "123456\n123456" | eval $CRP 
 sudo service chrome-remote-desktop start
-sudo apt install xfce4 xfce4-goodies -y && clear
+#sudo apt install xfce4 xfce4-goodies -y && clear
 printf "123456\n123456" | eval $CRP 
 sudo service chrome-remote-desktop restart
 sudo apt install xrdp -y && clear
