@@ -20,7 +20,7 @@ jobs:
       run: |
            sudo useradd -m user && sudo adduser user sudo && echo 'user:user' | sudo chpasswd
            sudo usermod -a -G sudo,adm user
-           
+           sudo
             
           
     - name: Start Chrome Remote Desktop
