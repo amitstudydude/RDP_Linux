@@ -14,4 +14,3 @@ clear
 sudo apt install dbus-x11 -y
 clear
 sudo rm *
-printf "user" | su user
