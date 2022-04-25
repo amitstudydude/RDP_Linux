@@ -1,6 +1,7 @@
 #!/bin/bash
 #read -p "" CRP
-printf "123456\n123456" | eval $CRP $name
+eval DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="$CRP" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=Linux --pin=123456
+clear
 sudo apt update
 clear
 sudo apt install dbus-x11 -y && clear
@@ -9,20 +10,25 @@ wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/GDrive.sh ht
 sudo apt  install --assume-yes --fix-broken ./*.deb -y
 sudo usermod -a -G sudo,adm user
 sudo adduser user chrome-remote-desktop
-printf "123456\n123456" | eval $CRP $name
+eval DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="$CRP" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=Linux --pin=123456
+clear
 sudo service chrome-remote-desktop start
 sudo apt install xfce4 xfce4-goodies -y && clear
-printf "123456\n123456" | eval $CRP $name
+eval DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="$CRP" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=Linux --pin=123456
+clear
 sudo service chrome-remote-desktop start
 sudo apt install xrdp -y && clear
-printf "123456\n123456" | eval $CRP $name
+eval DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="$CRP" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=Linux --pin=123456
+clear
 sudo service chrome-remote-desktop start
 #sudo apt install gnome -y
-printf "123456\n123456" | eval $CRP $name
+eval DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="$CRP" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=Linux --pin=123456
+clear
 sudo service chrome-remote-desktop start
 sudo apt install firefox -y
 #sudo apt install firefox-esr -y
-printf "123456\n123456" | eval $CRP $name
+eval DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="$CRP" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=Linux --pin=123456
+clear
 sudo service chrome-remote-desktop start
 #wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/Loop.sh
 #bash Loop.sh
