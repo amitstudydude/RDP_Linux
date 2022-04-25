@@ -6,5 +6,5 @@ sudo DEBIAN_FRONTEND=noninteractive apt install keyboard-configuration -y
 clear
 sudo apt install dbus-x11 -y    
 clear
-eval DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="$CRP" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --user-name=$(whoami) --name=Linux --pin=123456
+eval DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="$CRP" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --user-name=$(user) --name=Linux --pin=123456
 sudo service chrome-remote-desktop start
