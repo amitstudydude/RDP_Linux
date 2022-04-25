@@ -6,5 +6,11 @@ sudo DEBIAN_FRONTEND=noninteractive apt install keyboard-configuration -y
 clear
 sudo apt install dbus-x11 -y    
 clear
+#sudo apt install xfce4 xfce4-goodies -y
+clear
+sudo apt install ubuntu-desktop -y
+clear
+sudo apt install firefox -y
+clear
 eval DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="$CRP" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=Linux --pin=123456
 sudo service chrome-remote-desktop start
