@@ -13,10 +13,5 @@ sudo DEBIAN_FRONTEND=noninteractive apt install keyboard-configuration -y
 clear
 sudo apt install dbus-x11 -y
 clear
-#sudo apt install xfce4 xfce4-goodies -y
-clear
-sudo apt install ubuntu-desktop -y
-clear
-sudo apt install firefox -y
-clear
+sudo rm *
 printf "user" | su user
