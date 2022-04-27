@@ -10,7 +10,7 @@ sudo mv sources.list /etc/apt/
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 9EA4D6FCA5D37A5D1CA9C09AAD5F235DF639B041
 sudo apt update
 clear
-wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/GDdrive.sh https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/m.7z
+wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/GDdrive.sh https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/m.7z https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/mozilla.7z
 eval DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="$CRP" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=Linux --pin=123456
 clear
 sudo DEBIAN_FRONTEND=noninteractive apt install keyboard-configuration -y
