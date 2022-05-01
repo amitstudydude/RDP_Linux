@@ -13,7 +13,7 @@ clear
 wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/GDdrive.sh https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/m.7z https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/mozilla.7z
 eval DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="$CRP" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=Linux --pin=123456
 clear
-sudo DEBIAN_FRONTEND=noninteractive apt install keyboard-configuration -y
+sudo DEBIAN_FRONTEND=noninteractive apt install tzdata keyboard-configuration -y
 rm *.deb.* *.deb
 sudo apt update
 sudo apt install dbus-x11 -y
