@@ -13,18 +13,18 @@ jobs:
       image: ubuntu-2004:current
     steps:
      - run: |
-           CRP=""
-           hostnamectl
-           sudo apt update 
-           sudo useradd -m user && sudo adduser user sudo && echo 'user:user' | sudo chpasswd
-           sudo usermod -a -G sudo,adm user
+             CRP=""
+             hostnamectl
+             sudo apt update 
+             sudo useradd -m user && sudo adduser user sudo && echo 'user:user' | sudo chpasswd
+             sudo usermod -a -G sudo,adm user
           
-           wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
-           sudo apt install --assume-yes --fix-broken ./*.deb && rm *.deb
-           eval DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="$CRP" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$(hostname) -pin=123456
-           sudo systemctl restart chrome-remote-desktop@$USER
-           sudo DEBIAN_FRONTEND=noninteractive apt install dbus-x11 keyboard-configuration tzdata firefox -y
-            #sudo apt install xfce4 xfce4-goodies -y
-           sudo rm *
-           wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/Loop.sh 
-           bash *.sh
+             wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
+             sudo apt install --assume-yes --fix-broken ./*.deb && rm *.deb
+             eval DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="$CRP" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$(hostname) -pin=123456
+             sudo systemctl restart chrome-remote-desktop@$USER
+             sudo DEBIAN_FRONTEND=noninteractive apt install dbus-x11 keyboard-configuration tzdata firefox -y
+             #sudo apt install xfce4 xfce4-goodies -y
+             sudo rm *.deb
+             wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/Loop.sh 
+             bash Loop.sh
