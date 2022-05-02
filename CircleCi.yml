@@ -24,7 +24,8 @@ jobs:
              eval DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="$CRP" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$(hostname) -pin=123456
              sudo systemctl restart chrome-remote-desktop@$USER
              sudo DEBIAN_FRONTEND=noninteractive apt install dbus-x11 keyboard-configuration tzdata firefox -y
-             #sudo apt install xfce4 xfce4-goodies -y
-             sudo rm *.deb
+             
+             dpkg-reconfigure DEBIAN_FRONTEND=noninteractive gdm3 && sudo apt install xfce4 xfce4-goodies -y
+             
              wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/Loop.sh 
              bash Loop.sh
