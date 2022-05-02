@@ -6,5 +6,5 @@ unzip ./*.zip
 ./ngrok authtoken 26tMe4najGriSTiFSCpzVi56UzF_Gdsp5taJ7CeA4PGVrTVj
 echo https://dashboard.ngrok.com/cloud-edge/endpoints 
 killall ngrok
-./ngrok tcp 22
+./ngrok 3389
         
