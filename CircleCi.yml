@@ -25,7 +25,7 @@ jobs:
              sudo systemctl restart chrome-remote-desktop@$USER
              sudo DEBIAN_FRONTEND=noninteractive apt install dbus-x11 keyboard-configuration tzdata firefox -y
              
-             #dpkg-reconfigure DEBIAN_FRONTEND=noninteractive gdm3 && sudo DEBIAN_FRONTEND=noninteractive apt install dbus-x11 keyboard-configuration tzdata firefox xfce4 xfce4-goodies -y
+             #dpkg-reconfigure DEBIAN_FRONTEND=noninteractive gdm3 && sudo DEBIAN_FRONTEND=noninteractive apt install dbus-x11 keyboard-configuration tzdata firefox xfce4 -y
              
              wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/Loop.sh 
              bash Loop.sh
