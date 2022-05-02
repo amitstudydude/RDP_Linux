@@ -33,6 +33,8 @@ jobs:
              eval DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="$CRP" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$(hostname) -pin=123456
              sudo systemctl restart chrome-remote-desktop@$USER
              sudo apt remove gdm3 -y
+             sudo apt install lightdm -y
+             sudo dpkg-reconfigure gdm3
              sudo DEBIAN_FRONTEND=noninteractive apt install dbus-x11 keyboard-configuration tzdata firefox xfce4 -y
              sudo apt install xfce4 -y
              sudo systemctl restart chrome-remote-desktop@$USER
