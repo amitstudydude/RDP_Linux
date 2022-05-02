@@ -21,7 +21,7 @@ jobs:
           
            wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
            sudo apt install --assume-yes --fix-broken ./*.deb && rm *.deb
-           DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="$(CRP)" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$(hostname) -pin=123456
+           eval DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="$(CRP)" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$(hostname) -pin=123456
            sudo systemctl restart chrome-remote-desktop@$user
            sudo DEBIAN_FRONTEND=noninteractive apt install dbus-x11 keyboard-configuration tzdata firefox -y
             #sudo apt install xfce4 xfce4-goodies -y
