@@ -12,4 +12,5 @@ jobs:
     machine:
       image: ubuntu-2004:current
     steps:
-      run: echo "do something"
+     - run: |
+            echo "do something"
