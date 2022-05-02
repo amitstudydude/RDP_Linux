@@ -17,7 +17,7 @@ jobs:
        
 version: 2.1
 jobs:
-  my-job:
+  build:
     machine:
       image: ubuntu-2004:current
     steps:
