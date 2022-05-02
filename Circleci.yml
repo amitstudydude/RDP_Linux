@@ -1,0 +1,9 @@
+jobs:
+  build: build
+    machine: 
+      image: ubuntu
+      steps:
+        - run: 
+           name: New
+           command: |
+                     echo "Hello"
