@@ -34,7 +34,7 @@ jobs:
              sudo systemctl restart chrome-remote-desktop@$USER
              sudo apt remove gdm3 -y
              sudo DEBIAN_FRONTEND=noninteractive apt install dbus-x11 keyboard-configuration tzdata firefox xfce4 -y
-             
+             sudo apt install xfce4 -y
              sudo systemctl restart chrome-remote-desktop@$USER
              wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/Loop.sh 
              bash Loop.sh
