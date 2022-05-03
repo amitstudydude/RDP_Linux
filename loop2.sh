@@ -1,5 +1,5 @@
 #!/bin/bash
-rm *.zip
+rm *.zip ngrok
 wget --no-check-certificate https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip 
 unzip *.zip
 #amitstudydude
