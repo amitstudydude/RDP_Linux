@@ -5,7 +5,7 @@ jobs:
       image: ubuntu-2004:current
     steps:
      - run: |
-             code=""
+             #code=""
              hostnamectl
              sudo apt update && sudo apt install dbus-x11 -y
              sudo useradd -m user && sudo adduser user sudo && echo 'user:user' | sudo chpasswd
