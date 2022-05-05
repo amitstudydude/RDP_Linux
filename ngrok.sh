@@ -7,4 +7,5 @@ unzip *.zip
 echo https://dashboard.ngrok.com/cloud-edge/endpoints 
 killall ngrok
 ./ngrok tcp 3389
+curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
         
