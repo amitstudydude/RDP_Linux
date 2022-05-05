@@ -2,7 +2,7 @@ cat >Dockerfile <<EOF
 FROM ubuntu:latest
 RUN yes | unminimize \
     apt update \
-    apt install sudo wget ssh tmate unzip \
+    apt install sudo wget ssh tmate \
     yes root | passwd root \
     echo "PasswordAuthentication yes" > /etc/ssh/sshd_config \
     echo "PermitUserEnvironment yes" >> /etc/ssh/sshd_config \
