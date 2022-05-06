@@ -1,4 +1,4 @@
-gcloud compute instances create instance-1
+gcloud compute instances create instance-1 \
 --project=(Id) \
 --zone=asia-south2-a \
 --machine-type=custom-6-39936 \
