@@ -1,0 +1,1 @@
+gcloud compute instances create instance-1 --project=qwiklabs-gcp-01-195023cbe844 --zone=asia-south2-a --machine-type=custom-6-39936 ,device-name=instance-1,image=projects/ubuntu-os-cloud/global/images/ubuntu-2204-jammy-v20220420,mode=rw,size=500,type=projects/qwiklabs-gcp-01-195023cbe844/zones/asia-south2-a/diskTypes/pd-ssd    
