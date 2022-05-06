@@ -1,6 +1,8 @@
 cat >VM.sh <<EOF
 #!/bin/bash
-read -p "" ID
+read -p "" CODE
+echo $CODE
+ID="CODE"
 echo "$ID"
 gcloud compute instances create instance \
 --project=$ID \
