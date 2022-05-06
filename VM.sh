@@ -12,8 +12,9 @@ gcloud compute instances create instance \
 --boot-disk-type=projects/$ID/zones/asia-south2-a/diskTypes/pd-ssd 
 gcloud compute ssh --zone "asia-south2-a" "instance"  --project "$ID"
 gcloud compute ssh --zone "asia-south2-a" "instance"  --project "$ID"
-EOF
-bash VM.sh
+
+
+
 
 
 
