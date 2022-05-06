@@ -11,5 +11,6 @@ echo "PermitUserEnvironment yes" >> /etc/ssh/sshd_config
 echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
 sudo service ssh restart
 ./ngrok tcp --region in 22 &>/dev/null. 2>&1
+sudo service ssh restart
 curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
         
