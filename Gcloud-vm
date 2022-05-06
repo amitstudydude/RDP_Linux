@@ -1,3 +1,4 @@
+#!/bin/bash
 ID="qwiklabs-gcp-03-c956f8b6f212"
 gcloud compute instances create instance \
 --project=($ID) \
@@ -6,4 +7,4 @@ gcloud compute instances create instance \
 --image=projects/ubuntu-os-cloud/global/images/ubuntu-2204-jammy-v20220420 \
 --boot-disk-size=500 \
 --boot-disk-type=projects/($ID)/zones/asia-south2-a/diskTypes/pd-ssd 
-gcloud compute ssh --zone "asia-south2-a" "instance"  --project "id"
+gcloud compute ssh --zone "asia-south2-a" "instance"  --project "$ID"
