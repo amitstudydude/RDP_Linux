@@ -26,7 +26,7 @@ sudo useradd -m user && sudo adduser user sudo && yes user | sudo passwd user &&
 eval DISPLAY= /opt/google/chrome-remote-desktop/start-host --$code --user-name="user" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=small_ssh --pin=123456
 bash ngrok.sh
 sudo apt install xfce4-terminal xarchiver screensaver mousepad xfce4 firefox -y &>/dev/null &
-sudo service chrome-remote-desktop start
+sudo systemctl start chrome-remote-desktop@USER 
 EOF
 bash setup.sh
 
