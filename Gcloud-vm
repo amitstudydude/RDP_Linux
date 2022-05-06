@@ -1,1 +1,1 @@
-gcloud compute instances create instance-1 --project=(Id) --zone=asia-south2-a --machine-type=custom-6-39936 ,device-name=instance-1,image=projects/ubuntu-os-cloud/global/images/ubuntu-2204-jammy-v20220420,mode=rw,size=500,type=projects/(ID)/zones/asia-south2-a/diskTypes/pd-ssd    
+gcloud compute instances create instance-1 --project=(Id) --zone=asia-south2-a --machine-type=custom-6-39936 device-name=instance-1,image=projects/ubuntu-os-cloud/global/images/ubuntu-2204-jammy-v20220420,mode=rw,size=500,type=projects/(ID)/zones/asia-south2-a/diskTypes/pd-ssd    
