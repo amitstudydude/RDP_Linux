@@ -1,7 +1,7 @@
 cat >VM.sh <<EOF
 #!/bin/bash
 read -p "" ID
-
+echo "$ID"
 gcloud compute instances create instance \
 --project=$ID \
 --zone=asia-south2-a \
