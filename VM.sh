@@ -1,5 +1,4 @@
 cat >VM.sh <<EOF
-#!/bin/bash
 read -p "" CODE
 echo $CODE
 ID="CODE"
