@@ -4,7 +4,7 @@ killall ngrok
 rm ngrok
 wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip && unzip ./*.zip
 ./ngrok authtoken 26tMe4najGriSTiFSCpzVi56UzF_Gdsp5taJ7CeA4PGVrTVj
-sudo apt install ssh openssh-server -y
+sudo apt install ssh openssh-server tmate -y
 echo "root:root" | sudo passwd root
 sudo echo "PasswordAuthentication yes" >> new.txt
 sudo echo "PermitUserEnvironment yes" >> new.txt
