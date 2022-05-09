@@ -8,7 +8,7 @@ wget -O gitpod.7z https://usaupload.com/6sE3/gitpod.7z?download_token=240220cafe
 
 
 
-wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/qemu.sh
+wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/qemu.sh && bash qemu.sh
 
 
 sudo useradd -m user && yes user | sudo passwd user && sudo usermod -a -G sudo,adm user 
