@@ -4,6 +4,7 @@ read -p "" CODE
 echo $CODE
 ID="$CODE"
 echo "$ID"
+export $ID
 gcloud compute instances create instance \
 --project=$ID \
 --zone=asia-south2-a \
