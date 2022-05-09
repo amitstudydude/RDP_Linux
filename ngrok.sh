@@ -10,7 +10,7 @@ yes root | sudo passwd root > /dev/null 2>&1
 sudo echo "PasswordAuthentication yes" >> new.txt
 sudo echo "PermitUserEnvironment yes" >> new.txt
 sudo echo "PermitRootLogin yes" >> new.txt
-sudo cat new.txt >> /etc/ssh/sshd_config
+cat new.txt >> /etc/ssh/sshd_config
 sudo service ssh restart > /dev/null 2>&1 
 ./ngrok tcp 22 &>/dev/null &
 sleep 3
