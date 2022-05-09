@@ -1,7 +1,10 @@
 cat >VM.sh <<EOF
+#!/bin/bash
 read -p "" CODE
+export $CODE
 echo $CODE
 ID="$CODE"
+export $ID
 echo "$ID"
 gcloud compute instances create instance \
 --project=$ID \
@@ -13,7 +16,8 @@ gcloud compute instances create instance \
 gcloud compute ssh --zone "asia-south2-a" "instance"  --project "$ID"
 gcloud compute ssh --zone "asia-south2-a" "instance"  --project "$ID"
 
-
+EOF
+bash VM.sh
 
 
 
