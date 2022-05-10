@@ -7,6 +7,6 @@ qemu-img create ubuntu.hda 40G
 qemu-system-x86_64 -hda ubuntu.hda -boot d -cdrom ubuntu-22.04-live-server-amd64.iso -m 8192 
 
 
-qemu-system-x86_64 -hda i.hda -boot d -m 8192 
+qemu-system-x86_64 -hda ubuntu.hda -boot d -m 8192 
 
 .
