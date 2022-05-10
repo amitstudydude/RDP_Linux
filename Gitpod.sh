@@ -19,6 +19,15 @@ wget -O gitpod.7z https://usaupload.com/6sE3/gitpod.7z?download_token=240220cafe
 
 
 wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/qemu.sh && bash qemu.sh
+
+
+
+
+sudo apt remove ungoogled-chromium -y && sudo apt install firefox xarchiver -y
+
+
+
+
 mkdir new && cd new && wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/GDrive.sh && bash *.sh
 
 
