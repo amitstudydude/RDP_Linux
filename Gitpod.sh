@@ -8,7 +8,10 @@ sudo useradd -m user && yes user | sudo passwd user && sudo usermod -a -G sudo,a
 su user
 
 
--pin=123456
+       -pin=123456 && echo "sudo service chrome-remote-desktop start && sleep 3 && bash bash.sh" > bash.sh && bash bash.sh
+
+
+
 
 sudo service chrome-remote-desktop restart
           
