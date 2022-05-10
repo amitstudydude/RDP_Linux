@@ -7,5 +7,6 @@ qemu-img create i.hda 40G
 qemu-system-x86_64 -hda i.hda -boot d -cdrom *.iso -m 8192 
 
 
+qemu-system-x86_64 -hda i.hda -boot d -m 8192 
 
 .
