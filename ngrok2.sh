@@ -2,6 +2,15 @@
 killall ngrok
 rm ngrok 
 yes root | passwd
+sudo echo "PasswordAuthentication yes" >> sshd_config
+sudo echo "PermitUserEnvironment yes" >> sshd_config
+sudo echo "PermitRootLogin yes" >> sshd_config
+sudo apt install ssh openssh-server -y 
+sudo cat sshd_config >> /etc/ssh/sshd_config
+sudo cat /etc/ssh/sshd_config >> sshd_config
+cat sshd_config
+sudo rm /etc/ssh/sshd_config && sudo mv sshd_config  /etc/ssh/
+            
 sudo echo "PasswordAuthentication yes" >> new.txt
 sudo echo "PermitUserEnvironment yes" >> new.txt
 sudo echo "PermitRootLogin yes" >> new.txt
