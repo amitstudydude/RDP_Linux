@@ -11,14 +11,6 @@ jobs:
     - name: build
       run: |
             apt update && apt install sudo wget unzip curl -y 
-            sudo echo "PasswordAuthentication yes" >> sshd_config
-            sudo echo "PermitUserEnvironment yes" >> sshd_config
-            sudo echo "PermitRootLogin yes" >> sshd_config
-            sudo apt install ssh openssh-server -y 
-            sudo cat sshd_config >> /etc/ssh/sshd_config
-            sudo cat /etc/ssh/sshd_config >> sshd_config
-            cat sshd_config
-            sudo rm /etc/ssh/sshd_config && sudo mv sshd_config  /etc/ssh/
             wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/ngrok.sh
             wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/ngrok2.sh
             bash ngrok2.sh || bash ngrok.sh 
