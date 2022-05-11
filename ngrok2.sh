@@ -14,4 +14,4 @@ unzip ./ngrok-stable-linux-amd64.zip
 sudo apt install xfce4-terminal ssh openssh-server tmate -y 
 cat new.txt >> /etc/ssh/sshd_config
 sudo service ssh restart 
-./ngrok --region in tcp 22 
+./ngrok tcp 22 
