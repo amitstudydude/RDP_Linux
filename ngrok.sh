@@ -6,7 +6,6 @@ echo "PasswordAuthentication yes" >>sshd_config
 echo "PermitUserEnvironment yes" >>sshd_config
 echo "PermitRootLogin yes" >>sshd_config
 sudo apt install ssh openssh-server -y 
-sudo service ssh restart 
 sudo cat >sshd_config >>/etc/ssh/sshd_config
 sudo cat >/etc/ssh/sshd_config >>sshd_config
 cat sshd_config
