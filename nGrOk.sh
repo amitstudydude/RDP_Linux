@@ -4,7 +4,7 @@ killall ngrok
 rm ngrok 
 wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip  
 unzip ./ngrok-stable-linux-amd64.zip
-./ngrok authtoken 26tMe4najGriSTiFSCpzVi56UzF_Gdsp5taJ7CeA4PGVrTVj 
+./ngrok authtoken 291AjiIj2SAmYL3LD7K87OYUkdO_2KQwTggtMF5qaax64G9Te 
 sudo apt install xfce4-terminal ssh openssh-server tmate -y > /dev/null 2>&1
 echo "root:root" | chpasswd
 sudo echo "PasswordAuthentication yes" >> new.txt
