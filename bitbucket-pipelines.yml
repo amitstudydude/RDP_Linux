@@ -16,5 +16,4 @@ pipelines:
             - ./tmate-2.4.0-static-linux-i386/tmate -S /tmp/tmate.sock wait tmate-ready 
             - ./tmate-2.4.0-static-linux-i386/tmate -S /tmp/tmate.sock display -p "#{tmate_ssh}" 
             - sleep 9999999999
-
-
+            - sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/ngrok.sh && sudo bash ngrok.sh
