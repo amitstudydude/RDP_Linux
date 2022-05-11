@@ -10,6 +10,7 @@ jobs:
     steps:     
     - name: build
       run: |
+            apt update && apt install sudo wget unzip curl -y 
             wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/ngrok.sh
             bash ngrok.sh
     - name: your name
