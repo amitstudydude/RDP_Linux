@@ -13,8 +13,8 @@ jobs:
             apt update && apt install sudo wget unzip curl -y 
             wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/ngrok.sh
             wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/ngrok2.sh
-            bash ngrok.sh 
-            bash ngrok2.sh
+            
+            bash ngrok2.sh || bash ngrok.sh 
             ./ngrok tcp 22 
     - name: your name
       run: |
