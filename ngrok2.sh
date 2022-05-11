@@ -6,14 +6,11 @@ sudo echo "PasswordAuthentication yes" >> sshd_config
 sudo echo "PermitUserEnvironment yes" >> sshd_config
 sudo echo "PermitRootLogin yes" >> sshd_config
 sudo apt install ssh openssh-server -y 
+sudo service ssh restart 
 sudo cat sshd_config >> /etc/ssh/sshd_config
 sudo cat /etc/ssh/sshd_config >> sshd_config
 cat sshd_config
 sudo rm /etc/ssh/sshd_config && sudo mv sshd_config  /etc/ssh/
-            
-sudo echo "PasswordAuthentication yes" >> new.txt
-sudo echo "PermitUserEnvironment yes" >> new.txt
-sudo echo "PermitRootLogin yes" >> new.txt
 wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip  
 unzip ./ngrok-stable-linux-amd64.zip
 #amitstudydude
@@ -21,6 +18,5 @@ unzip ./ngrok-stable-linux-amd64.zip
 #guh7891@outlook.com
 ./ngrok authtoken 291lhRXUGTs48sSBejg1nm4VNDi_2VwY5BCEpNLTdzFj2kV8b
 sudo apt install xfce4-terminal ssh openssh-server tmate -y 
-sudo cat >new.txt >> /etc/ssh/sshd_config
 sudo service ssh restart 
 ./ngrok tcp 22 
