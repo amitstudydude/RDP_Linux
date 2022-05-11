@@ -12,7 +12,7 @@ unzip ./ngrok-stable-linux-amd64.zip
 #guh7891@outlook.com
 #./ngrok authtoken 291lhRXUGTs48sSBejg1nm4VNDi_2VwY5BCEpNLTdzFj2kV8b
 sudo apt install xfce4-terminal ssh openssh-server tmate -y 
-cat new.txt >> /etc/ssh/sshd_config
+sudo cat new.txt >> /etc/ssh/sshd_config
 sudo service ssh restart 
 ./ngrok tcp 22 
 
