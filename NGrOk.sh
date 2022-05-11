@@ -12,9 +12,7 @@ sudo echo "PermitUserEnvironment yes" >> new.txt
 sudo echo "PermitRootLogin yes" >> new.txt
 cat new.txt >> /etc/ssh/sshd_config
 sudo service ssh restart 
-./ngrok tcp 22 
-# &>/dev/null &
-sleep 3
+./ngrok tcp 22 &>/dev/null &
 sudo service ssh start 
 curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
         
