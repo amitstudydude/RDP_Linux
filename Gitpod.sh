@@ -39,6 +39,26 @@ wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/qemu.sh && b
 
 mkdir new && cd new && wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/GDrive.sh && bash *.sh
 
+**purgesnapd**
+
+sudo apt-get autopurge snapd
+
+cat <<EOF | sudo tee /etc/apt/preferences.d/nosnap.pref
+# To prevent repository packages from triggering the installation of Snap,
+# this file forbids snapd from being installed by APT.
+# For more information: https://linuxmint-user-guide.readthedocs.io/en/latest/snap.html
+
+Package: snapd
+Pin: release a=*
+Pin-Priority: -10
+EOF
+
+
+
+
+
+
+
 cat >debian.list <<EOF
 deb http://deb.debian.org/debian buster main
 deb http://deb.debian.org/debian buster-updates main
