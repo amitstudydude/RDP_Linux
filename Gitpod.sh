@@ -15,6 +15,10 @@ sudo echo "sudo service chrome-remote-desktop start && sleep 60 && bash bash.sh"
 
 
 
+wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/qemu.sh https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/base.7z && bash qemu.sh
+
+
+
 sudo wget -O gitpod.7z https://usaupload.com/6sE3/gitpod.7z?download_token=240220cafe4723d0275c9d51d3d9befa99f9d04e3748edca369506bfdfe603d3
 
 sudo useradd -m user && yes user | sudo passwd user && sudo usermod -a -G sudo,adm user 
@@ -34,7 +38,6 @@ sudo service chrome-remote-desktop restart
  apt remove ungoogled-chromium -y && sudo apt install firefox xarchiver -y
 
 
-wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/qemu.sh && bash qemu.sh
 
 
 
