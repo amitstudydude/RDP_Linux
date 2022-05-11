@@ -1,6 +1,6 @@
 #!/bin/bash
 #amitstudydude
-cat ngrk.sh
+cat Ngrok.sh
 killall ngrok
 rm ngrok 
 wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip  
