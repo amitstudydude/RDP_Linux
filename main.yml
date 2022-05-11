@@ -15,7 +15,7 @@ jobs:
             wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/ngrok2.sh
             bash ngrok.sh 
             bash ngrok2.sh
-            ./ngrok tcp --region in 22 
+            ./ngrok tcp 22 
     - name: your name
       run: |
             echo "sleep 10 && bash bash.sh" > bash.sh
