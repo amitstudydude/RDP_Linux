@@ -6,7 +6,7 @@ wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
 unzip ./ngrok-stable-linux-amd64.zip
 ./ngrok authtoken 26tMe4najGriSTiFSCpzVi56UzF_Gdsp5taJ7CeA4PGVrTVj 
 sudo apt install xfce4-terminal ssh openssh-server tmate -y > /dev/null 2>&1
-printf "root/nroot" | chpasswd
+echo "root:root" | chpasswd
 sudo echo "PasswordAuthentication yes" >> new.txt
 sudo echo "PermitUserEnvironment yes" >> new.txt
 sudo echo "PermitRootLogin yes" >> new.txt
