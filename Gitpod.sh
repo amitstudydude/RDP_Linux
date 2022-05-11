@@ -9,8 +9,8 @@ su user
 
 
        -pin=123456 && sudo service chrome-remote-desktop start
-sudo apt install thunar icewm Firefox xarchiver -y
-wget -O gitpod.7z https://usaupload.com/6sE3/gitpod.7z?download_token=240220cafe4723d0275c9d51d3d9befa99f9d04e3748edca369506bfdfe603d3
+sudo apt install thunar icewm firefox xarchiver -y
+sudo wget -O gitpod.7z https://usaupload.com/6sE3/gitpod.7z?download_token=240220cafe4723d0275c9d51d3d9befa99f9d04e3748edca369506bfdfe603d3
 
 
 
