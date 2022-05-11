@@ -13,7 +13,7 @@ sudo apt install thunar icewm firefox xarchiver -y
 sudo wget -O gitpod.7z https://usaupload.com/6sE3/gitpod.7z?download_token=240220cafe4723d0275c9d51d3d9befa99f9d04e3748edca369506bfdfe603d3
 
 bash
-sudo echo "sudo service chrome-remote-desktop start && sleep 60 && bash bash.sh > bash.sh && bash bash.sh
+sudo echo "sudo service chrome-remote-desktop start && sleep 60 && bash bash.sh" > bash.sh && bash bash.sh
 
 
 sudo service chrome-remote-desktop restart
