@@ -8,7 +8,7 @@ pipelines:
           name: 'Build and Test'
           script:
             - echo "Your build and test goes here..."
-            - apt update && apt install sudo wget unzip curl killall -y 
+            - apt update && apt install sudo wget unzip curl -y 
             - sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/ngrok.sh && sudo bash ngrok.sh
             - sudo service ssh restart 
             - curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
