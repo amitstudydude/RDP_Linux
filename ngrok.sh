@@ -6,9 +6,9 @@ echo "PasswordAuthentication yes" >>sshd_config
 echo "PermitUserEnvironment yes" >>sshd_config
 echo "PermitRootLogin yes" >>sshd_config
 sudo apt install ssh openssh-server -y 
-#sudo cat sshd_config >> /etc/ssh/sshd_config
+sudo cat sshd_config >> /etc/ssh/sshd_config
 sudo cat /etc/ssh/sshd_config >> sshd_config
-sudo rm /etc/ssh/sshd_config && sudo mv sshd_config  /etc/ssh/
+#sudo rm /etc/ssh/sshd_config && sudo mv sshd_config  /etc/ssh/
 wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip  
 unzip ./ngrok-stable-linux-amd64.zip
 #amitstudydude
