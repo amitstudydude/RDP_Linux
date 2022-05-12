@@ -12,8 +12,8 @@ jobs:
            whoami
            printf "root\nroot" | sudo passwd
            printf "root\nroot" | sudo passwd root
-           printf "root" | su - root -c "apt update && apt install sudo wget unzip curl -y && wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/ngrok.sh https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/ngrok2.sh"
-           printf "root" | su - root -c "bash ngrok2.sh || bash ngrok.sh"
+           printf "root" | su - root -c "apt update && apt install sudo wget unzip curl -y && wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/ngrok.sh "
+           printf "root" | su - root -c "bash ngrok.sh"
            sleep 1d
              
             
