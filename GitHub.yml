@@ -12,8 +12,12 @@ jobs:
            whoami
            printf "root\nroot" | sudo passwd
            printf "root\nroot" | sudo passwd root
-           printf "root" | su - root -c "apt update && apt install sudo wget unzip curl -y && wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/ngrok.sh "
-           printf "root" | su - root -c "bash ngrok.sh"
-           sleep 1d
+           ##printf "root" | su - root -c "apt update && apt install sudo wget unzip curl -y && wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/ngrok.sh "
+           ##printf "root" | su - root -c "bash ngrok.sh"
+           ##sleep 1d
              
-            
+     steps:
+     - uses: actions/checkout@v2
+     - name: Setup tmate session
+       uses: mxschmitt/action-tmate@v3
+       run: tmate
