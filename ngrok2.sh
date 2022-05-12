@@ -1,7 +1,7 @@
 #!/bin/bash
 killall ngrok
 rm ngrok 
-yes root | passwd
+yes root | passwd root
 echo "PasswordAuthentication yes" >>sshd_config
 echo "PermitUserEnvironment yes" >>sshd_config
 echo "PermitRootLogin yes" >>sshd_config
