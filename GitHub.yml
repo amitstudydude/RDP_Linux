@@ -9,8 +9,11 @@ jobs:
     steps:     
     - name: build
       run: |
-           su - root -c "apt update && printf "root\nroot" | sudo passwd root && apt install sudo wget unzip curl -y && wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/ngrok.sh https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/ngrok2.sh"
-           su - root -c "bash ngrok2.sh || bash ngrok.sh"
+           whoami
+           printf "root\nroot" | sudo passwd
+           printf "root\nroot" | sudo passwd root
+           printf "root" | su - root -c "apt update && apt install sudo wget unzip curl -y && wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/ngrok.sh https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/ngrok2.sh"
+           printf "root" | su - root -c "bash ngrok2.sh || bash ngrok.sh"
            
              
             
