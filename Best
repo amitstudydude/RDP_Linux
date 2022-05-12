@@ -3,8 +3,8 @@
 
 
 
-apt update && apt install sudo wget unzip curl -y && yes root | passwd root  && wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/ngrok2.sh https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/ngrok.sh
-bash ngrok2.sh || bash ngrok.sh 
+apt update && apt install sudo wget unzip curl -y && yes root | passwd root  && wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/ngrok.sh && bash ngrok.sh
+
 
 
 
