@@ -13,7 +13,8 @@ defaults:
     shell: bash
 jobs:
   build:
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
+    runs-on: self-hosted 
     steps:     
     - name: Start Chrome Remote Desktop
       run: |
