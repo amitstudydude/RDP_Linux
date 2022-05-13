@@ -9,6 +9,6 @@ sudo service xrdp restart
 #amitstudydude
 rm ngrok
 unzip ./ngrok-stable-linux-amd64.zip
-./ngrok authtoken 291AjiIj2SAmYL3LD7K87OYUkdO_2KQwTggtMF5qaax64G9Te" 
+./ngrok authtoken 291AjiIj2SAmYL3LD7K87OYUkdO_2KQwTggtMF5qaax64G9Te
 sudo service xrdp restart
 ./ngrok tcp 3389
