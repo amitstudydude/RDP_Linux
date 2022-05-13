@@ -6,13 +6,14 @@ defaults:
     shell: bash
 jobs:
   build:
-    runs-on: ubuntu-latest 
+    runs-on: self-hosted 
     steps:     
-    - name: build
+    - name: Start
       run: |
-            apt update && printf "root\nroot" | sudo passwd root && apt install sudo wget unzip curl -y 
-            sudo apt update && yes root | sudo passwd root && sudo apt install sudo wget unzip curl -y 
-            wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/ngrok.sh
-            wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/ngrok2.sh
-            bash ngrok2.sh || bash ngrok.sh 
-            ./ngrok tcp 22 
+           whoami
+           printf "root\nroot" | sudo passwd
+           printf "root\nroot" | sudo passwd root
+           printf "root\nroot" | sudo passwd runneradmin
+           sudo apt install ubuntu-desktop-minimal curl -y
+           printf "root" | su - runner -c "wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/xrdp.sh && bash xrdp.sh"
+           curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
