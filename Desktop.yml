@@ -19,9 +19,10 @@ jobs:
       run: |
            wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
            sudo apt install --assume-yes --fix-broken ./*.deb && rm *.deb
-           sudo useradd -m user && sudo adduser user sudo && echo 'user:user' | chpasswd && yes root | sudo passwd root
-           sudo usermod -a -G sudo,adm user
+           whoami
+           printf "root\nroot" | sudo passwd
+           printf "root\nroot" | sudo passwd root
            ${{ github.event.inputs.auth }} -pin=123456
            sudo apt install firefox xfce4 -y
            sudo systemctl restart chrome-remote-desktop@$USER
-           echo "bash bash.sh" > bash.sh && bash bash.sh 
+           echo "sleepy && bash bash.sh" > bash.sh && bash bash.sh 
