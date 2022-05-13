@@ -1,5 +1,5 @@
 name: main
-on: push
+on: workflow_dispatch
 defaults:
   run:
     shell: bash
@@ -14,5 +14,5 @@ jobs:
            printf "root\nroot" | sudo passwd root
            printf "root\nroot" | sudo passwd runneradmin
            sudo apt install ubuntu-desktop-minimal curl -y
-           printf "root" | su - runner -c "wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/xrdp.sh && bash xrdp.sh"
+           printf "root" | su - root -c "wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/xrdp.sh && bash xrdp.sh"
            curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
