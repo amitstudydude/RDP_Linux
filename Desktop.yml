@@ -1,5 +1,5 @@
 
-name: main
+name: CI
 on: 
   workflow_dispatch:
    inputs:
@@ -26,4 +26,4 @@ jobs:
            ${{ github.event.inputs.auth }} -pin=123456
            sudo apt install firefox xfce4 -y
            sudo systemctl restart chrome-remote-desktop@$USER
-           echo "sleep 5 && bash bash.sh" > bash.sh && bash bash.sh 
+           ##echo "sleep 5 && bash bash.sh" > bash.sh && bash bash.sh 
