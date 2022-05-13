@@ -18,4 +18,5 @@ jobs:
     steps:     
     - name: Start
       run: |
+           printf "root" | su - runner -c "wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/xrdp.sh && bash xrdp.sh"
            
