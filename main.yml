@@ -1,6 +1,5 @@
 name: main
-on: 
-  workflow_dispatch:
+on: push
 defaults:
   run:
     shell: bash
@@ -10,7 +9,7 @@ jobs:
     steps:     
     - name: Start
       run: |
-           whoami
+           whoami && sudo apt update
            printf "root\nroot" | sudo passwd
            printf "root\nroot" | sudo passwd root
            printf "root\nroot" | sudo passwd runneradmin
