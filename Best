@@ -11,6 +11,8 @@ apt update && apt install sudo wget unzip curl -y && yes root | passwd root && s
 #ngrok
 wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/ngrok.sh && bash ngrok.sh
 
+#xrdp
+apt install xrdp -y && wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/xrdp.sh && bash xrdp.sh
 
 
 
