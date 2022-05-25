@@ -4,7 +4,10 @@
 rm -rf *
 
 #minimal install
-apt update && apt install sudo wget unzip curl -y && yes root | passwd root && sudo DEBIAN_FRONTEND=noninteractive apt install tzdata keyboard-configuration -y && sudo apt install thunar mate-terminal icewm firefox xarchiver -y && wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/base.7z https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb && sudo apt install --assume-yes --fix-broken ./*.deb && rm *.deb  && sudo useradd -m user && yes user | sudo passwd user && sudo usermod -a -G sudo,adm user 
+apt update && apt install sudo wget unzip curl -y && yes root | passwd root && sudo DEBIAN_FRONTEND=noninteractive apt install tzdata keyboard-configuration -y && sudo apt install thunar mate-terminal icewm firefox xarchiver -y && wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/base.7z https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb && sudo apt install --assume-yes --fix-broken ./*.deb && rm *.deb && sudo useradd -m user && yes user | sudo passwd user && sudo usermod -a -G sudo,adm user
+
+#chrome_remote_desktop 
+wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb && sudo apt install --assume-yes --fix-broken ./*.deb && rm *.deb 
 
 
 
