@@ -1,4 +1,6 @@
 #! /bin/bash
+apt update 
+sudo apt update
 sudo apt install unzip xrdp -y 
 wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip 
 unzip ./ngrok-stable-linux-amd64.zip
