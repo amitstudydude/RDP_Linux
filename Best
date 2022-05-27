@@ -28,6 +28,6 @@ wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/base.7z
 #docker
 sudo apt update && apt install docker.io
 snap install docker
-docker pull run -it ghcr.io/amitstudydude/gitpod-ubuntu-20.04:latest
-#docker pull run -it -p 6080:6080 ghcr.io/amitstudydude/gitpod-ubuntu-20.04:latest
+docker run -it ghcr.io/amitstudydude/gitpod-ubuntu-20.04:latest
+#docker  run -it -p 6080:6080 ghcr.io/amitstudydude/gitpod-ubuntu-20.04:latest
 
