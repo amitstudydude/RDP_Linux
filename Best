@@ -30,6 +30,8 @@ docker run -it ghcr.io/amitstudydude/gitpod-ubuntu-20.04:latest
 #docker  run -it -p 6080:6080 ghcr.io/amitstudydude/gitpod-ubuntu-20.04:latest
 
 #autoclick.sh
+sudo apt update && sudo apt install xdotool gedit -y 
+xdotool getmouselocation
 wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/autoclick.sh && bash autoclick.sh
 
 
