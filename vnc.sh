@@ -1,3 +1,4 @@
+#! /bin/bash
 DISPLAY=:1
 sudo wget https://raw.githubusercontent.com/amitstudydude/gitpod-ubuntu-20.04/master/dockerfiles/xorg.conf
 sudo sed -i 's/allowed_users=console/allowed_users=anybody/' /etc/X11/Xwrapper.config
