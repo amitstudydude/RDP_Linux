@@ -4,7 +4,7 @@ After=display-manager.service network.target syslog.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/x11vnc -display :33 -N -forever -shared -bg  -nopw
+ExecStart=/usr/bin/x11vnc -display :33 -N -forever -shared -bg 
 ExecStop=/usr/bin/killall x11vnc
 Restart=on-failure
 
