@@ -1,19 +1,13 @@
 #!/bin/sh
 
+# Uncomment the following two lines for normal desktop:
 unset SESSION_MANAGER
-unset DBUS_SESSION_BUS_ADDRESS
-
-#export XKL_XMODMAP_DISABLE=1
-#export XDG_CURRENT_DESKTOP="GNOME-Flashback:GNOME"
-#export XDG_MENU_PREFIX="gnome-flashback-"
-
+ exec /etc/X11/xinit/xinitrc
+gnome-session --session=gnome-classic &
 
 [ -x /etc/vnc/xstartup ] && exec /etc/vnc/xstartup
 [ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources
 xsetroot -solid grey
 vncconfig -iconic &
-
-gnome-session &
-#gnome-session --systemd --disable-acceleration-check --debug &
-nautilus &
-gnome-terminal &            
+x-terminal-emulator -geometry 80x24+10+10 -ls -title "$VNCDESKTOP Desktop" &
+ x-window-manager &
