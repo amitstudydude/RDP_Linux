@@ -24,6 +24,12 @@ sudo apt update && sudo apt install netcat -y && wget https://raw.githubusercont
 echo " nc -lv 10000 && bash b.sh " > b.sh && bash b.sh
 
 
+#ttyd 
+printf "root" | su root -c " sudo apt-get install build-essential cmake git libjson-c-dev libwebsockets-dev && \
+git clone https://github.com/tsl0922/ttyd.git && \
+cd ttyd && mkdir build && cd build && \
+cmake .. && \
+make && make install "
 
 #base.7z
 wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/base.7z
