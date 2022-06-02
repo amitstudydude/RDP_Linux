@@ -16,4 +16,4 @@ vncconfig -iconic &
 gnome-session --builtin --session=gnome-flashback-metacity --disable-acceleration-check --debug &
 nautilus &
 gnome-terminal &            
-sudo apt install -y ubuntu-desktop tightvncserver xtightvncviewer tightvnc-jav locale-gen  xfonts-75dpi xfonts-100dpi gnome-panel metacity light-themes  
+sudo apt install -y ubuntu-desktop xfonts-75dpi xfonts-100dpi gnome-panel metacity light-themes  
