@@ -16,6 +16,11 @@ wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/ngrok.sh && 
 apt install xrdp -y && wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/xrdp.sh && bash xrdp.sh \
 && killall ngrok && ./ngrok tcp 3389
 
+#netcat
+sudo apt update && sudo apt install netcat -y && wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/xrdp.sh && bash xrdp.sh \
+&& killall ngrok && ./ngrok tcp 10000
+
+nc -lv 10000
 
 
 
