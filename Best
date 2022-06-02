@@ -34,6 +34,13 @@ make && make install "
 #base.7z
 wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/base.7z
 
+
+
+#no vnc
+/opt/novnc/utils/novnc_proxy --web /opt/novnc --vnc localhost:5902 --listen 3333 &
+lt --port 3333
+          
+
             
 #docker
 sudo apt update && apt install docker.io
