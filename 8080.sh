@@ -1,5 +1,5 @@
 #!/bin/bash
-lt --port 8080 > 1.txt & 
-echo " cat 1.txt && sleep 2 && bash 1.sh " >> 1.sh 
-bash 1.sh
+lt --port 8080 > 1.txt
+lt --port 6080 > 2.txt
+cat 1.txt && sleep 2 && cat 2.txt && sleep 2
 bash 8080.sh
