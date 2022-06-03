@@ -1,5 +1,5 @@
 #!/bin/bash
-rm *
+rm *.sh
 lt --port 8080 >>1.txt >&/dev/null 2>&1 &
 lt --port 6080 >>2.txt >&/dev/null 2>&1 &
 cat 1.txt && cat 2.txt 
