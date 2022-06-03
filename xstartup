@@ -15,8 +15,8 @@ export XDG_MENU_PREFIX="gnome-flashback-"
 xsetroot -solid grey
 vncconfig -iconic &
 
-sudo apt-get install ubuntu-gnome-desktop
-sudo apt-get install tightvncserver xtightvncviewer tightvnc-java
+sudo apt-get install gnome-session-flashback
+sudo apt-get install tightvncserver 
 sudo apt-get install xfonts-75dpi
 sudo apt-get install xfonts-100dpi
 sudo apt-get install gnome-panel
