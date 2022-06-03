@@ -63,4 +63,18 @@ sudo bash 6080.sh
 
 
 
+#!/bin/sh
+vncserver -kill :3
+DESKTOP_SESSION=gnome &
+export DESKTOP_SESSION &
+gnome-session &
+vncserver :3 
+
+
+
+
+
+
+
+
 .
