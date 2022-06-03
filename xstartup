@@ -15,6 +15,14 @@ export XDG_MENU_PREFIX="gnome-flashback-"
 xsetroot -solid grey
 vncconfig -iconic &
 
+sudo apt-get install ubuntu-gnome-desktop
+sudo apt-get install tightvncserver xtightvncviewer tightvnc-java
+sudo apt-get install xfonts-75dpi
+sudo apt-get install xfonts-100dpi
+sudo apt-get install gnome-panel
+sudo apt-get install metacity
+sudo apt-get install light-themes
+
 gnome-session --session=gnome-flashback-metacity --disable-acceleration-check &
 gnome-panel &
 gnome-settings-daemon &
