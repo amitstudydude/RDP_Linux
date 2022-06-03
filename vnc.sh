@@ -7,5 +7,4 @@ git clone https://github.com/novnc/websockify /opt/novnc/utils/websockify  && ec
 sudo apt update && sudo DEBIAN_FRONTEND=noninteractive apt install -y tzdata npm keyboard-configuration xfce4-session gnome-session lightdm dbus-x11 apt-utils sudo nano wget curl git dos2unix unzip xserver-xorg-video-dummy xserver-xorg-legacy x11vnc && sudo npm install -g localtunnel
 sudo apt install ubuntu-unity-desktop &
 sudo wget  https://raw.githubusercontent.com/amitstudydude/gitpod-ubuntu-20.04/master/dockerfiles/xorg.conf && sudo sed -i 's/allowed_users=console/allowed_users=anybody/' /etc/X11/Xwrapper.config && sudo mv xorg.conf /etc/X11/xorg.conf && sudo dos2unix /etc/X11/xorg.conf
-sudo bash 6080.sh
 
