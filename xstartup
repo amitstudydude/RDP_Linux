@@ -15,17 +15,17 @@ export XDG_MENU_PREFIX="gnome-flashback-"
 xsetroot -solid grey
 vncconfig -iconic &
 
-sudo apt-get install gnome-session-flashback
-sudo apt-get install tightvncserver 
-sudo apt-get install xfonts-75dpi
-sudo apt-get install xfonts-100dpi
-sudo apt-get install gnome-panel
-sudo apt-get install metacity
-sudo apt-get install light-themes
+sudo DEBIAN_FRONTEND=noninteractive apt install tzdata keyboard-configuration -y 
+
+sudo apt-get install gnome-session-flashback &
+sudo apt-get install tightvncserver &
+sudo apt-get install xfonts-75dpi &
+sudo apt-get install xfonts-100dpi &
+sudo apt-get install gnome-panel &
+sudo apt-get install metacity &
+sudo apt-get install light-themes &
 
 gnome-session --session=gnome-flashback-metacity --disable-acceleration-check &
 gnome-panel &
-gnome-settings-daemon &
 metacity &
 nautilus &
-gnome-terminal &
