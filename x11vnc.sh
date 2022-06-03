@@ -1,7 +1,8 @@
 #! /bin/bash
 
 sudo apt update  > /dev/null 2>&1 
-sudo DEBIAN_FRONTEND=noninteractive apt install -y tzdata npm keyboard-configuration xfce4-session gnome-session lightdm dbus-x11 apt-utils sudo nano wget curl git dos2unix unzip xserver-xorg-video-dummy xserver-xorg-legacy x11vnc && sudo npm install -g localtunnel > /dev/null 2>&1
+sudo DEBIAN_FRONTEND=noninteractive apt install -y tzdata npm keyboard-configuration xfce4-session gnome-session lightdm dbus-x11 apt-utils sudo nano wget curl git dos2unix unzip xserver-xorg-video-dummy xserver-xorg-legacy x11vnc  > /dev/null 2>&1
+sudo npm install -g localtunnel > /dev/null 2>&1
 sudo apt install ubuntu-unity-desktop  > /dev/null 2>&1
 
 
