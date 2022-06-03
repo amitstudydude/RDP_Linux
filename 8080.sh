@@ -1,5 +1,5 @@
 #!/bin/bash
-rm 8080.sh
+rm 8080.sh *.txt
 sudo npm install -g localtunnel 
 lt --port 8080 >>1.txt &
 lt --port 6080 >>2.txt &
