@@ -7,9 +7,9 @@ sudo apt install xfce4
 /opt/novnc/utils/novnc_proxy --web /opt/novnc --vnc localhost:5900 --listen 6080 &
 dpkg-reconfigure lightdm
 startxfce4 &
-x11vnc -rfbport 5900 -forever -bg -auth /var/run/lightdm/root/:0 -shared -nopw &
+x11vnc -display :0 -rfbport 5900 -forever -bg -auth /var/run/lightdm/root/:0 -shared -nopw &
 lt --port 8080 >> nail.txt & 
 lt --port 6080 >> pin.txt & 
-echo " cat nail.txt && cat pin.txt && bash bash.sh " >> bash.sh 
+echo " cat nail.txt && cat pin.txt && sleep 2 && bash bash.sh " >> bash.sh 
 bash bash.sh &
-sleep 30
+sleep 10
