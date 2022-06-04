@@ -7,7 +7,7 @@ startxfce4 &
 x11vnc -rfbport 5900 -forever -loop -shared &
 lt --port 8080 >> nail.txt & 
 lt --port 6080 >> pin.txt & 
-echo " cat nail.txt && cat pin.txt && sleep 60 && bash bash.sh " >> bash.sh 
+echo " cat nail.txt && cat pin.txt && sleep 10 && bash bash.sh " >> bash.sh 
 bash bash.sh &
 wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/vncloop.sh
 bash vncloop.sh
