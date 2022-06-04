@@ -4,4 +4,4 @@ sudo curl -o actions-runner-linux-x64-2.291.1.tar.gz -L https://github.com/actio
 echo "1bde3f2baf514adda5f8cf2ce531edd2f6be52ed84b9b6733bf43006d36dcd4c  actions-runner-linux-x64-2.291.1.tar.gz" | shasum -a 256 -c
 sudo tar xzf ./actions-runner-linux-x64-2.291.1.tar.gz
 printf '\n\n${{ github.event.inputs.token }}\n${{ github.event.inputs.token }}\n\n' | ./config.sh --url https://github.com/${{ github.event.inputs.repo }} --token ${{ github.event.inputs.token }}
-./run.sh &
+./run.sh 
