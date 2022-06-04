@@ -1,5 +1,7 @@
 #!/bin/bash
 sudo npm install -g localtunnel
+sudo DEBIAN_FRONTEND=noninteractive apt install -y tzdata npm keyboard-configuration lightdm apt-utils xserver-xorg-video-dummy xserver-xorg-legacy x11vnc  > /dev/null 2>&1
+sudo apt install xfce4 > /dev/null 2>&1
 /opt/novnc/utils/novnc_proxy --web /opt/novnc --vnc localhost:5900 --listen 6080 &
 startxfce4 &
 x11vnc -rfbport 5900 -forever -loop -shared &
