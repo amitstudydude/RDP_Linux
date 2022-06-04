@@ -14,5 +14,6 @@ expect eof
 exit
 EOF
 
-vncserver -name github -alwaysshared -basehttpport 5901
-
+sudo npm install -g localtunnel
+lt --port 5901 &
+vncserver -name github -alwaysshared -basehttpport 5901 -httpport 5901
