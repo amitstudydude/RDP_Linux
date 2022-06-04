@@ -11,7 +11,7 @@ sudo apt install xfce4
 dpkg-reconfigure lightdm
  
 
-sudo apt install tightvncserver 
+sudo apt install tightvncserver expect
 
 vncpasswd
 123456
