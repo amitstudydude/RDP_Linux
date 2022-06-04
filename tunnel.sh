@@ -11,4 +11,5 @@ x11vnc -rfbport 5900 -forever -bg -auth /var/run/lightdm/root/:0 -shared -nopw &
 lt --port 8080 >> nail.txt & 
 lt --port 6080 >> pin.txt & 
 echo " cat nail.txt && cat pin.txt && bash bash.sh " >> bash.sh 
-bash bash.sh 
+bash bash.sh &
+sleep 30
