@@ -5,15 +5,18 @@ printf "root" | su root -c "sudo apt-get install build-essential cmake git libjs
 cd ttyd && mkdir build && cd build && cmake .. && make && make install && ttyd -p 8080 bash -x & " 
 echo "<html><head><meta http-equiv=\"Refresh\" content=\"0; url=vnc.html?autoconnect=true&reconnect=true&reconnect_delay=1000&resize=scale&quality=9\"></head></html>" > /opt/novnc/index.html 
 
-sudo DEBIAN_FRONTEND=noninteractive apt install -y tzdata npm keyboard-configuration lightdm apt-utils xserver-xorg-video-dummy xserver-xorg-legacy tightvncserver
+sudo DEBIAN_FRONTEND=noninteractive apt install -y tzdata npm keyboard-configuration lightdm apt-utils xserver-xorg-video-dummy xserver-xorg-legacy tightvncserver 
 sudo apt install xfce4 
 
 dpkg-reconfigure lightdm
-startxfce4 &
+startxfce4 
 
 sudo apt install tightvncserver 
 
-
+vncpasswd
+123456
+123456
+n
 
 prog=/usr/bin/vncpasswd
 mypass="123456"
@@ -27,6 +30,8 @@ send "$mypass\r"
 expect eof
 exit
 EOF
+
+echo "done"
 
 sudo npm install -g localtunnel
 npm update
