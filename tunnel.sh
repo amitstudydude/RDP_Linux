@@ -9,6 +9,6 @@ x11vnc -rfbport 5900 -forever -loopbg -gui tray  -auth /var/run/lightdm/root/:0 
 lt --port 8080 >> nail.txt & 
 lt --port 6080 >> pin.txt & 
 echo " cat nail.txt && cat pin.txt && sleep 10 && bash bash.sh " >> bash.sh 
-bash bash.sh &
+bash bash.sh 
 
 
