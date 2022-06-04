@@ -24,4 +24,4 @@ bash bash.sh &
 bash bash.sh &
 bash bash.sh &
 bash bash.sh &
-bash bash.sh 
+bash bash.sh &
