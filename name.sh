@@ -34,15 +34,18 @@ echo "done"
 
 sudo npm install -g localtunnel
 
-/opt/novnc/utils/novnc_proxy --web /opt/novnc --vnc localhost:5900 --listen 6080 &
-startxfce4 > /dev/null 2>&1 &
 vncserver :1
+
 vncserver -clean -kill :1
+
 cd && cd .vnc
+
 echo " startxfce4 & " >> xstartup
 
-vncserver :0 -alwaysshared
+vncserver :0  -alwaysshared
 
+
+/opt/novnc/utils/novnc_proxy --web /opt/novnc --vnc localhost:5900 --listen 6080 &
 
 lt --port 8080 >> nail.txt & 
 lt --port 6080 >> pin.txt & 
