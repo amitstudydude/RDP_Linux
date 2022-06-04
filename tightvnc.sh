@@ -9,7 +9,7 @@ sudo DEBIAN_FRONTEND=noninteractive apt install -y tzdata npm keyboard-configura
 sudo apt install xfce4 
 
 dpkg-reconfigure lightdm
-startxfce4 
+ 
 
 sudo apt install tightvncserver 
 
@@ -37,7 +37,7 @@ sudo npm install -g localtunnel
 npm update
 
 /opt/novnc/utils/novnc_proxy --web /opt/novnc --vnc localhost:5900 --listen 6080 &
-
+startxfce4 > /dev/null 2>&1 &
 vncserver :0 : vncserver -clean -kill :0
 cd && cd .vnc
 echo " startxfce4 & " >> xstartup
