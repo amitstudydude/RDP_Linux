@@ -13,5 +13,15 @@ lt --port 6080 >> pin.txt &
 echo " cat nail.txt && cat pin.txt && bash bash.sh " >> bash.sh 
 bash bash.sh &
 wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/tunnel.sh
+bash bash.sh &
+bash bash.sh &
+bash bash.sh &
+bash bash.sh &
+bash bash.sh &
+bash bash.sh &
+bash bash.sh &
+bash bash.sh &
+bash bash.sh &
+bash bash.sh &
+bash bash.sh &
 bash bash.sh 
-
