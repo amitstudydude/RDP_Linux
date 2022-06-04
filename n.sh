@@ -1,6 +1,6 @@
 #!/bin/sh
 
-vncserver -clean -kill :3
+vncserver -clean -kill :0
 sudo apt install tightvncserver 
 
 prog=/usr/bin/vncpasswd
@@ -19,7 +19,7 @@ EOF
 sudo npm install -g localtunnel
 
 
-/opt/novnc/utils/novnc_proxy --web /opt/novnc --vnc localhost:5903 --listen 5555 &
+/opt/novnc/utils/novnc_proxy --web /opt/novnc --vnc localhost:5900 --listen 5555 &
 
 
 
