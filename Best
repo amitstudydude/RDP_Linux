@@ -2,79 +2,20 @@
 rm -rf *
 
 #minimal install
-apt update && apt install sudo wget unzip curl -y && yes root | passwd root && sudo DEBIAN_FRONTEND=noninteractive apt install tzdata keyboard-configuration -y && sudo apt install thunar mate-terminal icewm firefox xarchiver -y && wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/base.7z https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb && sudo apt install -y ./*.deb && rm *.deb && sudo useradd -m user && yes user | sudo passwd user && sudo usermod -a -G sudo,adm user
+apt update && apt install sudo wget unzip curl -y && yes root | passwd root && sudo DEBIAN_FRONTEND=noninteractive apt install tzdata keyboard-configuration -y && wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/base.7z https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb && sudo apt install -y ./*.deb && rm *.deb && sudo useradd -m user && yes user | sudo passwd user && sudo usermod -a -G sudo,adm user
 
 #chrome_remote_desktop 
 wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb && sudo apt install -y ./*.deb && rm *.deb 
 
 
-
-#ngrok
-wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/ngrok.sh && bash ngrok.sh
-
-#xrdp
-apt install xrdp -y && wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/xrdp.sh && bash xrdp.sh \
-&& killall ngrok && ./ngrok tcp 3389
-
-#netcat-ngrok install
-sudo apt update && sudo apt install netcat -y && wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/xrdp.sh && bash xrdp.sh \
-&& killall ngrok && ./ngrok tcp 10000
-
-#netcat listen
-echo " nc -lv 10000 && bash b.sh " > b.sh && bash b.sh
-
-
-#ttyd 
-printf "root\nroot" | sudo passwd root
-printf "root" | su root -c " sudo apt-get install build-essential cmake git libjson-c-dev libwebsockets-dev && \
-git clone https://github.com/tsl0922/ttyd.git && \
-cd ttyd && mkdir build && cd build && \
-cmake .. && \
-make && make install "
-
 #base.7z
 wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/base.7z
 
-
-
-#no vnc
-/opt/novnc/utils/novnc_proxy --web /opt/novnc --vnc localhost:5902 --listen 3333 &
-lt --port 3333
-          
-
-            
-#docker
-sudo apt update && apt install docker.io
-snap install docker
-docker run -it ghcr.io/amitstudydude/gitpod-ubuntu-20.04:latest
-#docker  run -it -p 6080:6080 ghcr.io/amitstudydude/gitpod-ubuntu-20.04:latest
 
 #autoclick.sh
 sudo apt update && sudo apt install xdotool gedit -y 
 xdotool getmouselocation
 wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/autoclick.sh && bash autoclick.sh
-
-#xfce4 vnc
-sudo apt update && sudo DEBIAN_FRONTEND=noninteractive apt install -y tzdata keyboard-configuration xfce4 ubuntu-desktop lightdm dbus-x11 apt-utils sudo nano wget curl git dos2unix unzip xserver-xorg-video-dummy xserver-xorg-legacy x11vnc && sudo npm install -g localtunnel
-sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/6080.sh https://raw.githubusercontent.com/amitstudydude/gitpod-ubuntu-20.04/master/dockerfiles/xorg.conf && sudo sed -i 's/allowed_users=console/allowed_users=anybody/' /etc/X11/Xwrapper.config && sudo mv xorg.conf /etc/X11/xorg.conf && sudo dos2unix /etc/X11/xorg.conf
-startxfce4 &
-x11vnc -display :0 -N -forever -shared -bg && git clone https://github.com/novnc/noVNC.git /opt/novnc && git clone https://github.com/novnc/websockify /opt/novnc/utils/websockify  && echo "<html><head><meta http-equiv=\"Refresh\" content=\"0; url=vnc.html?autoconnect=true&reconnect=true&reconnect_delay=1000&resize=scale&quality=9\"></head></html>" > /opt/novnc/index.html && /opt/novnc/utils/novnc_proxy --web /opt/novnc --vnc localhost:5900 --listen 6080 &
-sudo bash 6080.sh
-
-
-
-#!/bin/sh
-vncserver -kill :3
-DESKTOP_SESSION=gnome &
-export DESKTOP_SESSION &
-gnome-session &
-vncserver :3 
-
-
-
-
-
-
 
 
 .
