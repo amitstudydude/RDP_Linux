@@ -7,7 +7,7 @@ startxfce4 &
 x11vnc -rfbport 5900 -forever -loop -shared &
 lt --port 8080 >> nail.txt & 
 lt --port 6080 >> pin.txt & 
-echo " cat nail.txt && cat pin.txt && sleep 2 && bash bash.sh " >> bash.sh 
+echo " cat nail.txt && cat pin.txt && sleep 60 && bash bash.sh " >> bash.sh 
 bash bash.sh &
-echo " bash tunnel.sh && sleep 60 && bash vncloop.sh " > vncloop.sh
+echo " bash tunnel.sh && sleep 300 && bash vncloop.sh " > vncloop.sh
 bash vncloop.sh
