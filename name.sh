@@ -13,10 +13,6 @@ dpkg-reconfigure lightdm
 
 sudo apt install tightvncserver expect
 
-vncpasswd
-123456
-123456
-n
 
 prog=/usr/bin/vncpasswd
 mypass="123456"
