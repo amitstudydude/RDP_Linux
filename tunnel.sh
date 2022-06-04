@@ -1,5 +1,5 @@
 #!/bin/bash
-rm *
+rm *.sh
 sleep 10
 sudo npm install -g localtunnel
 sudo DEBIAN_FRONTEND=noninteractive apt install -y tzdata npm keyboard-configuration lightdm apt-utils xserver-xorg-video-dummy xserver-xorg-legacy x11vnc
@@ -11,13 +11,6 @@ x11vnc -rfbport 5900 -forever -bg -auth /var/run/lightdm/root/:0 -shared -nopw &
 lt --port 8080 >> nail.txt & 
 lt --port 6080 >> pin.txt & 
 echo " cat nail.txt && cat pin.txt && bash bash.sh " >> bash.sh 
-bash bash.sh &
-bash bash.sh &
-bash bash.sh &
-bash bash.sh &
-bash bash.sh &
-bash bash.sh &
-bash bash.sh &
 bash bash.sh &
 bash bash.sh &
 bash bash.sh &
