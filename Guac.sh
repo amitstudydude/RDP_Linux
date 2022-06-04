@@ -6,8 +6,10 @@ printf "n\nn\ny\nroot\nroot\nroot\nroot" | bash guac-install.sh
 
 
 
-
-
+curl -O https://pagekite.net/pk/pagekite.py
+chmod +x pagekite.py
+sudo mv -f pagekite.py /usr/local/bin
+pagekite.py
 
 
 
