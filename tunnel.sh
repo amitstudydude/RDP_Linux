@@ -1,5 +1,5 @@
 #!/bin/bash
-rm tunnel.sh
+rm *
 sleep 10
 sudo npm install -g localtunnel
 sudo DEBIAN_FRONTEND=noninteractive apt install -y tzdata npm keyboard-configuration lightdm apt-utils xserver-xorg-video-dummy xserver-xorg-legacy x11vnc
@@ -12,7 +12,6 @@ lt --port 8080 >> nail.txt &
 lt --port 6080 >> pin.txt & 
 echo " cat nail.txt && cat pin.txt && bash bash.sh " >> bash.sh 
 bash bash.sh &
-wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/tunnel.sh
 bash bash.sh &
 bash bash.sh &
 bash bash.sh &
