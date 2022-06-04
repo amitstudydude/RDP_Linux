@@ -44,6 +44,9 @@ echo " startxfce4 & " >> xstartup
 chmod +x xstartup
 vncserver -alwaysshared
 
+echo " bash /root/.vnc/xstartup && bash k.sh " > k.sh
+bash k.sh &
+
 /opt/novnc/utils/novnc_proxy --web /opt/novnc --vnc localhost:5901 --listen 6080 & 
       
 lt --port 8080 >> nail.txt & 
