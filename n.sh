@@ -25,6 +25,6 @@ sudo npm install -g localtunnel
 
 
 
-vncserver :0
+vncserver 
 
 lt --port 5555 & 
