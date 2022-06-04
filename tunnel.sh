@@ -1,5 +1,6 @@
 #!/bin/bash
 rm tunnel.sh
+sleep 10
 sudo npm install -g localtunnel
 sudo DEBIAN_FRONTEND=noninteractive apt install -y tzdata npm keyboard-configuration lightdm apt-utils xserver-xorg-video-dummy xserver-xorg-legacy x11vnc
 sudo apt install xfce4 
