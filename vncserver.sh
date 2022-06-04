@@ -15,5 +15,5 @@ exit
 EOF
 
 sudo npm install -g localtunnel
-lt --port 5901 &
-vncserver -name github -alwaysshared -basehttpport 5901 -httpport 5901
+lt --port 6400
+vncserver -name github -alwaysshared -basehttpport 6400 -httpport 6400
