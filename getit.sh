@@ -42,7 +42,7 @@ sudo makdir /usr/share/tomcat8/
 sudo touch /usr/share/tomcat8/.guacomol
 ln -s  /etc/guacamole/guacamole.properties /usr/share/tomcat8/.guacomol
 sudo systemctl daemon-reload
-sudo systemctl restart tomcat9 guacd
+sudo systemctl restart ssh xrdp tomcat9 guacd
 cd 
 
 prog=/usr/bin/vncpasswd
