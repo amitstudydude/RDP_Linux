@@ -1,8 +1,8 @@
 #!/bin/bash
 apt-get update && apt-get -y upgrade && apt-get -y dist-upgrade 
 #sudo apt install tightvncserver expect xfce4-session lightdm
-#sudo apt-get install indicator-applet-complete
-sudo apt install ubuntu-desktop gnome-session-flashback nautilus mate-terminal gnome-panel ubuntu* gnome* gnome-settings-daemon metacity
+sudo apt-get install indicator-applet-complete
+sudo apt install ubuntu-desktop gnome-session-flashback nautilus mate-terminal gnome-panel  gnome-settings-daemon metacity
 unset SESSION_MANAGER
 unset DBUS_SESSION_BUS_ADDRESS
 chmod +x xstartup
@@ -12,13 +12,14 @@ export XDG_MENU_PREFIX="gnome-flashback-"
 gnome-session -session=gnome-flashback-metacity -disable-acceleration-check --debug &
 gnome-panel &
 vncconfig -iconic &
-#gsettings set org.gnome.desktop.background show-desktop-icons true &
+gsettings set org.gnome.desktop.background show-desktop-icons true &
 metacity &
 nautilus &
 #startxfce4 &
 mate-terminal &
 #ubuntu-sesstings &
 sudo cat xstartup.sh > xstartup 
+vncserver -alwaysshared
 
 
 
