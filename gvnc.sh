@@ -34,6 +34,7 @@ vncserver -clean -kill :1
 cd && cd .vnc
 echo " #! /bin/bash " > xstartup
 echo " startxfce4 & " >> xstartup
+echo " gnome-session & " >> xstartup
 sudo chmod +x xstartup
 vncserver -alwaysshared
 
