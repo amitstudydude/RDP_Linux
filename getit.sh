@@ -93,5 +93,5 @@ echo " cat nail.txt && systemctl start gdm3 && sleep 2 && bash bash.sh " >> bash
 bash bash.sh 
 
 
-
+systemctl reboot 
 
