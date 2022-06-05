@@ -20,6 +20,7 @@ startxfce4 &
 #ubuntu-sesstings &
 sudo cat xstartup.sh > xstartup 
 vncserver -alwaysshared
+bash xstartup.sh &
 
 
 
