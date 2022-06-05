@@ -1,5 +1,4 @@
 #!/bin/bash
-cd && cd .vnc
 sudo apt install ubuntu-desktop gnome-session-flashback nautilus mate-terminal gnome-panel gnome-settings-daemon metacity
 unset SESSION_MANAGER
 unset DBUS_SESSION_BUS_ADDRESS
