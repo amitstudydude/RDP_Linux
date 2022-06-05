@@ -1,5 +1,13 @@
 #! /bin/bash
 cd 
+
+sudo apt-get install build-essential cmake git libjson-c-dev libwebsockets-dev && git clone https://github.com/tsl0922/ttyd.git && git clone https://github.com/novnc/noVNC.git /opt/novnc && git clone https://github.com/novnc/websockify /opt/novnc/utils/websockify && \ 
+cd ttyd && mkdir build && cd build && cmake .. && make && make install && ttyd -p 1234 bash -x & 
+echo "<html><head><meta http-equiv=\"Refresh\" content=\"0; url=vnc.html?autoconnect=true&reconnect=true&reconnect_delay=1000&resize=scale&quality=9\"></head></html>" > /opt/novnc/index.html 
+
+sudo DEBIAN_FRONTEND=noninteractive apt install -y tzdata xfonts-base xfonts-100dpi npm xfonts-75dpi keyboard-configuration lightdm apt-utils xserver-xorg-video-dummy xserver-xorg-legacy tightvncserver 
+sudo apt install xfce4 xfce4-goodies
+
 sudo wget https://raw.githubusercontent.com/MysticRyuujin/guac-install/main/guac-install.sh && \
 printf "n\nn\ny\nroot\nroot\nroot\nroot" | sudo bash guac-install.sh 
 sudo ufw enable && sudo  ufw allow 8080 && sudo ufw allow 22
