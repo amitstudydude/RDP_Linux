@@ -71,7 +71,7 @@ vncserver -alwaysshared
 
 
 
-#lt --port 1234 >> nail.txt &
+lt --port 1234 >> nail.txt &
 lt --port 8080 >> nail.txt & 
 #lt --port 6080 >> nail.txt & 
 echo " cat nail.txt && sleep 2 && bash bash.sh " >> bash.sh 
