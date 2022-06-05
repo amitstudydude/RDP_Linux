@@ -15,7 +15,7 @@ tar -xvf guacamole-server-1.4.0.tar.gz
 tar -xvf guacamole-client-1.4.0.tar.gz
 cd guacamole-server-1.4.0
 sudo ./configure --with-init-dir=/etc/init.d --enable-allow-freerdp-snapshots
-sudo make
+sudo make && make install 
 sudo make install
 sudo ldconfig
 sudo systemctl daemon-reload
@@ -26,22 +26,23 @@ cd
 sudo mv guacamole-1.4.0.war /var/lib/tomcat9/webapps/guacamole.war
 sudo systemctl restart tomcat9 guacd
 cd
-cd guacamole-client-1.4.0.tar.gz
+cd guacamole-client-1.4.0
 mvn package
 cat /etc/guacamole/guacamole.properties 
-mkdir /usr/share/tomcat8/.guacomol
+sudo mkdir /usr/share/tomcat8/.guacomol
 ln -s  /etc/guacamole/guacamole.properties /usr/share/tomcat8/.guacomol
 sudo systemctl daemon-reload
 sudo systemctl restart tomcat9 guacd
 
-
+echo " guacd-hostname: localhost " 
+echo " guacd-port: 4822 "
 
 
 
 #sudo apt install --allow-change-held-packages --fix-broken -y libpulse-dev  libssl-dev libvorbis-dev libwebsockets-dev libvncserver-dev libtelnet-dev libssh2-1-dev libpango1.0-dev freerdp2-dev libavcodec-dev libavformat-dev libavutil-dev   libossp-uuid-dev libtool-bin uuid-dev   libcairo2-dev  && \
 #wget https://raw.githubusercontent.com/MysticRyuujin/guac-install/main/guac-install.sh && \
 
-#printf "n\nn\ny\nroot\nroot\nroot\nroot" | bash guac-install.sh 
+#printf "n\nn\ny\nroot\nroot\nroot\nroot" | sudo bash guac-install.sh 
 #sudo systemctl enable guacd
 #dudo systemctl start guacd
 #sudo systemctl daemon reload
@@ -55,6 +56,6 @@ sudo systemctl restart tomcat9 guacd
 
 
 
-chmod +x guac-install.sh
-./guac-install.sh --mysqlpwd root --guacpwd root --nomfa --installmysql
+#chmod +x guac-install.sh
+#./guac-install.sh --mysqlpwd root --guacpwd root --nomfa --installmysql
 
