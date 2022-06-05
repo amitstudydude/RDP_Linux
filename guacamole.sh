@@ -44,52 +44,13 @@ sudo systemctl daemon-reload
 sudo systemctl restart ssh xrdp tomcat9 guacd
 cd 
 
-prog=/usr/bin/vncpasswd
-mypass="123456"
-answer="n"
-
-sudo /usr/bin/expect <<EOF
-spawn "$prog"
-expect "Password:"
-send "$mypass\r"
-expect "Verify:"
-send "$mypass\r"
-expect "Would you like to enter a view-only password (y/n)?"
-send "$answer\r"
-expect eof
-exit
-EOF
-
 sudo npm install -g localtunnel
 
-vncserver :1
+lt --port 8080 >> nail.txt &
+echo " cat nail.txt && sleep 2 && bash bash.sh " >> bash.sh 
 
-vncserver -clean -kill :1
+bash bash.sh 
 
-
-cd && cd .vnc 
-
-echo "#! /bin/bash " > xstartup
-echo " gnome-session & " >> xstartup
-echo " startxfce4 & " >> xstartup
-sudo chmod +x xstartup
-
-vncserver -alwaysshared
-
-
-
-lt --port 1234 >> nail.txt &
-lt --port 8080 >> nail.txt & 
-#lt --port 6080 >> nail.txt & 
-echo " cat nail.txt && systemctl start gdm3 && systemctl start xrdp &&  sleep 2 && bash bash.sh " >> bash.sh 
-
-bash bash.sh &
-
-sudo apt-get install build-essential cmake git libjson-c-dev libwebsockets-dev && git clone https://github.com/tsl0922/ttyd.git && git clone https://github.com/novnc/noVNC.git /opt/novnc && git clone https://github.com/novnc/websockify /opt/novnc/utils/websockify && \ 
-cd ttyd && mkdir build && cd build && cmake .. && make && make install && ttyd -p 1234 bash -x & 
-echo "<html><head><meta http-equiv=\"Refresh\" content=\"0; url=vnc.html?autoconnect=true&reconnect=true&reconnect_delay=1000&resize=scale&quality=9\"></head></html>" > /opt/novnc/index.html 
-
-sleep 5d
 
 
 
