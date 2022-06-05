@@ -4,7 +4,6 @@ cd
 sudo apt update && apt upgrade
 apt-get update && apt-get -y upgrade && apt-get -y dist-upgrade 
 sudo apt install xrdp tightvncserver expect xfce4-session lightdm
-sudo apt-get install indicator-applet-complete
 sudo apt install ubuntu-desktop gnome-session-flashback nautilus mate-terminal gnome-panel  gnome-settings-daemon metacity
 sudo DEBIAN_FRONTEND=noninteractive apt install -y tomcat9 tomcat9-admin tomcat9-common tomcat9-user tightvncserver \
     gcc g++ maven openjdk-8-jdk build-essential libcairo2-dev libjpeg-turbo8-dev \
