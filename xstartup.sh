@@ -18,7 +18,6 @@ nautilus &
 mate-terminal &
 ubuntu-sesstings &
 sudo cat xstartup.sh > xstartup 
-vncserver -alwaysshared
 
 
 
