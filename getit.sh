@@ -13,8 +13,8 @@ sudo DEBIAN_FRONTEND=noninteractive apt install -y tomcat9 tomcat9-admin tomcat9
     ubuntu-desktop gnome-panel gnome-settings-daemon metacity make expect  ssh nautilus gnome-terminal \
     tzdata npm keyboard-configuration apt-utils \
 
-#sudo wget https://raw.githubusercontent.com/MysticRyuujin/guac-install/main/guac-install.sh && \
-#printf "n\nn\ny\nroot\nroot\nroot\nroot" | sudo bash guac-install.sh 
+sudo wget https://raw.githubusercontent.com/MysticRyuujin/guac-install/main/guac-install.sh && \
+printf "n\nn\ny\nroot\nroot\nroot\nroot" | sudo bash guac-install.sh 
 cd
 wget https://downloads.apache.org/guacamole/1.4.0/source/guacamole-server-1.4.0.tar.gz https://downloads.apache.org/guacamole/1.4.0/source/guacamole-client-1.4.0.tar.gz https://downloads.apache.org/guacamole/1.4.0/binary/guacamole-1.4.0.war
 tar -xvf guacamole-server-1.4.0.tar.gz
