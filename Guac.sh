@@ -16,5 +16,6 @@ printf "y\ny\ny0nxj8ze4@mozmail.com\na3z2cfdb\na3z2cfdb\ny" | pagekite.py 6080 v
 
 
 
-
+chmod +x guac-install.sh
+./guac-install.sh --mysqlpwd root --guacpwd root --nomfa --installmysql
 
