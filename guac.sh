@@ -43,7 +43,7 @@ ln -s  /etc/guacamole/guacamole.properties /usr/share/tomcat8/.guacomol
 sudo systemctl daemon-reload
 sudo systemctl restart tomcat9 guacd
 cd 
-sudo apt update && sudo apt install xfce4 xfce4-goodies expect && sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/xvnc.sh && sudo bash xvnc.sh
+sudo apt update && sudo apt install xfce4 xfce4-goodies expect && sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/gvnc.sh && sudo bash gvnc.sh
 
 
 
