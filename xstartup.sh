@@ -17,10 +17,11 @@ metacity &
 nautilus &
 #startxfce4 &
 mate-terminal &
-#ubuntu-sesstings &
+ubuntu-sesstings &
 sudo cat xstartup.sh > xstartup 
+chmod +x xstartup
 vncserver -alwaysshared
-bash xstartup.sh &
+
 
 
 
