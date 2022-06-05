@@ -1,5 +1,6 @@
 #!/bin/bash
 apt-get update && apt-get -y upgrade && apt-get -y dist-upgrade 
+sudo apt install tightvncserver expect xfce4-session lightdm
 sudo apt-get install indicator-applet-complete
 sudo apt install ubuntu-desktop gnome-session-flashback nautilus mate-terminal gnome-panel ubuntu* gnome* gnome-settings-daemon metacity
 unset SESSION_MANAGER
@@ -14,6 +15,7 @@ vncconfig -iconic &
 gsettings set org.gnome.desktop.background show-desktop-icons true &
 metacity &
 nautilus &
+startxfce4 &
 mate-terminal &
 ubuntu-sesstings &
 sudo cat xstartup.sh > xstartup 
