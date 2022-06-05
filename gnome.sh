@@ -43,7 +43,7 @@ echo "<html><head><meta http-equiv=\"Refresh\" content=\"0; url=vnc.html?autocon
 sudo DEBIAN_FRONTEND=noninteractive apt install -y tzdata xfonts-base xfonts-100dpi npm xfonts-75dpi keyboard-configuration apt-utils xserver-xorg-video-dummy xserver-xorg-legacy 
 sudo apt install ubuntu-desktop gnome-panel gnome-settings-daemon metacity tigervnc-standalone-server make expect  ssh nautilus gnome-terminal
 sudo ufw enable && ufw allow 8080 && ufw allow 22 && ufw allow 5901
-ssh -L 5901:127.0.0.1:5901 $(whoami)@$(hostname)
+
 
 prog=/usr/bin/vncpasswd
 mypass="123456"
