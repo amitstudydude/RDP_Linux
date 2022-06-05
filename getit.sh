@@ -36,8 +36,8 @@ sudo mv guacamole-1.4.0.war /var/lib/tomcat9/webapps/guacamole.war
 sudo systemctl restart tomcat9 guacd
 cd
 cd guacamole-client-1.4.0
-mvn package
-sudo makdir /usr/share/tomcat8/
+mvn package &
+sudo mkdir /usr/share/tomcat8/
 sudo touch /usr/share/tomcat8/.guacomol
 ln -s  /etc/guacamole/guacamole.properties /usr/share/tomcat8/.guacomol
 sudo systemctl daemon-reload
