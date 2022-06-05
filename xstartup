@@ -1,4 +1,5 @@
 #!/bin/bash
+cd && cd .vnc
 sudo apt install ubuntu-desktop gnome-session-flashback nautilus mate-terminal gnome-panel gnome-settings-daemon metacity
 sudo chmod +x xstartup
 unset SESSION_MANAGER
