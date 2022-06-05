@@ -1,6 +1,10 @@
 
 rm -rf *
 
+
+#share
+python3 -m http.server 6080
+
 #minimal install
 apt update && apt install sudo wget unzip curl -y && yes root | passwd root && sudo DEBIAN_FRONTEND=noninteractive apt install tzdata keyboard-configuration -y && wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/base.7z https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb && sudo apt install -y ./*.deb && rm *.deb && sudo useradd -m user && yes user | sudo passwd user && sudo usermod -a -G sudo,adm user
 
