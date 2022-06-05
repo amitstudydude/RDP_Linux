@@ -1,10 +1,9 @@
 #!/bin/sh
 cd 
 
-sudo dpkg-reconfigure lightdm
  
 
-sudo apt install tightvncserver expect
+sudo apt install tightvncserver expect xfce4-session lightdm
 
 
 prog=/usr/bin/vncpasswd
