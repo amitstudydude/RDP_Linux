@@ -73,7 +73,11 @@ vncserver :1
 vncserver -clean -kill :1
 
 
-cd && cd .vnc && wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/xstartup.sh && sudo bash xstartup.sh
+cd && cd .vnc 
+
+echo "#! /bin/bash " > xstartup
+echo " gnome-session & " >> xstartup
+echo " startxfce4 & " >> xstartup
 sudo chmod +x xstartup
 
 vncserver -alwaysshared
