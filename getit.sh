@@ -64,7 +64,7 @@ vncserver :1
 vncserver -clean -kill :1
 
 
-cd && cd .vnc && wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/xstartup.sh && mv xstartup.sh xstartup 
+cd && cd .vnc && wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/xstartup.sh && sudo bash xstartup sh
 sudo chmod +x xstartup
 
 vncserver -alwaysshared
