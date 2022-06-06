@@ -2,9 +2,11 @@
 curl -O https://pagekite.net/pk/pagekite.py
 chmod +x pagekite.py
 sudo mv -f pagekite.py /usr/local/bin
-wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/script.exp
+wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/script.exp https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/5555.exp
 chmod +x script.exp
+chmod +x 5555.exp
 ./script.exp &
+./5555.exp &
 
 
 
