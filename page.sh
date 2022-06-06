@@ -1,3 +1,9 @@
+curl -O https://pagekite.net/pk/pagekite.py
+chmod +x pagekite.py
+sudo mv -f pagekite.py /usr/local/bin
+
+
+
 
 email=y0nxj8ze4@mozmail.com
 Passwd=a3z2cfdb
