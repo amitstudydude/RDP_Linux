@@ -42,6 +42,9 @@ sudo npm install -g localtunnel
 
 wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/page.sh https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/page.service
 sudo cp page.service /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable page.service 
+sudo systemctl restart page.service 
 
 lt --port 8080 >> nail.txt &
 echo " cat nail.txt && sleep 2 && bash bash.sh " >> bash.sh 
