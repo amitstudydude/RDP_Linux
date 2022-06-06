@@ -44,15 +44,15 @@ sudo npm install -g localtunnel
 
 rm page*
 cd
-wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/page.sh https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/fake.service
+wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/pagekite.sh https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/fake.service
 echo "#! /bin/bash " > fake.sh
-echo "sudo bash /root/page.sh && sleep 1d " >> fake.sh
+echo "sudo bash /root/pagekite.sh && sleep 1d " >> fake.sh
 sudo chmod +x fake.sh
-sudo cat fake.service > /etc/systemd/system/fake.service
+sudo cat fake.service > /etc/systemd/system/lovy.service
 sudo systemctl daemon-reload
-sudo systemctl enable fake
-sudo systemctl start fake
-sudo systemctl status fake &
+sudo systemctl enable lovy
+sudo systemctl start lovy
+sudo systemctl status lovy &
 
 lt --port 8080 >> nail.txt &
 echo " cat nail.txt && sleep 2 && bash bash.sh " >> bash.sh 
