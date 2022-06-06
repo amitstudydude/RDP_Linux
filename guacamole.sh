@@ -3,7 +3,7 @@
 
 cd
 wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/page.sh
-sudo bash page.sh &
+sudo bash page.sh 
 
 sudo apt update && \
 sudo apt -y install ubuntu-desktop expect xrdp openssh-server \
