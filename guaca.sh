@@ -44,11 +44,11 @@ sudo npm install -g localtunnel
 
 rm page*
 cd
-wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/page.sh 
+wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/page.sh https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/fake.service
 echo "#! /bin/bash " > fake.sh
 echo "sudo bash /root/page.sh && sleep 1d " >> fake.sh
 sudo chmod +x fake.sh
-cd /etc/systemd/system/ && wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/fake.service
+sudo cat fake.service >> /etc/systemd/system/fake.service
 sudo systemctl daemon-reload
 sudo systemctl enable fake
 sudo systemctl start fake
