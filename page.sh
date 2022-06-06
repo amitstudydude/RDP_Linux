@@ -2,7 +2,7 @@ curl -O https://pagekite.net/pk/pagekite.py
 chmod +x pagekite.py
 sudo mv -f pagekite.py /usr/local/bin
 
-
+pagekite.py jha.pagekite.me
 
 
 email=y0nxj8ze4@mozmail.com
