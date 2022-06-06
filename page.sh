@@ -1,6 +1,6 @@
 #! /bin/bash
 cd /root
-sudo rm $(which pagekite.py) $(which pagekite-gtk.py)
+#sudo rm $(which pagekite.py) $(which pagekite-gtk.py)
 rm *.exp
 sudo curl -O https://pagekite.net/pk/pagekite.py
 sudo chmod +x pagekite.py
@@ -10,7 +10,6 @@ cd /root
 expect main.exp &
 expect share.exp &
 cd .. && python3 -m http.server 1234
-sudo iptables -t nat -A OUTPUT -o lo -p tcp --dport 3033 -j REDIRECT --to-port 5555
+sudo iptables -t nat -A OUTPUT -o lo -p tcp --dport 1234 -j REDIRECT --to-port 5555
 sudo iptables -t nat -A OUTPUT -o lo -p tcp --dport 80 -j REDIRECT --to-port 8080
-#port forwarding 80 to 8080
 sleep 1d
