@@ -1,7 +1,4 @@
 #! /bin/bash
-#wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/page.service 
-#sudo mv page.service /etc/systemd/system/
-#sudo systemctl status page.service &
 sudo rm $(which pagekite.py) $(which pagekite-gtk.py)
 rm *.exp
 sudo curl -O https://pagekite.net/pk/pagekite.py
@@ -12,8 +9,8 @@ export passwd=a3z2cfdb
 sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/script.exp https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/5555.exp
 sudo chmod +x script.exp
 sudo chmod +x 5555.exp
-./script.exp &
-./5555.exp &
+expect script.exp &
+expect 5555.exp &
 cd ..
 sudo python3 -m http.server 5555 &
 
