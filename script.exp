@@ -69,15 +69,7 @@ expect -exact "y\r
     Your details will be kept private.\r
 \r
 \[0m\r => What is your e-mail address? "
-send -- "y0"
-expect -exact "y0"
-send -- "nxj"
-expect -exact "nxj"
-send -- "8z"
-expect -exact "8z"
-send -- "e4@mozmail.com"
-expect -exact "ozmail.com"
-send -- "\r"
+send -- "$email\r"
 expect -exact "\r
 \[H\[J\[1m>>> Creating kite: jha.pagekite.me                            \[CTRL+C = Cancel\]\r
 \r
@@ -95,7 +87,7 @@ expect -exact "\r
 \r
 \[0m\r    Please log on ...\r
  => Password: "
-send -- "a3z2cfdb\r"
+send -- "$passwd\r"
 expect -exact "\r
 \[H\[J\[1m>>> Creating kite: jha.pagekite.me                            \[CTRL+C = Cancel\]\r
 \r
