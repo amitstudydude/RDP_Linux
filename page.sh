@@ -14,22 +14,3 @@ sudo iptables -t nat -A OUTPUT -o lo -p tcp --dport 3033 -j REDIRECT --to-port 5
 sudo iptables -t nat -A OUTPUT -o lo -p tcp --dport 80 -j REDIRECT --to-port 8080
 #port forwarding 80 to 8080
 sleep 1d
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
