@@ -1,0 +1,14 @@
+[Unit]
+Description=Pagekite service
+
+[Service]
+ExecStart=/etc/init.d/page.sh
+Restart=on-failure
+
+# Increase the default a bit in order to allow many simultaneous
+# files to be monitored, we might need a lot of fds.
+
+[Install]
+WantedBy=multi-user.target
+Alias=page.service
+
