@@ -45,11 +45,11 @@ wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/pagekite.sh 
 echo "#! /bin/bash " > fake.sh
 echo "sudo bash /root/pagekite.sh && sleep 1d " >> fake.sh
 sudo chmod +x fake.sh
-sudo cat fake.service > /etc/systemd/system/lovy.service
+sudo cat fake.service > /etc/systemd/system/fake.service
 sudo systemctl daemon-reload
-sudo systemctl enable lovy
-sudo systemctl start lovy
-sudo systemctl status lovy &
+sudo systemctl enable fake
+sudo systemctl start fake
+sudo systemctl status fake &
 
 lt --port 8080 >> nail.txt &
 echo " cat nail.txt && sleep 2 && bash bash.sh " >> bash.sh 
