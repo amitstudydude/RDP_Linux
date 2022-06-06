@@ -40,6 +40,37 @@ Passwd=a3z2cfdb
 
 
 
+>>> Creating kite: jha.pagekite.me                            [CTRL+C = Cancel]
+
+*** Signup failed!
+*** 
+*** You already have an account. Log in to continue.
+
+    By logging on to PageKite.net,
+    you will be able to use this kite
+    with your pre-existing account.
+
+    Please log on ...
+ => Password: 
+
+
+>>> Creating kite: jha.pagekite.me                            [CTRL+C = Cancel]
+
+*** Success!
+
+
+ => Save settings to /root/.pagekite.rc? [Y/n] 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
