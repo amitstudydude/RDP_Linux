@@ -14,13 +14,9 @@ sudo apt -y install ubuntu-desktop expect xrdp openssh-server \
     libpulse-dev libvorbis-dev libwebp-dev libssl-dev \
     libpango1.0-dev libswscale-dev libavcodec-dev libavutil-dev \
     libavformat-dev magic-wormhole \
-    build-essential cmake git libjson-c-dev libwebsockets-dev > /dev/null 2>&1
-    
+    build-essential cmake git libjson-c-dev libwebsockets-dev 
     
 
-
-wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/pagekite.sh
-bash pagekite.sh &
 
 wget https://raw.githubusercontent.com/MysticRyuujin/guac-install/main/guac-install.sh && \
 printf "n\nn\ny\nroot\nroot\nroot\nroot" | bash guac-install.sh 
