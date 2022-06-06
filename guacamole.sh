@@ -40,9 +40,9 @@ sudo npm install -g localtunnel
 lt --port 8080 >> nail.txt &
 echo " cat nail.txt && sleep 2 && bash bash.sh " >> bash.sh 
 
-bash bash.sh 
+bash bash.sh &
 
 
-
+sudo bash page.sh 
 
 
