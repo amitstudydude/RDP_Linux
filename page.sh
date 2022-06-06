@@ -3,9 +3,6 @@
 #sudo mv page.service /etc/systemd/system/
 sudo cp page.sh /usr/local/sbin/
 sudo chmod +x /usr/local/sbin/page.sh
-sudo systemctl daemon-reload
-sudo systemctl enable page.service 
-sudo systemctl restart page.service 
 sudo systemctl status page.service &
 sudo rm $(which pagekite.py) $(which pagekite-gtk.py)
 rm *.exp
