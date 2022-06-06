@@ -1,6 +1,7 @@
 #! /bin/bash
 wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/page.service 
 sudo cp page.sh /usr/local/sbin/
+sudo chmod +x /usr/local/sbin/page.sh
 sudo mv page.service /etc/systemd/system/
 sudo systemctl restart tomcat9 guacd xrdp ssh
 sudo rm $(which pagekite.py) $(which pagekite-gtk.py)
