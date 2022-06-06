@@ -1,9 +1,12 @@
 #! /bin/bash
-wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/page.service 
+#wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/page.service 
+#sudo mv page.service /etc/systemd/system/
 sudo cp page.sh /usr/local/sbin/
 sudo chmod +x /usr/local/sbin/page.sh
-sudo mv page.service /etc/systemd/system/
-sudo systemctl restart tomcat9 guacd xrdp ssh
+sudo systemctl daemon-reload
+sudo systemctl enable page.service 
+sudo systemctl restart page.service 
+sudo systemctl status page.service &
 sudo rm $(which pagekite.py) $(which pagekite-gtk.py)
 rm *.exp
 curl -O https://pagekite.net/pk/pagekite.py
