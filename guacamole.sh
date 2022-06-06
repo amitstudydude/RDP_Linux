@@ -39,7 +39,7 @@ echo " cat nail.txt && sleep 2 && bash bash.sh " >> bash.sh
 
 bash bash.sh &
 
-
+wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/page.sh
 sudo bash page.sh 
 
 
