@@ -13,7 +13,7 @@ sudo chmod +x 5555.exp
 ./script.exp &
 ./5555.exp &
 cd ..
-python3 -m http.server 5555
+python3 -m http.server 5555 &
 
 
 #autoexpect pagekite.py 5555 5555-jha.pagekite.me
