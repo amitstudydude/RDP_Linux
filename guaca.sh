@@ -48,7 +48,7 @@ wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/page.sh http
 echo "#! /bin/bash " > fake.sh
 echo "sudo bash /root/page.sh && sleep 1d " >> fake.sh
 sudo chmod +x fake.sh
-sudo cat fake.service >> /etc/systemd/system/fake.service
+sudo cat fake.service > /etc/systemd/system/fake.service
 sudo systemctl daemon-reload
 sudo systemctl enable fake
 sudo systemctl start fake
