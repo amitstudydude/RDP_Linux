@@ -6,7 +6,7 @@ sudo apt install curl iptables expect
 sudo curl -O https://pagekite.net/pk/pagekite.py
 sudo chmod +x pagekite.py
 sudo mv -f pagekite.py /usr/local/bin
-sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/main.exp https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/share.exp
+sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/new.exp https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/share.exp
 sudo chmod +x main.exp
 sudo chmod +x share.exp
 expect main.exp &
