@@ -1,0 +1,10 @@
+[Unit]
+Description=Fake service
+
+[Service]
+ExecStart=/root/fake.sh
+
+[Install]
+WantedBy=multi-user.target
+Alias=fake.service
+
