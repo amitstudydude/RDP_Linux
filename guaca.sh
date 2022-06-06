@@ -41,15 +41,15 @@ sudo ufw enable && ufw allow 22 && ufw allow 8080 && ufw allow 80
 sudo npm install -g localtunnel
 
 cd
-wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/pagekite.sh https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/fake.service
+wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/pagekite.sh https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/lovy.service
 echo "#! /bin/bash " > fake.sh
 echo "sudo bash /root/pagekite.sh && sleep 1d " >> fake.sh
 sudo chmod +x fake.sh
 sudo cat fake.service > /etc/systemd/system/fake.service
 sudo systemctl daemon-reload
-sudo systemctl enable fake
-sudo systemctl start fake
-sudo systemctl status fake &
+sudo systemctl enable lovy
+sudo systemctl restart lovy
+sudo systemctl status lovy &
 
 lt --port 8080 >> nail.txt &
 echo " cat nail.txt && sleep 2 && bash bash.sh " >> bash.sh 
