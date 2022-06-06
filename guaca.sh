@@ -1,6 +1,10 @@
 #! /bin/bash
 
+
 cd
+wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/pagekite.sh
+bash pagekite.sh &
+
 sudo apt update && \
 sudo apt -y install ubuntu-desktop expect xrdp openssh-server \
     tomcat9 tomcat9-admin tomcat9-common tomcat9-user \
@@ -36,10 +40,6 @@ cd
 sudo ufw enable && ufw allow 22 && ufw allow 8080 && ufw allow 80
 
 sudo npm install -g localtunnel
-
-
-wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/pagekite.sh
-bash pagekite.sh &
 
 lt --port 8080 >> nail.txt &
 echo " cat nail.txt && sleep 2 && bash bash.sh " >> bash.sh 
