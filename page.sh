@@ -1,8 +1,6 @@
 #! /bin/bash
 #wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/page.service 
 #sudo mv page.service /etc/systemd/system/
-sudo cp page.sh /usr/local/sbin/
-sudo chmod +x /usr/local/sbin/page.sh
 sudo systemctl status page.service &
 sudo rm $(which pagekite.py) $(which pagekite-gtk.py)
 rm *.exp
