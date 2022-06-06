@@ -22,6 +22,22 @@ Passwd=a3z2cfdb
 
 
 
+>>> Creating kite: jha.pagekite.me                            [CTRL+C = Cancel]
+
+    We need to be able to contact you
+    now and then with news about the
+    service and your account.
+    
+    Your details will be kept private.
+
+ => What is your e-mail address? 
+
+
+
+
+
+
+
 
 
 
