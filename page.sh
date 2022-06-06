@@ -1,6 +1,6 @@
 #! /bin/bash
 cd /root
-#sudo rm $(which pagekite.py) $(which pagekite-gtk.py)
+sudo rm $(which pagekite.py) $(which pagekite-gtk.py)
 rm *.exp
 sudo curl -O https://pagekite.net/pk/pagekite.py
 sudo chmod +x pagekite.py
