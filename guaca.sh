@@ -16,7 +16,7 @@ sudo DEBIAN_FRONTEND=noninteractive apt install ubuntu-desktop expect xrdp opens
     dbus-x11 ssh openssh-server xrdp tmate apt-utils software-properties-common apt-transport-https sudo \
     psmisc tmux nano wget curl telnet gnupg gdb git autoconf locales gdebi \
     meld dos2unix meshlab xserver-xorg-video-dummy xserver-xorg-legacy \
-    python3 python3-dev python3-pip python3-setuptools > /dev/null 2>&1
+    python3 python3-dev python3-pip python3-setuptools 
 #7 mins
 
 wget https://raw.githubusercontent.com/MysticRyuujin/guac-install/main/guac-install.sh && \
