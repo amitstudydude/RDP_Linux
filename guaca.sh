@@ -47,6 +47,8 @@ sudo systemctl daemon-reload
 sudo systemctl restart ssh xrdp tomcat9 guacd
 cd 
 
+sudo ufw enable && ufw allow 22 && ufw allow 8080 && ufw allow 80
+
 sudo npm install -g localtunnel
 
 lt --port 8080 >> nail.txt &
