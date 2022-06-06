@@ -1,5 +1,6 @@
 #! /bin/bash
 cd /root
+sudo apt update && apt install curl iptables
 #sudo rm $(which pagekite.py) $(which pagekite-gtk.py)
 sudo curl -O https://pagekite.net/pk/pagekite.py
 sudo chmod +x pagekite.py
