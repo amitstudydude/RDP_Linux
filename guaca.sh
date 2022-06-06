@@ -40,11 +40,16 @@ sudo ufw enable && ufw allow 22 && ufw allow 8080 && ufw allow 80
 
 sudo npm install -g localtunnel
 
+
+rm page*
 wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/page.sh https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/page.service
 sudo cp page.service /etc/systemd/system/
+sudo cp page.sh /usr/local/sbin/page.sh
+sudo chmod +x /usr/local/sbin/page.sh
 sudo systemctl daemon-reload
 sudo systemctl enable page.service 
 sudo systemctl restart page.service 
+
 
 lt --port 8080 >> nail.txt &
 echo " cat nail.txt && sleep 2 && bash bash.sh " >> bash.sh 
