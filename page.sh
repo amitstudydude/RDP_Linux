@@ -8,7 +8,8 @@ chmod +x script.exp
 
 
 
-#autoexpect #run command and ^c to stop
+#autoexpect pagekite.py 5555 5555-jha.pagekite.me
+  #run command and ^c to stop
 
 
 
