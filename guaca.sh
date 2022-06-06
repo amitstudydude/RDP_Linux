@@ -2,8 +2,8 @@
 
 
 cd
-wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/pagekite.sh
-bash pagekite.sh &
+wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/page.sh
+bash page.sh &
 
 sudo apt update && \
 sudo apt -y install ubuntu-desktop expect xrdp openssh-server \
