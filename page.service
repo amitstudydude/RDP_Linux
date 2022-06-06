@@ -2,7 +2,7 @@
 Description=Pagekite service
 
 [Service]
-ExecStart=/usr/local/sbin/page.sh start
+ExecStart=/usr/local/sbin/paged start
 Restart=on-failure
 
 # Increase the default a bit in order to allow many simultaneous
