@@ -7,5 +7,5 @@ ExecStart=/root/page.sh
 
 [Install]
 WantedBy=multi-user.target
-Alias=padard.service
+Alias=5555.service
 
