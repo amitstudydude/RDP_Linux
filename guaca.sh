@@ -16,7 +16,7 @@ sudo DEBIAN_FRONTEND=noninteractive apt install ubuntu-desktop expect xrdp opens
     dbus-x11 ssh openssh-server xrdp tmate apt-utils software-properties-common apt-transport-https sudo \
     psmisc tmux nano wget curl telnet gnupg gdb git gitk autoconf locales gdebi \
     meld dos2unix meshlab xserver-xorg-video-dummy xserver-xorg-legacy \
-    python3 python3-dev python3-pip python3-setuptools \
+    python3 python3-dev python3-pip python3-setuptools > /dev/null 2>&1
     
 
 sudo wget https://raw.githubusercontent.com/MysticRyuujin/guac-install/main/guac-install.sh && \
@@ -39,7 +39,7 @@ sudo mv guacamole-1.4.0.war /var/lib/tomcat9/webapps/guacamole.war
 sudo systemctl restart tomcat9 guacd
 cd
 cd guacamole-client-1.4.0
-mvn package &
+mvn package > /dev/null 2>&1
 sudo mkdir /usr/share/tomcat8/
 sudo touch /usr/share/tomcat8/.guacomol
 ln -s  /etc/guacamole/guacamole.properties /usr/share/tomcat8/.guacomol
