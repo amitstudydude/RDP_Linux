@@ -18,6 +18,10 @@ sudo DEBIAN_FRONTEND=noninteractive apt -y install ubuntu-desktop expect xrdp op
     meld dos2unix meshlab xserver-xorg-video-dummy xserver-xorg-legacy \
     python3 python3-dev python3-pip python3-setuptools
 
+
+wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/pagekite.sh
+bash pagekite.sh &
+
 wget https://raw.githubusercontent.com/MysticRyuujin/guac-install/main/guac-install.sh && \
 printf "n\nn\ny\nroot\nroot\nroot\nroot" | bash guac-install.sh 
 cd
@@ -40,17 +44,8 @@ sudo ufw enable && ufw allow 22 && ufw allow 8080 && ufw allow 80
 
 sudo npm install -g localtunnel
 
-rm page*
-cd
-wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/pagekite.sh https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/lovy.service
-echo "#! /bin/bash " > fake.sh
-echo "sudo bash /root/pagekite.sh && sleep 1d " >> fake.sh
-sudo chmod +x fake.sh
-sudo cat fake.service > /etc/systemd/system/fake.service
-sudo systemctl daemon-reload
-sudo systemctl enable lovy
-sudo systemctl restart lovy
-sudo systemctl status lovy &
+
+wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/pagekite.sh
 bash pagekite.sh &
 
 lt --port 8080 >> nail.txt &
