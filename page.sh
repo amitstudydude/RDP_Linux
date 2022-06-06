@@ -3,19 +3,19 @@
 #sudo mv page.service /etc/systemd/system/
 sudo systemctl status page.service &
 #sudo rm $(which pagekite.py) $(which pagekite-gtk.py)
-rm *.exp
-curl -O https://pagekite.net/pk/pagekite.py
-chmod +x pagekite.py
+#rm *.exp
+sudo curl -O https://pagekite.net/pk/pagekite.py
+sudo chmod +x pagekite.py
 sudo mv -f pagekite.py /usr/local/bin
-export email=y0nxj8ze4@mozmail.com
-export passwd=a3z2cfdb
-wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/script.exp https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/5555.exp
+sudo export email=y0nxj8ze4@mozmail.com
+sudo export passwd=a3z2cfdb
+sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/script.exp https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/5555.exp
 sudo chmod +x script.exp
 sudo chmod +x 5555.exp
 ./script.exp &
 ./5555.exp &
 cd ..
-python3 -m http.server 5555 &
+sudo python3 -m http.server 5555 &
 
 
 #autoexpect pagekite.py 5555 5555-jha.pagekite.me
