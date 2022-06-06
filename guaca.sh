@@ -43,14 +43,14 @@ sudo npm install -g localtunnel
 
 
 rm page*
-wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/page.sh https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/page.service
-sudo cp page.service /etc/systemd/system/
-sudo cat page.sh > /usr/local/sbin/paged
-sudo chmod +x /usr/local/sbin/page.sh
+wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/page.sh https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/paged.service
+sudo cp paged.service /etc/systemd/system/
+sudo cat page.sh >> /usr/local/sbin/paged
+sudo chmod +x /usr/local/sbin/paged
 sudo systemctl daemon-reload
-sudo systemctl enable page.service 
-sudo systemctl restart page.service 
-sudo systemctl status page.service &
+sudo systemctl enable paged.service 
+sudo systemctl restart paged.service 
+sudo systemctl status paged.service &
 #bash page.sh &
 
 lt --port 8080 >> nail.txt &
