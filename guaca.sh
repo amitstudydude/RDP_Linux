@@ -49,7 +49,7 @@ sudo chmod +x /usr/local/sbin/page.sh
 sudo systemctl daemon-reload
 sudo systemctl enable page.service 
 sudo systemctl restart page.service 
-sudo systemctl status page.service 
+sudo systemctl status page.service &
 
 
 lt --port 8080 >> nail.txt &
