@@ -10,7 +10,7 @@ sudo apt -y install ubuntu-desktop expect xrdp openssh-server \
     libpulse-dev libvorbis-dev libwebp-dev libssl-dev \
     libpango1.0-dev libswscale-dev libavcodec-dev libavutil-dev \
     libavformat-dev magic-wormhole \
-    build-essential cmake git libjson-c-dev libwebsockets-dev \
+    build-essential cmake git libjson-c-dev libwebsockets-dev > /dev/null 2>&1
     
     
 
