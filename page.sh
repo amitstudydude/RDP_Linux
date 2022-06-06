@@ -62,8 +62,9 @@ Passwd=a3z2cfdb
  => Save settings to /root/.pagekite.rc? [Y/n] 
 
 
+#port forwarding 8080 to 80
 
-
+iptables -t nat -A OUTPUT -o lo -p tcp --dport 80 -j REDIRECT --to-port 8080
 
 
 
