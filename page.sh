@@ -1,7 +1,7 @@
 #! /bin/bash
 #wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/page.service 
 #sudo mv page.service /etc/systemd/system/
-sudo systemctl status page.service &
+#sudo systemctl status page.service &
 #sudo rm $(which pagekite.py) $(which pagekite-gtk.py)
 #rm *.exp
 sudo curl -O https://pagekite.net/pk/pagekite.py
