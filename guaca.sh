@@ -14,7 +14,7 @@ sudo DEBIAN_FRONTEND=noninteractive apt install ubuntu-desktop expect xrdp opens
     ubuntu-desktop make expect  ssh nautilus gnome-terminal \
     tzdata npm keyboard-configuration apt-utils \
     dbus-x11 ssh openssh-server xrdp tmate apt-utils software-properties-common apt-transport-https sudo \
-    psmisc tmux nano wget curl telnet gnupg gdb git gitk autoconf locales gdebi \
+    psmisc tmux nano wget curl telnet gnupg gdb git autoconf locales gdebi \
     meld dos2unix meshlab xserver-xorg-video-dummy xserver-xorg-legacy \
     python3 python3-dev python3-pip python3-setuptools 
     
