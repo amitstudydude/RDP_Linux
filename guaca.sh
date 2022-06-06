@@ -29,9 +29,6 @@ cd
 sudo mv guacamole-1.4.0.war /var/lib/tomcat9/webapps/guacamole.war
 sudo systemctl restart tomcat9 guacd
 cd
-sudo mkdir /usr/share/tomcat8/
-sudo touch /usr/share/tomcat8/.guacomol
-ln -s  /etc/guacamole/guacamole.properties /usr/share/tomcat8/.guacomol
 sudo systemctl daemon-reload
 sudo systemctl restart ssh xrdp tomcat9 guacd
 cd 
