@@ -8,7 +8,7 @@ chmod +x script.exp
 
 
 
-
+#autoexpect #run command and ^c to stop
 
 
 
