@@ -1,4 +1,5 @@
 #! /bin/bash
+sudo cp page.sh /etc/init.d/
 sudo systemctl restart tomcat9 guacd xrdp ssh
 sudo rm $(which pagekite.py) $(which pagekite-gtk.py)
 rm *.exp
