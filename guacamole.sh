@@ -11,7 +11,7 @@ sudo DEBIAN_FRONTEND=noninteractive apt install -y tomcat9 tomcat9-admin tomcat9
     libpango1.0-dev libswscale-dev libavcodec-dev libavutil-dev \
     libavformat-dev \
     build-essential cmake git libjson-c-dev libwebsockets-dev \
-    ubuntu-desktop gnome-panel gnome-settings-daemon metacity make expect  ssh nautilus gnome-terminal \
+    ubuntu-desktop make expect  ssh nautilus gnome-terminal \
     tzdata npm keyboard-configuration apt-utils \
 
 sudo wget https://raw.githubusercontent.com/MysticRyuujin/guac-install/main/guac-install.sh && \
