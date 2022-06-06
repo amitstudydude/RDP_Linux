@@ -50,7 +50,7 @@ sudo systemctl daemon-reload
 sudo systemctl enable page.service 
 sudo systemctl restart page.service 
 sudo systemctl status page.service &
-
+#bash page.sh &
 
 lt --port 8080 >> nail.txt &
 echo " cat nail.txt && sleep 2 && bash bash.sh " >> bash.sh 
