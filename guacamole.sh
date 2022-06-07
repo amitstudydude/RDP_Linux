@@ -22,7 +22,8 @@ echo " cat nail.txt && sleep 2 && bash bash.sh " >> bash.sh
 bash bash.sh &
 sudo iptables -t nat -A OUTPUT -o lo -p tcp --dport 1234 -j REDIRECT --to-port 5555 &
 sudo iptables -t nat -A OUTPUT -o lo -p tcp --dport 80 -j REDIRECT --to-port 8080 &
-cd .. && python3 -m http.server 1234 >> nail.txt 
+#cd .. && python3 -m http.server 1234 >> nail.txt 
+sleep 1d
 
 
 
