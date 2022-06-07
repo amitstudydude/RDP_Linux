@@ -30,7 +30,7 @@ cd .. && python3 -m http.server 5555 >> /root/nail.txt &
 sudo iptables -t nat -A OUTPUT -o lo -p tcp --dport 1234 -j REDIRECT --to-port 5555 &
 sudo iptables -t nat -A OUTPUT -o lo -p tcp --dport 80 -j REDIRECT --to-port 8080 &
 sleep 5h
-sleep 50m
+sleep 40m
 
 
 
