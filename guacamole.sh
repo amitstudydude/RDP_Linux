@@ -6,6 +6,8 @@ sudo apt update
 sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/install.sh && sudo bash install.sh
 wget https://raw.githubusercontent.com/MysticRyuujin/guac-install/main/guac-install.sh && \
 printf "n\nn\ny\nroot\nroot\nroot\nroot" | bash guac-install.sh 
+sudo mkdir -p /etc/guacamole/{extensions,lib}
+sudo mv guacamole-1.4.0.war /var/lib/tomcat9/webapps/guacamole.war
 sudo systemctl daemon-reload
 sudo systemctl enable guacd
 sudo systemctl start guacd
