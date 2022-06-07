@@ -14,7 +14,7 @@ sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/main.ex
 sudo chmod +x main.exp
 sudo chmod +x share.exp
 expect main.exp &
-sleep 10
+sleep 30
 ./share.exp &
 
 sleep 1d
