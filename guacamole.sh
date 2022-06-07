@@ -15,9 +15,9 @@ sudo npm install -g localtunnel
 lt --port 8080 >> nail.txt &
 echo " cat nail.txt && sleep 2 && bash bash.sh " >> bash.sh 
 bash bash.sh &
+cd .. && python3 -m http.server 1234 >> nail.txt &
 sudo iptables -t nat -A OUTPUT -o lo -p tcp --dport 1234 -j REDIRECT --to-port 5555 &
 sudo iptables -t nat -A OUTPUT -o lo -p tcp --dport 80 -j REDIRECT --to-port 8080 &
-cd .. && python3 -m http.server 1234 >> nail.txt &
 sleep 1d
 
 
