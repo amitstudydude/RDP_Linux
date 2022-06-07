@@ -1,6 +1,6 @@
 #! /bin/bash
 sudo DEBIAN_FRONTEND=noninteractive apt -y install tzdata 
-sudo DEBIAN_FRONTEND=noninteractive apt -y install npm 
+#sudo DEBIAN_FRONTEND=noninteractive apt -y install npm 
 sudo DEBIAN_FRONTEND=noninteractive apt -y install keyboard-configuration
 sudo DEBIAN_FRONTEND=noninteractive apt -y install xrdp 
 sudo DEBIAN_FRONTEND=noninteractive apt -y install tomcat9
