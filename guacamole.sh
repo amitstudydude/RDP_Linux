@@ -34,8 +34,8 @@ sudo ufw enable && ufw allow 22 && ufw allow 8080 && ufw allow 80
 
 sudo npm install -g localtunnel
 
-wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/page.sh
-sudo bash page.sh &
+#wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/page.sh
+#sudo bash page.sh &
 
 
 
