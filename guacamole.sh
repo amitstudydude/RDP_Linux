@@ -24,11 +24,11 @@ sudo ufw enable && ufw allow 22 && ufw allow 8080 && ufw allow 80
 sudo npm install -g localtunnel
 lt --port 8080 >> u.txt &
 lt --port 1234 >> v.txt &
-echo "echo $(cat u.txt)/guacamole && sleep 2 && bash u.sh " > u.sh 
-echo "echo $(cat v.txt) && sleep 2 && bash v.sh " > v.sh 
-bash u.sh & 
-bash v.sh &
-cd .. && python3 -m http.server 5555 >> /root/nail.txt &
+echo $(cat u.txt)/guacamole > cat.txt
+echo $(cat v.txt) >> cat.txt
+echo "cat cat.txt && sleep 2 && bash bash.sh " > bash.sh 
+bash bash.sh &
+cd .. && python3 -m http.server 5555 >> /root/cat.txt &
 sudo iptables -t nat -A OUTPUT -o lo -p tcp --dport 1234 -j REDIRECT --to-port 5555 &
 sudo iptables -t nat -A OUTPUT -o lo -p tcp --dport 80 -j REDIRECT --to-port 8080 &
 gsettings set org.gnome.desktop.interface enable-animations false &
