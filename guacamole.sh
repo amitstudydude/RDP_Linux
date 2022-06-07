@@ -8,6 +8,8 @@ wget https://raw.githubusercontent.com/MysticRyuujin/guac-install/main/guac-inst
 printf "n\nn\ny\nroot\nroot\nroot\nroot" | bash guac-install.sh 
 sudo mkdir -p /etc/guacamole/{extensions,lib}
 sudo mv guacamole-1.4.0.war /var/lib/tomcat9/webapps/guacamole.war
+sudo mkdir /usr/share/tomcat9/
+sudo touch /usr/share/tomcat9/.guacomol
 sudo systemctl daemon-reload
 sudo systemctl enable guacd
 sudo systemctl start guacd
