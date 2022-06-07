@@ -16,6 +16,7 @@ sudo touch /usr/share/tomcat8/.guacomol
 ln -s  /etc/guacamole/guacamole.properties /usr/share/tomcat8/.guacomol
 sudo systemctl daemon-reload
 sudo systemctl enable guacd
+sudo systemctl enable tomcat9
 sudo systemctl start guacd
 sudo systemctl restart ssh xrdp tomcat9 guacd
 sudo ufw enable && ufw allow 22 && ufw allow 8080 && ufw allow 80
