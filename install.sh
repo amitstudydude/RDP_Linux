@@ -1,6 +1,6 @@
 #! /bin/bash
 sudo DEBIAN_FRONTEND=noninteractive apt -y install tzdata 
-#sudo DEBIAN_FRONTEND=noninteractive apt -y install npm 
+sudo DEBIAN_FRONTEND=noninteractive apt -y install npm 
 sudo DEBIAN_FRONTEND=noninteractive apt -y install keyboard-configuration
 sudo DEBIAN_FRONTEND=noninteractive apt -y install xrdp 
 sudo DEBIAN_FRONTEND=noninteractive apt -y install tomcat9
@@ -49,9 +49,9 @@ sudo DEBIAN_FRONTEND=noninteractive apt -y install curl
 sudo DEBIAN_FRONTEND=noninteractive apt -y install telnet 
 sudo DEBIAN_FRONTEND=noninteractive apt -y install gnupg 
 sudo DEBIAN_FRONTEND=noninteractive apt -y install gdb
-#sudo DEBIAN_FRONTEND=noninteractive apt -y install meld 
-#sudo DEBIAN_FRONTEND=noninteractive apt -y install dos2unix 
-#sudo DEBIAN_FRONTEND=noninteractive apt -y install meshlab 
+sudo DEBIAN_FRONTEND=noninteractive apt -y install meld 
+sudo DEBIAN_FRONTEND=noninteractive apt -y install dos2unix 
+sudo DEBIAN_FRONTEND=noninteractive apt -y install meshlab 
 sudo DEBIAN_FRONTEND=noninteractive apt -y install xserver-xorg-video-dummy 
 sudo DEBIAN_FRONTEND=noninteractive apt -y install xserver-xorg-legacy 
 sudo DEBIAN_FRONTEND=noninteractive apt -y install python3 
