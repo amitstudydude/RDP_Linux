@@ -5,7 +5,7 @@ rm -rf *
 #share
 python3 -m http.server 6080
 
-#redirect port1 to port2
+#redirect port1(lt-link) to port2 (http)
 sudo iptables -t nat -A OUTPUT -o lo -p tcp --dport 1080 -j REDIRECT --to-port 2000 
 
 #minimal install
