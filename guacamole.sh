@@ -10,6 +10,10 @@ sudo mkdir -p /etc/guacamole/{extensions,lib}
 sudo mv guacamole-1.4.0.war /var/lib/tomcat9/webapps/guacamole.war
 sudo mkdir /usr/share/tomcat9/
 sudo touch /usr/share/tomcat9/.guacomol
+sudo touch /usr/share/tomcat8/.guacomol
+ln -s  /etc/guacamole/guacamole.properties /usr/share/tomcat9/.guacomol
+sudo touch /usr/share/tomcat8/.guacomol
+ln -s  /etc/guacamole/guacamole.properties /usr/share/tomcat8/.guacomol
 sudo systemctl daemon-reload
 sudo systemctl enable guacd
 sudo systemctl start guacd
