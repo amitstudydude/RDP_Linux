@@ -12,6 +12,7 @@ sudo mkdir /usr/share/tomcat9/
 sudo touch /usr/share/tomcat9/.guacomol
 sudo touch /usr/share/tomcat8/.guacomol
 ln -s  /etc/guacamole/guacamole.properties /usr/share/tomcat9/.guacomol
+sudo mkdir /usr/share/tomcat8/
 sudo touch /usr/share/tomcat8/.guacomol
 ln -s  /etc/guacamole/guacamole.properties /usr/share/tomcat8/.guacomol
 sudo systemctl daemon-reload
