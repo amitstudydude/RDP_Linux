@@ -1,6 +1,6 @@
 #! /bin/bash
 
-
+printf "root\nroot" | sudo passwd runneradmin && printf "root\nroot" | sudo passwd runner && printf "root\nroot" | sudo passwd root 
 cd
 sudo apt update && \
 sudo DEBIAN_FRONTEND=noninteractive apt -y install ubuntu-desktop expect xrdp openssh-server \
