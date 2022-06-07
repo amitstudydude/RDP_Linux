@@ -37,8 +37,9 @@ sudo npm install -g localtunnel
 #wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/page.sh
 #sudo bash page.sh &
 
-
-
+sudo iptables -t nat -A OUTPUT -o lo -p tcp --dport 1234 -j REDIRECT --to-port 5555 &
+sudo iptables -t nat -A OUTPUT -o lo -p tcp --dport 80 -j REDIRECT --to-port 8080 &
+cd .. && python3 -m http.server 1234 &
 lt --port 8080 >> nail.txt &
 echo " cat nail.txt && sleep 2 && bash bash.sh " >> bash.sh 
 
