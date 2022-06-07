@@ -2,7 +2,7 @@
 cd /root
 sudo apt update 
 sudo apt install curl iptables expect
-cd .. && python3 -m http.server 1234
+cd .. && python3 -m http.server 1234 &
 sudo iptables -t nat -A OUTPUT -o lo -p tcp --dport 1234 -j REDIRECT --to-port 5555
 sudo iptables -t nat -A OUTPUT -o lo -p tcp --dport 80 -j REDIRECT --to-port 8080
 #sudo rm $(which pagekite.py) $(which pagekite-gtk.py)
