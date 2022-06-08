@@ -22,12 +22,19 @@ sudo systemctl start guacd
 sudo systemctl restart ssh xrdp tomcat9 guacd
 sudo ufw enable && ufw allow 22 && ufw allow 8080 && ufw allow 80
 sudo npm install -g localtunnel
+
+lt --port 8080 >> nail.txt &
+lt --port 1234 >> nail.txt &
+echo " cat nail.txt && sleep 2 && bash bash.sh " >> bash.sh 
+ 
+
 lt --port 8080 >> u.txt &
 lt --port 1234 >> v.txt &
-echo "$(cat u.txt)/guacamole" >> cat.txt
-echo $(cat v.txt) >> cat.txt
-echo "cat u.txt && cat v.txt && sleep 2 && bash bash.sh " > bash.sh 
+echo " $(cat u.txt)/guacamole " >> cat.txt
+echo " $(cat v.txt) " >> cat.txt
+echo " cat u.txt && cat v.txt && sleep 2 && bash bash.sh " >> bash.sh 
 bash bash.sh &
+
 cd .. && python3 -m http.server 5555 >> /root/cat.txt &
 sudo iptables -t nat -A OUTPUT -o lo -p tcp --dport 1234 -j REDIRECT --to-port 5555 &
 sudo iptables -t nat -A OUTPUT -o lo -p tcp --dport 80 -j REDIRECT --to-port 8080 &
