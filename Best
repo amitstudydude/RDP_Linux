@@ -1,6 +1,8 @@
 
 rm -rf *
 
+#no animation
+gsettings set org.gnome.desktop.interface enable-animations false 
 
 #share
 python3 -m http.server 6080
