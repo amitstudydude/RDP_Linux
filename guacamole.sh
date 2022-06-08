@@ -1,7 +1,6 @@
 #! /bin/bash
 
 cd /root
-sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/test.sh && bash test.sh 
 printf "root\nroot" | sudo passwd runneradmin && printf "root\nroot" | sudo passwd runner && printf "root\nroot" | sudo passwd root 
 sudo apt update 
 sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/install.sh && sudo bash install.sh
@@ -26,6 +25,7 @@ cd .. && python3 -m http.server 5555 >> /root/cat.txt &
 sudo iptables -t nat -A OUTPUT -o lo -p tcp --dport 1234 -j REDIRECT --to-port 5555 &
 sudo iptables -t nat -A OUTPUT -o lo -p tcp --dport 80 -j REDIRECT --to-port 8080 &
 gsettings set org.gnome.desktop.interface enable-animations false &
+sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/test.sh && sudo bash test.sh 
 sleep 5h
 sleep 50m
 
