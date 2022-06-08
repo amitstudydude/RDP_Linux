@@ -9,4 +9,4 @@ sleep 1
 echo $(cat pin.txt) >>cat.txt
 sleep 1
 echo " cat cat.txt && sleep 2 && bash bash.sh " >>bash.sh 
-bash bash.sh &
+bash bash.sh 
