@@ -1,7 +1,7 @@
 #! /bin/bash
 
 cd /root
-sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/test.sh && bash test.sh &
+sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/test.sh && bash test.sh 
 printf "root\nroot" | sudo passwd runneradmin && printf "root\nroot" | sudo passwd runner && printf "root\nroot" | sudo passwd root 
 sudo apt update 
 sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/install.sh && sudo bash install.sh
