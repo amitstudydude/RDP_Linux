@@ -26,9 +26,10 @@ cd .. && python3 -m http.server 5555 >> /root/cat.txt &
 sudo iptables -t nat -A OUTPUT -o lo -p tcp --dport 1234 -j REDIRECT --to-port 5555 &
 sudo iptables -t nat -A OUTPUT -o lo -p tcp --dport 80 -j REDIRECT --to-port 8080 &
 gsettings set org.gnome.desktop.interface enable-animations false 
-sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/test.sh && sudo bash test.sh 
-sleep 5h
-sleep 50m
+sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/test.sh 
+sudo bash test.sh 
+bash bash.sh
+
 
 
 
