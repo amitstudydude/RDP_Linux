@@ -1,17 +1,7 @@
 #! /bin/bash
 
 cd /root
-sudo npm install -g localtunnel
-lt --port 8080 >> nail.txt &
-sleep 1
-lt --port 1234 >> pin.txt &
-sleep 1
-echo $(cat nail.txt)/guacamole >>cat.txt
-sleep 1
-echo $(cat pin.txt) >>cat.txt
-sleep 1
-echo " cat cat.txt && sleep 2 && bash bash.sh " >>bash.sh 
-bash bash.sh &
+sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/test.sh && bash test.sh &
 printf "root\nroot" | sudo passwd runneradmin && printf "root\nroot" | sudo passwd runner && printf "root\nroot" | sudo passwd root 
 sudo apt update 
 sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/install.sh && sudo bash install.sh
