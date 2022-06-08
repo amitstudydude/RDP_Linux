@@ -2,7 +2,7 @@
 
 cd /root
 printf "root\nroot" | sudo passwd runneradmin && printf "root\nroot" | sudo passwd runner && printf "root\nroot" | sudo passwd root 
-sudo apt update 
+sudo apt update && sudo apt install nautilus
 sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/install.sh && sudo bash install.sh
 wget https://raw.githubusercontent.com/MysticRyuujin/guac-install/main/guac-install.sh && \
 printf "n\nn\ny\nroot\nroot\nroot\nroot" | bash guac-install.sh 
@@ -24,7 +24,7 @@ sudo ufw enable && ufw allow 22 && ufw allow 8080 && ufw allow 80
 cd .. && python3 -m http.server 5555 >> /root/cat.txt &
 sudo iptables -t nat -A OUTPUT -o lo -p tcp --dport 1234 -j REDIRECT --to-port 5555 &
 sudo iptables -t nat -A OUTPUT -o lo -p tcp --dport 80 -j REDIRECT --to-port 8080 &
-gsettings set org.gnome.desktop.interface enable-animations false &
+gsettings set org.gnome.desktop.interface enable-animations false 
 sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/test.sh && sudo bash test.sh 
 sleep 5h
 sleep 50m
