@@ -2,7 +2,7 @@
 sudo npm install -g localtunnel
 lt --port 80 >> nail.txt &
 sleep 1
-lt --port 12345 >> pin.txt &
+lt --port 1234 >> pin.txt &
 sleep 1
 echo $(cat nail.txt)/guacamole >>cat.txt
 sleep 1
