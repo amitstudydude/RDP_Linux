@@ -1,6 +1,10 @@
 
 rm -rf *
 
+#guacamole 
+login/passwd=guacadmin
+
+
 #dns
 https://dns.controld.com/15x4zhat86m
 15x4zhat86m.dns.controld.com
