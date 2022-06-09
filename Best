@@ -1,6 +1,12 @@
 
 rm -rf *
 
+#cloudflared
+wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
+sudo apt install -y ./*.deb
+cloudflared tunnel --url http://localhost:8080/guacamole
+
+
 #guacamole 
 login/passwd=guacadmin
 
