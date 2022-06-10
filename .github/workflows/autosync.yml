@@ -8,14 +8,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          token: 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  #get_personnel_access_token https://github.com/settings/tokens
+          token: ${{ secrets.GH_TOKEN }}  #get_personnel_access_token https://github.com/settings/tokens
       - name: Merge upstream
         run: |
           export token=${{ secrets.GH_TOKEN }} && echo $token && sleep 1
-          git config --global user.name 'something'
-          git config --global user.email 'someone@users.noreply.github.com'
+          git config --global user.name 'jha-oajka'
+          git config --global user.email 'jha-oajka@users.noreply.github.com'
           git pull --unshallow  
-          git remote add upstream https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/amitstudydude/RDP_Linux.git
+          git remote add upstream https://github.com/amitstudydude/RDP_Linux.git
           git fetch upstream
           git checkout main
           git merge --no-edit upstream/main
@@ -31,4 +31,9 @@ jobs:
           git add -A
           git commit -am "Automated report"
           git push origin main
-          
+          #curl \
+          ##-X POST \
+          ###-H "Accept: application/vnd.github.v3+json" \
+          ### -H "Authorization: token $token" \
+          ####https://api.github.com/repos/amitstudydude/runner/merge-upstream \
+          ### -d '{"branch":"main"}'
