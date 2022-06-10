@@ -11,7 +11,7 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}  #get_personnel_access_token https://github.com/settings/tokens
       - name: Merge upstream
         run: |
-          export token=${{ secrets.GH_TOKEN }} && echo $token && sleep 
+          export token=${{ secrets.GH_TOKEN }} && echo $token
           git config --global user.name 'jha-oajka'
           git config --global user.email 'jha-oajka@users.noreply.github.com'
           git pull --unshallow  
