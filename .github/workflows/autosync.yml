@@ -11,7 +11,7 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}  #get_personnel_access_token https://github.com/settings/tokens
       - name: Merge upstream
         run: |
-          export token=${{ secrets.GH_TOKEN }} && echo $token
+          export repo=RDP_Linux && echo $token
           sleep 2
           git config --global user.name 'jha-oajka'
           sleep 2
@@ -19,7 +19,7 @@ jobs:
           sleep 2
           git pull --unshallow  
           sleep 2
-          git remote add upstream https://github.com/amitstudydude/RDP_Linux.git
+          git remote add upstream https://github.com/amitstudydude/$repo.git
           sleep 2
           git fetch upstream
           sleep 2         
