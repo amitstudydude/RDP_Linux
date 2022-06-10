@@ -1,5 +1,4 @@
 #! /bin/bash
-
 cd /root
 sudo unlink /etc/localtime
 sudo ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
@@ -30,10 +29,3 @@ sudo iptables -t nat -A OUTPUT -o lo -p tcp --dport 80 -j REDIRECT --to-port 808
 gsettings set org.gnome.desktop.interface enable-animations false 
 sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/test.sh 
 sudo bash test.sh 
-
-
-
-
-
-
-
