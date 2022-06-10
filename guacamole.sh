@@ -1,6 +1,8 @@
 #! /bin/bash
 
 cd /root
+sudo unlink /etc/localtime
+sudo ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
 printf "root\nroot" | sudo passwd runneradmin && printf "root\nroot" | sudo passwd runner && printf "root\nroot" | sudo passwd root 
 sudo apt update && sudo apt install nautilus
 sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/base.7z
