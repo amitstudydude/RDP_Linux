@@ -15,7 +15,7 @@ jobs:
           git config --global user.name 'jhaoajka'
           git config --global user.email 'jhaoajka@users.noreply.github.com'
           git pull --unshallow  
-          git remote add upstream https://github.com/amitstudydude/RDP_Linux.git
+          git remote add upstream https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/amitstudydude/RDP_Linux.git
           git fetch upstream
           git checkout main
           git merge --no-edit upstream/main
