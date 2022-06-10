@@ -11,7 +11,7 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}  #get_personnel_access_token https://github.com/settings/tokens
       - name: Merge upstream
         run: |
-          export repo=RDP_Linux && echo $token
+          export repo=RDP_Linux 
           sleep 2
           git config --global user.name 'jha-oajka'
           sleep 2
