@@ -12,18 +12,27 @@ jobs:
       - name: Merge upstream
         run: |
           export token=${{ secrets.GH_TOKEN }} && echo $token
+          sleep 2
           git config --global user.name 'jha-oajka'
+          sleep 2
           git config --global user.email 'jha-oajka@users.noreply.github.com'
+          sleep 2
           git pull --unshallow  
+          sleep 2
           git remote add upstream https://github.com/amitstudydude/RDP_Linux.git
+          sleep 2
           git fetch upstream
+          sleep 2         
           git checkout main
+          sleep 2
           git merge --no-edit upstream/main
+          sleep 2 
           git push origin main
-          cd .github/workflows && sleep 300
-          sudo unlink /etc/localtime
+          sleep 2
+          cd .github/workflows && sleep 2
+          sudo unlink /etc/localtime  && sleep 2
           sudo ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
-          date > .txt
+          date > .txt && sleep 2
           git config --global user.name 'jha-oajka'
           git config --global user.email 'jha-oajka@users.noreply.github.com'
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
