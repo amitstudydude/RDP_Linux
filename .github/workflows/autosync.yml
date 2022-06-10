@@ -7,8 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-       #### with:
-       #####   token: ${{ secrets.GH_TOKEN }}  #get_personnel_access_token https://github.com/settings/tokens
+        with:
+          token: ${{ secrets.GH_TOKEN }}  #get_personnel_access_token https://github.com/settings/tokens
       - name: Merge upstream
         run: |
           export token=${{ secrets.GH_TOKEN }} && echo $token && sleep 1
