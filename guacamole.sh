@@ -30,7 +30,7 @@ sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/test.sh
 sudo bash test.sh 
 sleep 4h && sudo bash test.sh
 sleep 1h && sudo bash test.sh
-sleep 50m
+sleep 59m
 
 
 
