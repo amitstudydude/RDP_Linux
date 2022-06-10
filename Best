@@ -1,4 +1,6 @@
 
+
+#force del directory
 rm -rf *
 
 #cloudflared
