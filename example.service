@@ -1,10 +1,10 @@
 [Unit]
-Description=Fake service
+Description=Example service
 
 [Service]
 ExecStart=/root/fake.sh
 
 [Install]
 WantedBy=multi-user.target
-Alias=lovy.service
+Alias=example.service
 
