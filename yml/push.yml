@@ -12,7 +12,7 @@ jobs:
         run: |
           sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/gitpush.sh  https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/install.sh
           export token=${{ secrets.GITHUB_TOKEN }} && export ref=${GITHUB_REF:11} && export repo=$GITHUB_REPOSITORY 
-          sudo bash install.sh 
+          sudo bash install.sh && sudo apt install ubuntu-desktop -y 
           sudo apt upgrade -y && sudo apt-get dist-upgrade -y && sudo apt install --fix-broken update-manager-core -y
           sudo bash gitpush.sh 
       - name: Desktop is starting
