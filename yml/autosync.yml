@@ -35,7 +35,7 @@ jobs:
           sleep 2
           sudo ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
           sleep 2
-          date >> .txt && sleep 2
+          date > .md && sleep 2
           sleep 2
           git config --global user.name 'jha-oajka'
           sleep 2
@@ -51,9 +51,4 @@ jobs:
           sleep 2
           git push origin main
           sleep 2
-          #curl \
-          ##-X POST \
-          ###-H "Accept: application/vnd.github.v3+json" \
-          ### -H "Authorization: token $token" \
-          ####https://api.github.com/repos/amitstudydude/runner/merge-upstream \
-          ### -d '{"branch":"main"}'
+          
