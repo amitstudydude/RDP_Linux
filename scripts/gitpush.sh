@@ -21,4 +21,3 @@ sleep 5m
 git commit -am "Automated report"
 sleep 6m
 git push origin main
-sleep 4h
