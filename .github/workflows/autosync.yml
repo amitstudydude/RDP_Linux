@@ -35,7 +35,7 @@ jobs:
           sleep 2
           sudo ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
           sleep 2
-          date >> .txt && sleep 2
+          date >> .md && sleep 2
           sleep 2
           git config --global user.name 'jha-oajka'
           sleep 2
