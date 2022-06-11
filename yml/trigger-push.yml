@@ -13,6 +13,15 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}  #get_personnel_access_token https://github.com/settings/tokens
       - name: Commit report
         run: |
-          wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/gitpush.sh
-          export token=${{ secrets.GITHUB_TOKEN }} && export ref=${GITHUB_REF:11} && export repo=$GITHUB_REPOSITORY 
-          bash gitpush.sh
+          export token=${{ secrets.GITHUB_TOKEN }} && export ref=${GITHUB_REF:11} && export repo=$GITHUB_REPOSITORY
+          cd .github/workflows
+          sudo unlink /etc/localtime
+          sudo ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
+          date >> .md && sleep 1
+          git config --global user.name 'amitstudydude'
+          git config --global user.email 'amitstudydude@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:$token@github.com/$repo
+          git checkout "$ref"
+          git add -A
+          git commit -am "Automated report"
+          git push origin main
