@@ -15,5 +15,3 @@ wget  https://raw.githubusercontent.com/amitstudydude/RDP_Linux/6b6cc0106c46175a
 cp config ~/.gdfuse/teamdrive
 google-drive-ocamlfuse -label teamdrive ./teamdrive
 cd ./gdrive
-pulseaudio
-
