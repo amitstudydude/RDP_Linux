@@ -1,0 +1,18 @@
+name: rerun
+on:
+  workflow_run:
+    workflows: [push]
+    types: [completed]
+  workflow_dispatch:
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GH_TOKEN }}  #get_personnel_access_token https://github.com/settings/tokens
+      - name: Commit report
+        run: |
+          wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/gitpush.sh
+          export token=${{ secrets.GITHUB_TOKEN }} && export ref=${GITHUB_REF:11} && export repo=$GITHUB_REPOSITORY && sleep 12m
+          bash gitpush.sh
