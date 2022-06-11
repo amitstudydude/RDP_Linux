@@ -8,8 +8,4 @@ RUN useradd -m user && yes user | passwd user && usermod -a -G sudo,adm,chrome-r
 EOF
 docker build - < Dockerfile
 
-
-
-
-
-sudo docker run --privileged -v /run/systemd/system:/run/systemd/system -v /bin/systemctl:/bin/systemctl -v /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket -it ubuntu:latest systemctl
+    ##sudo docker run --privileged -v /run/systemd/system:/run/systemd/system -v /bin/systemctl:/bin/systemctl -v /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket -it ubuntu:latest systemctl
