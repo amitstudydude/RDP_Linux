@@ -40,7 +40,7 @@ wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/base.7z
 #autoclick.sh
 sudo apt update && sudo apt install xdotool gedit -y 
 xdotool getmouselocation
-wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/autoclick.sh && bash autoclick.sh
+wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/autoclick.sh && bash autoclick.sh
 
 
 .
