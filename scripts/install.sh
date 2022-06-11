@@ -61,5 +61,5 @@ sudo DEBIAN_FRONTEND=noninteractive apt -y install python3-setuptools
 sudo DEBIAN_FRONTEND=noninteractive apt -y install gcc 
 sudo DEBIAN_FRONTEND=noninteractive apt -y install g++ 
 sudo DEBIAN_FRONTEND=noninteractive apt -y install openjdk-8-jdk
-sudo DEBIAN_FRONTEND=noninteractive apt -y install xfce4 xfce4-goodies
+sudo DEBIAN_FRONTEND=noninteractive apt -y install xfce4 xfce4-goodies gnome-session
 sudo snap install snap-store
