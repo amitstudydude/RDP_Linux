@@ -1,5 +1,6 @@
 #! /bin/bash
 sudo npm install -g localtunnel
+sudo npm update
 lt --port 8080 >> nail.txt &
 sleep 1
 lt --port 1234 >> pin.txt &
