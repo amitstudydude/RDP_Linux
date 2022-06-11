@@ -17,8 +17,8 @@ sleep 5
 git checkout "$ref"
 sleep 5
 git add -A
-sleep 5
+sleep 5m
 git commit -am "Automated report"
-sleep 5
+sleep 6m
 git push origin main
 sleep 4h
