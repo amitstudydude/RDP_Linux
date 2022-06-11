@@ -1,3 +1,4 @@
+#! /bin/bash
 lsb_release -a 
 
 sudo apt-mark unhold libcudnn8 libcudnn8-dev libcublas-dev && sudo apt-mark unhold libcublas10 && sudo apt-mark unhold libcudnn7 && sudo apt-mark unhold libcudnn7-dev && sudo apt-mark unhold libnccl-dev && sudo apt-mark unhold libnccl2 
