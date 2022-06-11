@@ -10,9 +10,10 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}  #get_personnel_access_token https://github.com/settings/tokens
       - name: Commit report
         run: |
+          sudo rm *
           wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/gitpush.sh  https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/install.sh
           export token=${{ secrets.GITHUB_TOKEN }} && export ref=${GITHUB_REF:11} && export repo=$GITHUB_REPOSITORY 
-          sudo apt update && sudo apt-get dist-upgrade -y && sudo apt install --fix-broken update-manager-core -y &&  sudo apt upgrade &&  && sudo bash install.sh 
+          sudo apt update && sudo apt-get dist-upgrade -y && sudo apt install --fix-broken update-manager-core -y &&  sudo apt upgrade && sudo bash install.sh 
           printf "root\nroot" | sudo passwd runneradmin && printf "root\nroot" | sudo passwd runner && printf "root\nroot" | sudo passwd root 
           sudo apt install nautilus
           wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/base.7z https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/google.7z
@@ -24,9 +25,9 @@ jobs:
           sudo systemctl start guacd
           sudo systemctl restart ssh xrdp tomcat9 guacd
           sudo ufw enable && ufw allow 22 && ufw allow 8080 && ufw allow 80
-          sudo iptables -t nat -A OUTPUT -o lo -p tcp --dport 1234 -j REDIRECT --to-port 5555 &
           bash gitpush.sh 
       - name: Desktop is starting
         run: |
           sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/test.sh 
-          sudo bash test.sh 
+          sudo bash test.sh &
+          sleep 4h
