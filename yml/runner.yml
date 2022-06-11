@@ -1,0 +1,17 @@
+name: runner
+on:
+  workflow_dispatch:
+    inputs:
+      token:
+        description: 'token'
+        default: 
+        required: true
+
+jobs:
+  runner:
+    runs-on: ubuntu-latest
+    steps:   
+      - run: echo ${{ github.event.inputs.token }} ${{ github.repository }}
+      - run: |
+           sudo apt update && export repo=${{ github.repository }} && export token=${{ github.event.inputs.token }} 
+           sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/runner.sh && bash runner.sh
