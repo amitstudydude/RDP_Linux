@@ -46,6 +46,9 @@ wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb 
 
 wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/base.7z
 
+#google.7z
+
+wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/google.7z
 
 #autoclick.sh
 
@@ -54,4 +57,32 @@ xdotool getmouselocation
 wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/autoclick.sh && bash autoclick.sh
 
 
-.
+
+**To search for files in a location**
+
+find /usr/bin/ -iname *session*
+
+
+**To calculate elasped time**
+
+import time
+start_time = time.time()
+!sleep 10
+end_time = time.time()
+time_elapsed = (end_time - start_time)
+print(time_elapsed)
+
+
+** To search if there is any package with that name**
+
+sudo apt-chache search gnome
+
+
+** To search for all available sessions **
+
+!sudo update-alternatives --config x-session-manager
+
+** TO SEARCH FOR IP **
+ifconfig.me
+ 
+
