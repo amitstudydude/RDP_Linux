@@ -1,3 +1,4 @@
+rm -rf gitpush.sh
 cd .github/workflows
 sudo unlink /etc/localtime
 sudo ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
