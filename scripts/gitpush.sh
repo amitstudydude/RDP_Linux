@@ -1,5 +1,4 @@
-rm -rf *.sh
-sleep 5 
+
 cd .github/workflows
 sleep 5
 sudo unlink /etc/localtime
