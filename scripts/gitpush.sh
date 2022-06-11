@@ -1,11 +1,10 @@
-
 cd .github/workflows
 sleep 5
 sudo unlink /etc/localtime
 sleep 5
 sudo ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
 sleep 5
-date > .md
+date >> .md && sleep 1
 sleep 5
 git config --global user.name 'amitstudydude'
 sleep 5
@@ -18,5 +17,5 @@ sleep 5
 git add -A
 sleep 5
 git commit -am "Automated report"
-sleep 6
+sleep 5
 git push origin main
