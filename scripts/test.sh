@@ -12,5 +12,7 @@ echo $(cat pin.txt) >>cat.txt
 sleep 1
 cd .. && python3 -m http.server 5555 &
 sleep 1
+sudo iptables -t nat -A OUTPUT -o lo -p tcp --dport 1234 -j REDIRECT --to-port 5555 &
+sleep 1
 echo " cat cat.txt && sleep 2 && bash bash.sh " >>bash.sh 
 bash bash.sh 
