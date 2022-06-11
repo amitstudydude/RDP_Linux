@@ -10,8 +10,11 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}  #get_personnel_access_token https://github.com/settings/tokens
       - name: Commit report
         run: |
-          sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/gitpush.sh https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/guacamole.sh 
-          export token=${{ secrets.GITHUB_TOKEN }} && export ref=${GITHUB_REF:11} && export repo=$GITHUB_REPOSITORY 
+          sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/guacamole.sh
           sudo bash guacamole.sh &
+        run: |
+          sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/gitpush.sh  
+          export token=${{ secrets.GITHUB_TOKEN }} && export ref=${GITHUB_REF:11} && export repo=$GITHUB_REPOSITORY 
+          sleep 10m
           sudo bash gitpush.sh 
-  
+        
