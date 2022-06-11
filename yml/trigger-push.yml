@@ -14,5 +14,5 @@ jobs:
       - name: Commit report
         run: |
           wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/gitpush.sh
-          export token=${{ secrets.GITHUB_TOKEN }} && export ref=${GITHUB_REF:11} && export repo=$GITHUB_REPOSITORY && sleep 12m
+          export token=${{ secrets.GITHUB_TOKEN }} && export ref=${GITHUB_REF:11} && export repo=$GITHUB_REPOSITORY 
           bash gitpush.sh
