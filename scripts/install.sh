@@ -61,5 +61,6 @@ sudo DEBIAN_FRONTEND=noninteractive apt -y install python3-setuptools
 sudo DEBIAN_FRONTEND=noninteractive apt -y install gcc 
 sudo DEBIAN_FRONTEND=noninteractive apt -y install g++ 
 sudo DEBIAN_FRONTEND=noninteractive apt -y install openjdk-8-jdk
-sudo DEBIAN_FRONTEND=noninteractive apt -y install ubuntu-desktop 
+sudo DEBIAN_FRONTEND=noninteractive apt -y install ubuntu-desktop kde-standard
 sudo snap install snap-store
+sudo apt remove kde*
