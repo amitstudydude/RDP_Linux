@@ -63,5 +63,5 @@ sudo DEBIAN_FRONTEND=noninteractive apt -y install g++
 sudo DEBIAN_FRONTEND=noninteractive apt -y install openjdk-8-jdk
 sudo DEBIAN_FRONTEND=noninteractive apt -y install kwin kde-plasma-desktop sddm
 sudo snap install snap-store
-sudo dpkg reconfigure sddm
+sudo dpkg-reconfigure sddm
 sudo service sddm start
