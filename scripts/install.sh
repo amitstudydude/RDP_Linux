@@ -64,4 +64,4 @@ sudo DEBIAN_FRONTEND=noninteractive apt -y install openjdk-8-jdk xfce4 xfce4-goo
 #sudo DEBIAN_FRONTEND=noninteractive apt -y install kde-plasma-desktop konsole ark dolphin sddm
 #sudo snap install snap-store
 sudo dpkg-reconfigure lightdm
-sudo service lightdmm start
+sudo service lightdm start
