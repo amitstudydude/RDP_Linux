@@ -60,8 +60,8 @@ sudo DEBIAN_FRONTEND=noninteractive apt -y install python3-pip
 sudo DEBIAN_FRONTEND=noninteractive apt -y install python3-setuptools 
 sudo DEBIAN_FRONTEND=noninteractive apt -y install gcc 
 sudo DEBIAN_FRONTEND=noninteractive apt -y install g++ 
-sudo DEBIAN_FRONTEND=noninteractive apt -y install openjdk-8-jdk xfce4 xfce4-goodies
+sudo DEBIAN_FRONTEND=noninteractive apt -y install openjdk-8-jdk gnome-session
 #sudo DEBIAN_FRONTEND=noninteractive apt -y install kde-plasma-desktop konsole ark dolphin sddm
 #sudo snap install snap-store
-sudo dpkg-reconfigure lightdm
-sudo service lightdm start
+#sudo dpkg-reconfigure lightdm
+#sudo service lightdm start
