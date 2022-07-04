@@ -58,8 +58,8 @@ expect -exact "\r
     - https://pagekite.net/humans.txt\r
 \r
 \[0m\r => Use the PageKite.net service? \[Y/n\] "
-send -- "y\r"
-expect -exact "y\r
+send -- "Y\r"
+expect -exact "Y\r
 \[H\[J\[1m>>> Creating kite: jhaji.pagekite.me                            \[CTRL+C = Cancel\]\r
 \r
 \[0m\r    We need to be able to contact you\r
