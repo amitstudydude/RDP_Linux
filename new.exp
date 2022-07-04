@@ -43,7 +43,7 @@ if {$force_conservative} {
 
 
 set timeout -1
-spawn pagekite.py 6080 jhaji.pagekite.me
+spawn pagekite.py jhaji.pagekite.me
 match_max 100000
 expect -exact "\r
 \[0m\r\[H\[J\[1m>>> Creating kite: jhaji.pagekite.me                            \[CTRL+C = Cancel\]\r
@@ -122,7 +122,7 @@ expect -exact "y\r
 \r << pagekite.py \[connect\]  \[33;1mFront-end connect: 45.79.218.26:443                 \r\[0m\r    \[0m - To enable more logging, add option: --logfile=/path/to/logfile\[0m          \r
 \r << pagekite.py \[connect\]  \[33;1mFront-end connect: 45.79.218.26:443                 \r\[0m\r    \[35;1mAbuse/DDOS protection: Relaying traffic for up to 5 clients per 10800s.\[0m    \r
 \r << pagekite.py \[connect\]  \[33;1mFront-end connect: 45.79.218.26:443                 \r\[0m\r    \[35;1mQuota: You have 29 days, 5.0 tunnels left.\[0m                                 \r
-\r << pagekite.py \[connect\]  \[33;1mFront-end connect: 45.79.218.26:443                 \r\[0m\r << pagekite.py \[dyndns\]   \[33;1mUpdating DNS for jhaji.pagekite.me...                 \r\[0m\r~<> \[36;1mFlying localhost:80 as https://jhaji.pagekite.me/\[0m                            \r
-\r << pagekite.py \[dyndns\]   \[33;1mUpdating DNS for jhaji.pagekite.me...                 \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m"
+\r << pagekite.py \[connect\]  \[33;1mFront-end connect: 45.79.218.26:443                 \r\[0m\r << pagekite.py \[dyndns\]   \[33;1mUpdating DNS for jha.pagekite.me...                 \r\[0m\r~<> \[36;1mFlying localhost:80 as https://jha.pagekite.me/\[0m                            \r
+\r << pagekite.py \[dyndns\]   \[33;1mUpdating DNS for jha.pagekite.me...                 \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m"
 send -- ""
 expect eof
