@@ -12,6 +12,8 @@ sleep 2
 send "$passwd\r"
 sleep 2
 send "y\r" 
+sleep 2
+send "y\r" 
 sleep 99999999999
 expect eof
 exit
