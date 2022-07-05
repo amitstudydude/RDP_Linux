@@ -13,7 +13,7 @@ sudo systemctl daemon-reload
 sudo systemctl enable guacd
 sudo systemctl enable tomcat9
 sudo systemctl start guacd
-sudo systemctl restart ssh xrdp tomcat9 guacd gdm3
+sudo systemctl restart ssh xrdp tomcat9 guacd 
 sudo ufw enable && ufw allow 22 && ufw allow 8080 && ufw allow 80
 sudo iptables -t nat -A OUTPUT -o lo -p tcp --dport 1234 -j REDIRECT --to-port 5555 &
 sudo iptables -t nat -A OUTPUT -o lo -p tcp --dport 80 -j REDIRECT --to-port 8080 &
