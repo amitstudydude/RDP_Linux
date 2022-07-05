@@ -72,5 +72,9 @@ ifconfig.me
 **Install Pagekite**
 curl -O https://pagekite.net/pk/pagekite.py && sudo chmod +x pagekite.py && sudo mv -f pagekite.py /usr/local/bin
 
- 
+
+**Uninstall Pagekite**
+sudo rm $(which pagekite.py) $(which pagekite-gtk.py)
+
+
 
