@@ -64,5 +64,5 @@ expect -exact "\r
 \[0m\r\r
 \[0m\r => Save settings to /root/.pagekite.rc? \[Y/n\] "
 send -- "y\r" 
-expect "Hello, who are you?\r"
+spawn pagekite.py 8080 jhaji.pagekite.me
 
