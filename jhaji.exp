@@ -77,14 +77,3 @@ expect -exact "y\r
 \r << pagekite.py \[connect\]  \[33;1mFront-end connect: 50.116.42.183:443                \r\[0m\r    \[35;1mQuota: You have 30 days, 5.0 tunnels left.\[0m                                 \r
 \r << pagekite.py \[connect\]  \[33;1mFront-end connect: 50.116.42.183:443                \r\[0m\r << pagekite.py \[dyndns\]   \[33;1mUpdating DNS for jhaji.pagekite.me...               \r\[0m\r~<> \[36;1mFlying localhost:6080 as https://jhaji.pagekite.me/\[0m                        \r
 \r << pagekite.py \[dyndns\]   \[33;1mUpdating DNS for jhaji.pagekite.me...               \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m"
-send -- "\r"
-expect -exact "\r
-\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m"
-send -- "\r"
-expect -exact "\r
-"
-send -- "\r"
-expect -exact "\r
-\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m"
-send -- ""
-expect eof
