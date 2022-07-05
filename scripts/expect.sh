@@ -4,7 +4,9 @@ echo 'pagekite.py $port $domain' >> page.sh
 sudo chmod +x page.sh
 sudo /usr/bin/expect <<EOF
 spawn ./page.sh
+sleep 2
 send "y\r"
+sleep 2
 send "y\r"
 sleep 2
 send "$email\r"
