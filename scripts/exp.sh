@@ -6,6 +6,7 @@ sleep 2
 send "$email\r"
 sleep 2
 send "$passwd\r"
+sleep 2
 send "y\r" 
 expect eof
 exit
