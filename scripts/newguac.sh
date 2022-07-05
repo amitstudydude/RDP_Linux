@@ -16,6 +16,7 @@ sudo systemctl start guacd
 sudo systemctl restart ssh xrdp tomcat9 guacd 
 sudo ufw enable && ufw allow 22 && ufw allow 8080 && ufw allow 80
 gsettings set org.gnome.desktop.interface enable-animations false 
+sudo apt install expect
 wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/jhaji.exp
 curl -O https://pagekite.net/pk/pagekite.py && sudo chmod +x pagekite.py && sudo mv -f pagekite.py /usr/local/bin
 expect jhaji.exp 
