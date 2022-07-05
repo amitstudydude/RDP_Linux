@@ -1,6 +1,6 @@
 #!/bin/expect -f
 
-spawn pagekite.py 6080 jhaji.pagekite.me
+spawn pagekite.py 8080 jhaji.pagekite.me
 match_max 100000
 expect -exact "\r
 \[0m\r\[H\[J\[1m>>> Creating kite: jhaji.pagekite.me                          \[CTRL+C = Cancel\]\r
