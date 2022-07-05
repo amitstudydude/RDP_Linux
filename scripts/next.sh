@@ -1,4 +1,4 @@
-
+sudo /usr/bin/expect <<EOF
 spawn ./page.sh
 send "y\r"
 send "$email"
