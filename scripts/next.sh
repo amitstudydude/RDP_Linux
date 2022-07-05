@@ -1,6 +1,5 @@
 
-spawn pagekite.py $port $parent
-match_max 100000
+spawn ./page.sh
 send "y\r"
 send "$email"
 send "\r"
