@@ -65,18 +65,5 @@ expect -exact "\r
 \[0m\r => Save settings to /root/.pagekite.rc? \[Y/n\] "
 send -- "y\r"
 expect -exact "y\r
-\r
-\[0m\r    Settings saved to: /root/.pagekite.rc\r
-\r
-\r << pagekite.py \[startup\]  \[0mStarting up...                                      \r\[0m\r>>> \[32;1mHello! This is pagekite.py v1.5.2.201011.\[0m                   \[CTRL+C = Stop\]\r
-\r << pagekite.py \[startup\]  \[0mStarting up...                                      \r\[0m\r << pagekite.py \[startup\]  \[0mCollecting entropy for a secure secret...           \r\[0m\r << pagekite.py \[startup\]  \[0mStarting up...                                      \r\[0m\r << pagekite.py \[connect\]  \[33;1mFront-end connect: 50.116.42.183:443                \r\[0m\r    \[0mConnecting to front-end relay 50.116.42.183:443 ...\[0m                        \r
-\r << pagekite.py \[connect\]  \[33;1mFront-end connect: 50.116.42.183:443                \r\[0m\r    \[0m - Relay supports 10 protocols on 23 public ports.\[0m                         \r
-\r << pagekite.py \[connect\]  \[33;1mFront-end connect: 50.116.42.183:443                \r\[0m\r    \[0m - Raw TCP/IP (HTTP proxied) kites are available.\[0m                          \r
-\r << pagekite.py \[connect\]  \[33;1mFront-end connect: 50.116.42.183:443                \r\[0m\r    \[0m - To enable more logging, add option: --logfile=/path/to/logfile\[0m          \r
-\r << pagekite.py \[connect\]  \[33;1mFront-end connect: 50.116.42.183:443                \r\[0m\r    \[35;1mAbuse/DDOS protection: Relaying traffic for up to 5 clients per 10800s.\[0m    \r
-\r << pagekite.py \[connect\]  \[33;1mFront-end connect: 50.116.42.183:443                \r\[0m\r    \[35;1mQuota: You have 30 days, 5.0 tunnels left.\[0m                                 \r
-\r << pagekite.py \[connect\]  \[33;1mFront-end connect: 50.116.42.183:443                \r\[0m\r << pagekite.py \[dyndns\]   \[33;1mUpdating DNS for jhaji.pagekite.me...               \r\[0m\r~<> \[36;1mFlying localhost:6080 as https://jhaji.pagekite.me/\[0m                        \r
-\r << pagekite.py \[dyndns\]   \[33;1mUpdating DNS for jhaji.pagekite.me...               \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m\r << pagekite.py \[flying\]   \[32;1mKites are flying and all is well.                   \r\[0m"
-send -- "y\r"
-expect -exact "y\r
+send -- ""
 expect eof
