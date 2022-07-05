@@ -64,7 +64,7 @@ expect -exact "\r
 \[0m\r\r
 \[0m\r => Save settings to /root/.pagekite.rc? \[Y/n\] "
 send -- "y\r"
-expect -exact "y\r
+
 \r
 \[0m\r    Settings saved to: /root/.pagekite.rc\r
 \r
