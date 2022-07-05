@@ -1,6 +1,6 @@
 
 sudo /usr/bin/expect <<EOF
-spawn "pagekite.py $port $parent"
+spawn "/usr/local/bin/pagekite.py $port $parent"
 send "y\r"
 send "$email"
 send "\r"
