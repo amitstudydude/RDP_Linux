@@ -1,5 +1,6 @@
 
-sudo /usr/bin/expect <<EOF
+sudo /usr/bin/expect -f <<EOF
+match_max 100000
 spawn "/usr/local/bin/pagekite.py $port $parent"
 send "y\r"
 send "$email"
