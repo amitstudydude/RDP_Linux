@@ -2,11 +2,9 @@ sudo /usr/bin/expect <<EOF
 spawn ./page.sh
 send "y\r"
 send "y\r"
+sleep 2
 send "$email\r"
-send "y\r"
-send "y\r"
-send "$passwd\r"
-send "$passwd\r"
+sleep 2
 send "$passwd\r"
 send "y\r" 
 expect eof
