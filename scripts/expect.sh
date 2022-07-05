@@ -1,5 +1,5 @@
 sudo apt install expect
-curl -O https://pagekite.net/pk/pagekite.py && sudo chmod +x pagekite.py && sudo cp -f pagekite.py /usr/local/bin
+curl -O https://pagekite.net/pk/pagekite.py && sudo chmod +x pagekite.py && sudo mv -f pagekite.py /usr/local/bin
 echo 'pagekite.py $port $domain' >> page.sh
 sudo chmod +x page.sh
 sudo /usr/bin/expect <<EOF
