@@ -1,5 +1,6 @@
+prog=/usr/local/bin/pagekite.py $port $parent
 sudo /usr/bin/expect <<EOF
-spawn pagekite.py $port $parent
+spawn "$prog"
 send "y\r"
 send "$email"
 send "\r"
