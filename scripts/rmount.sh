@@ -4,6 +4,6 @@ rclone lsd Teamdrive:
 mkdir Cloud && cd Cloud
 mkdir -p Mega Teamdrive Drive
 rclone mount Teamdrive: Teamdrive &
-sleep 3 && rclone mount Mega: Mega &
+sleep 3 && rclone mount  --vfs-cache-mode full Mega: Mega &
 sleep 3 && rclone mount Drive: Drive &
 sleep 3 && cd
