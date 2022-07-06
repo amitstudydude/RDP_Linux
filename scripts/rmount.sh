@@ -3,7 +3,7 @@ curl https://rclone.org/install.sh | sudo bash > /dev/null 2>&1
 rclone lsd Teamdrive:
 mkdir Cloud && cd Cloud
 mkdir -p Mega Teamdrive Drive
-rclone mount   Teamdrive: Teamdrive -deamon --vfs-cache-mode full
-sleep 3 && rclone mount full Mega: Mega -deamon --vfs-cache-mode full
-sleep 3 && rclone mount full  Drive: Drive -deamon --vfs-cache-mode full
+rclone mount   Teamdrive: Teamdrive -daemon --vfs-cache-mode full
+sleep 3 && rclone mount full Mega: Mega -daemon --vfs-cache-mode full
+sleep 3 && rclone mount full  Drive: Drive -daemon --vfs-cache-mode full
 sleep 3 && cd Mega && ls
