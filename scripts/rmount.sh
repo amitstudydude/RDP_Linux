@@ -2,6 +2,7 @@ su - root -c "wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/mai
 curl https://rclone.org/install.sh | sudo bash > /dev/null 2>&1
 rclone lsd Teamdrive:
 mkdir Clone && cd Clone
+mkdir Mega Teamdrive Drive
 rclone mount Mega: /content/Cloud/Mega --user-agent 'Mozilla' --vfs-cache-mode full --cache-dir '/content/Cloud/cache' --allow-other --daemon 
 rclone mount Teamdrive: /content/Cloud/Teamdrive --user-agent 'Mozilla' --vfs-cache-mode full --cache-dir '/content/Cloud/cache' --allow-other --daemon 
 rclone mount Drive: /content/Cloud/Drive --user-agent 'Mozilla' --vfs-cache-mode full --cache-dir '/content/Cloud/cache' --allow-other --daemon 
