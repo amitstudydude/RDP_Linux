@@ -6,4 +6,4 @@ mkdir -p Mega Teamdrive Drive
 rclone mount -deamon --vfs-cache-mode full  Teamdrive: Teamdrive &
 sleep 3 && rclone mount -deamon --vfs-cache-mode full Mega: Mega &
 sleep 3 && rclone mount -deamon --vfs-cache-mode full  Drive: Drive &
-sleep 3 && cd Mega && cp * /content
+sleep 3 && cd Mega && ls
