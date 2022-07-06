@@ -19,6 +19,4 @@ gsettings set org.gnome.desktop.interface enable-animations false
 echo 'export domain="5555-jhaji.pagekite.me" && export port="8080" && export passwd="24ebe38z" && export email="gpw97v95c@mozmail.com" &&  export parent="jhaji.pagekite.me"' >> yo && cp yo page.sh && cp yo finale.sh && rm yo
 wget -O lull https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/expect.sh && cat lull >> finale.sh && rm lull
 sudo bash finale.sh
-echo " pagekite.py 8080 jhaji.pagekite.me " > pagekite.sh
-echo " sleep 30 && bash pagekite.sh " >> pagekite.sh
-bash pagekite.sh
+pagekite.py 8080 jhaji.pagekite.me 
