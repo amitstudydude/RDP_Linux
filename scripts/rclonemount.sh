@@ -1,4 +1,4 @@
-su - root -c "mkdir -p /root/.config/rclone/ && cd /root/.config/rclone && rm rclone.conf && wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/rclone.conf  "
+su - root -c "mkdir -p /root/.config/rclone/ && wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/rclone.conf && cp rclone.conf /root/.config/rclone "
 curl https://rclone.org/install.sh | sudo bash > /dev/null 2>&1
 rclone lsd Teamdrive:
 mkdir Cloud && cd Cloud
