@@ -5,4 +5,4 @@ mkdir Cloud && cd Cloud
 mkdir -p Mega Teamdrive Drive
 rclone mount Teamdrive: Teamdrive > /dev/null 2>&1 &
 rclone mount Mega: Mega > /dev/null 2>&1 &
-rclone mount Drive: Drive > /dev/null 2>&1 &
+rclone mount Drive: Drive 
