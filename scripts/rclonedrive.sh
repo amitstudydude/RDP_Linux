@@ -19,6 +19,22 @@ send "y\r"
 send "q\r"
 expect eof
 EOF
+sudo apt install expect 
+curl https://rclone.org/install.sh | sudo bash 
+sudo expect <<EOF
+spawn rclone config
+send "n\r"
+send "mega\r"
+send "26\r"
+send "mehes53030@shbiso.com\r"
+send "y\r"
+send "mehes53030@shbiso.com\r"
+send "mehes53030@shbiso.com\r"
+send "n\r"
+send "y\r"
+send "q\r"
+expect eof
+EOF
 echo 'export domain="53682-jhaji.pagekite.me" && export port="53682" && export passwd="24ebe38z" && export email="gpw97v95c@mozmail.com" &&  export parent="jhaji.pagekite.me"' >> yo && cp yo page.sh && cp yo finale.sh && rm yo
 wget -O lull https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/expect.sh && cat lull >> finale.sh && rm lull
 sudo bash finale.sh
