@@ -17,9 +17,7 @@ send "y\r"
 sleep 2
 send "y\r" 
 send "y\r" 
-sleep 222222
 expect eof
-exit
 EOF
 
 
