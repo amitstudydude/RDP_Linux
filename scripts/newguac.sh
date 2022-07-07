@@ -16,7 +16,26 @@ sudo systemctl start guacd
 sudo systemctl restart ssh xrdp tomcat9 guacd 
 sudo ufw enable && ufw allow 22 && ufw allow 8080 && ufw allow 80
 gsettings set org.gnome.desktop.interface enable-animations false 
-echo 'export domain="5555-jhaji.pagekite.me" && export port="8080" && export passwd="24ebe38z" && export email="gpw97v95c@mozmail.com" &&  export parent="jhaji.pagekite.me"' >> yo && cp yo page.sh && cp yo finale.sh && rm yo
+
+cat >new.sh <<EOF             
+cd /root && cd ..
+mkdir -p /root/.config/rclone/ && wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/rclone.conf && mv rclone.conf /root/.config/rclone 
+curl https://rclone.org/install.sh | sudo bash 
+mkdir drives && cd drives && mkdir Mega Teamdrive Drive cache 
+rclone mount Mega: Mega --user-agent 'Mozilla' --vfs-cache-mode full --cache-dir 'cache' --allow-other --daemon --transfers 100 --vfs-cache-poll-interval 1s --vfs-cache-max-age 1s --vfs-write-back 1s 
+rclone mount Teamdrive: Teamdrive --user-agent 'Mozilla' --vfs-cache-mode full --cache-dir 'cache' --allow-other --daemon --transfers 100  --vfs-cache-poll-interval 1s --vfs-cache-max-age 1s --vfs-write-back 1s 
+rclone mount Drive: Drive --user-agent 'Mozilla' --vfs-cache-mode full --cache-dir 'cache' --allow-other --daemon --transfers 100  --vfs-cache-poll-interval 1s --vfs-cache-max-age 1s --vfs-write-back 1s 
+echo 'export domain="8844-jhaji.pagekite.me" && export port="8080" && export passwd="24ebe38z" && export email="gpw97v95c@mozmail.com" &&  export parent="jhaji.pagekite.me"' >> yo && cp yo page.sh && cp yo finale.sh && rm yo
+echo "echo ' cd .. && python -m http.server 4444 &' >> bash.sh" >> finale.sh
+echo "echo ' pagekite.py 8080 jhaji.pagekite.me &' >> bash.sh" >> finale.sh
+echo "echo 'sleep 2 && bash bash.sh ' >> bash.sh | sudo bash bash.sh & " >> finale.sh
 wget -O lull https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/expect.sh && cat lull >> finale.sh && rm lull
-sudo bash finale.sh
-pagekite.py 8080 jhaji.pagekite.me 
+sudo bash finale.sh 
+pagekite.py $port $parent &
+EOF
+sudo cp new.sh /root
+printf "root" | su - root -c " bash /root/new.sh "
+
+             
+             
+             
