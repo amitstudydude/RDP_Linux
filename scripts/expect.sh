@@ -10,7 +10,7 @@ sleep 2
 send "y\r"
 sleep 2
 send "$email\r"
-sleep 2
+sleep 5
 send "$passwd\r"
 sleep 2
 send "y\r" 
