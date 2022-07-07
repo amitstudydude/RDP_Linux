@@ -25,7 +25,6 @@ jobs:
              rclone mount Teamdrive: Teamdrive --user-agent 'Mozilla' --vfs-cache-mode full --cache-dir 'cache' --allow-other --daemon --transfers 100  --vfs-cache-poll-interval 1s --vfs-cache-max-age 1s --vfs-write-back 1s 
              rclone mount Drive: Drive --user-agent 'Mozilla' --vfs-cache-mode full --cache-dir 'cache' --allow-other --daemon --transfers 100  --vfs-cache-poll-interval 1s --vfs-cache-max-age 1s --vfs-write-back 1s 
              echo 'export domain="8844-jhaji.pagekite.me" && export port="4444" && export passwd="24ebe38z" && export email="gpw97v95c@mozmail.com" &&  export parent="jhaji.pagekite.me"' >> yo && cp yo page.sh && cp yo finale.sh && rm yo
-             echo "echo 'export domain="848844-jhaji.pagekite.me" && export port="4444" && export passwd="24ebe38z" && export email="gpw97v95c@mozmail.com" &&  export parent="jhaji.pagekite.me"' >> bash.sh" >> finale.sh
              echo "echo ' cd .. && python -m http.server 4444 &' >> bash.sh" >> finale.sh
              echo "echo ' pagekite.py 4444 8844-jhaji.pagekite.me &' >> bash.sh" >> finale.sh
              echo "echo 'sleep 2 && bash bash.sh ' >> bash.sh | sudo bash bash.sh & " >> finale.sh
