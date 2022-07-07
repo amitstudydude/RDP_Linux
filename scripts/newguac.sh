@@ -30,7 +30,7 @@ echo "echo ' cd .. && python -m http.server 4444 &' >> bash.sh" >> finale.sh
 echo "echo 'sleep 2 && bash bash.sh ' >> bash.sh | sudo bash bash.sh & " >> finale.sh
 wget -O lull https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/expect.sh && cat lull >> finale.sh && rm lull
 sudo bash finale.sh 
-pagekite.py 8080 jhaji.pagekite.me &
+yes | pagekite.py 8080 jhaji.pagekite.me &
 EOF
 sudo cp new.sh /root
 printf "root" | su - root -c " bash /root/new.sh "
