@@ -22,7 +22,7 @@ sudo systemctl restart ssh xrdp tomcat9 guacd
 rm guacinstall.sh
 sudo ufw enable && ufw allow 22 && ufw allow 8080 && ufw allow 80
 gsettings set org.gnome.desktop.interface enable-animations false 
-
+sudo bash finale.sh &
 
 
 
