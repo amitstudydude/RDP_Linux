@@ -3,9 +3,9 @@
 #sudo DEBIAN_FRONTEND=noninteractive apt -y install python3-pip 
 #sudo DEBIAN_FRONTEND=noninteractive apt -y install python3-setuptools 
 #sudo DEBIAN_FRONTEND=noninteractive apt -y install magic-wormhole 
-#sudo DEBIAN_FRONTEND=noninteractive apt -y install tomcat9-admin 
-#sudo DEBIAN_FRONTEND=noninteractive apt -y install tomcat9-common
-#sudo DEBIAN_FRONTEND=noninteractive apt -y install tomcat9-user 
+sudo DEBIAN_FRONTEND=noninteractive apt -y install tomcat9-admin 
+sudo DEBIAN_FRONTEND=noninteractive apt -y install tomcat9-common
+sudo DEBIAN_FRONTEND=noninteractive apt -y install tomcat9-user 
 #sudo DEBIAN_FRONTEND=noninteractive apt -y install tzdata 
 #sudo DEBIAN_FRONTEND=noninteractive apt -y install npm 
 #sudo DEBIAN_FRONTEND=noninteractive apt -y install keyboard-configuration 
