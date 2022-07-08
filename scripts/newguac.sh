@@ -9,6 +9,7 @@ sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts
 wget https://raw.githubusercontent.com/MysticRyuujin/guac-install/main/guac-install.sh && \
 printf "n\nn\ny\nroot\nroot\nroot\nroot" | bash guac-install.sh 
 sudo mkdir -p /etc/guacamole/{extensions,lib}
+cd /etc/guacamole/ && wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/usermapping.xml && cd /root
 sudo systemctl daemon-reload
 sudo systemctl enable guacd
 sudo systemctl enable tomcat9
