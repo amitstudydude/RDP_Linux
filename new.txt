@@ -6,4 +6,4 @@ SET @id = LAST_INSERT_ID();
 INSERT INTO guacamole_connection_parameter VALUES (@id, 'hostname', 'localhost');
 INSERT INTO guacamole_connection_parameter VALUES (@id, 'port', '3389');
 INSERT INTO guacamole_connection_parameter VALUES (@id, 'username', 'root');
-INSERT INTO guacamole_connection_parameter VALUES (@id, 'port', 'root');
+INSERT INTO guacamole_connection_parameter VALUES (@id, 'password', 'root');
