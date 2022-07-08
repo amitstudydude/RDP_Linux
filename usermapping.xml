@@ -1,14 +1,11 @@
 <user-mapping>
-
-    <authorize username="root" password="root">
-        <connection name="RDP">
-            <protocol>RDP</protocol>
-            <param name="hostname">localhost</param>
-            <param name="port">3389</param>
-        </connection>
-
-        
+    <authorize username="guacadmin" password="guacadmin">
+    <connection name="RDP">
+    <protocol>RDP</protocol>
+    <param name="hostname">localhost</param>
+    <param name="port">3389</param>
+    <param name="username">root</param>
+    <param name="password">root</param>
+    </connection>    
     </authorize>
-
-
 </user-mapping>
