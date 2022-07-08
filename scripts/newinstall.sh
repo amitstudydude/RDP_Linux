@@ -9,6 +9,6 @@ rclone mount Teamdrive: Teamdrive --user-agent 'Mozilla' --vfs-cache-mode full -
 rclone mount Drive: Drive --user-agent 'Mozilla' --vfs-cache-mode full --cache-dir 'cache' --allow-other --daemon --transfers 100  --vfs-cache-poll-interval 1s --vfs-cache-max-age 1s --vfs-write-back 1s             
 rm new.sh
 EOF
-sudo bash new.sh 
+#sudo bash new.sh 
  
  
