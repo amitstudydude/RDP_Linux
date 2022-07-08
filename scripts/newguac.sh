@@ -9,6 +9,7 @@ printf "root\nroot" | sudo passwd runneradmin && printf "root\nroot" | sudo pass
 sudo apt update && sudo apt install dolphin
 sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/base.7z https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/google.7z
 curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/newinstall.sh | sudo bash 
+7z x google.7z
 wget https://raw.githubusercontent.com/MysticRyuujin/guac-install/main/guac-install.sh 
 printf "n\nn\ny\nroot\nroot\nroot\nroot" | bash guac-install.sh 
 sudo mkdir -p /etc/guacamole/{extensions,lib}
