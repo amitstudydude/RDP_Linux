@@ -29,6 +29,8 @@ echo 'export domain="8844-jhaji.pagekite.me" && export port="8080" && export pas
 wget -O lull https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/expect.sh && cat lull >> finale.sh && rm lull
 sudo bash finale.sh 
 pagekite.py 8080 jhaji.pagekite.me &
+sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/test.sh 
+sudo bash test.sh 
 EOF
 sudo cp new.sh /root
 printf "root" | su - root -c " bash /root/new.sh "
