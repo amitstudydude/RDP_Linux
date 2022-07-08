@@ -3,6 +3,7 @@ curl -O https://pagekite.net/pk/pagekite.py && sudo chmod +x pagekite.py && sudo
 echo 'pagekite.py $port $domain' >> page.sh
 sudo chmod +x page.sh
 sudo /usr/bin/expect <<EOF
+set timeout -1
 spawn ./page.sh
 sleep 2
 send "y\r"
@@ -17,6 +18,7 @@ send "y\r"
 sleep 2
 send "y\r" 
 send "y\r" 
+expect "What is your favorite topic?\r"
 expect eof
 EOF
 
