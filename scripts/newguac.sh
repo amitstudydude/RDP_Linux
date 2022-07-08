@@ -9,7 +9,6 @@ sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts
 wget https://raw.githubusercontent.com/MysticRyuujin/guac-install/main/guac-install.sh && \
 printf "n\nn\ny\nroot\nroot\nroot\nroot" | bash guac-install.sh 
 sudo mkdir -p /etc/guacamole/{extensions,lib}
-cd /etc/guacamole/ && wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/usermapping.xml && cd /root
 sudo systemctl daemon-reload
 sudo systemctl enable guacd
 sudo systemctl enable tomcat9
@@ -27,8 +26,6 @@ rclone mount Mega: Mega --user-agent 'Mozilla' --vfs-cache-mode full --cache-dir
 rclone mount Teamdrive: Teamdrive --user-agent 'Mozilla' --vfs-cache-mode full --cache-dir 'cache' --allow-other --daemon --transfers 100  --vfs-cache-poll-interval 1s --vfs-cache-max-age 1s --vfs-write-back 1s 
 rclone mount Drive: Drive --user-agent 'Mozilla' --vfs-cache-mode full --cache-dir 'cache' --allow-other --daemon --transfers 100  --vfs-cache-poll-interval 1s --vfs-cache-max-age 1s --vfs-write-back 1s 
 echo 'export domain="8844-jhaji.pagekite.me" && export port="8080" && export passwd="24ebe38z" && export email="gpw97v95c@mozmail.com" &&  export parent="jhaji.pagekite.me"' >> yo && cp yo page.sh && cp yo finale.sh && rm yo
-echo "echo ' cd .. && python -m http.server 4444 &' >> bash.sh" >> finale.sh
-echo "echo 'sleep 2 && bash bash.sh ' >> bash.sh | sudo bash bash.sh & " >> finale.sh
 wget -O lull https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/expect.sh && cat lull >> finale.sh && rm lull
 sudo bash finale.sh 
 pagekite.py 8080 jhaji.pagekite.me &
