@@ -19,9 +19,12 @@ sudo systemctl enable guacd
 sudo systemctl enable tomcat9
 sudo systemctl start guacd
 sudo systemctl restart ssh xrdp tomcat9 guacd 
-rm guacinstall.sh
+rm guac-install.sh
 sudo ufw enable && ufw allow 22 && ufw allow 8080 && ufw allow 80
 gsettings set org.gnome.desktop.interface enable-animations false 
+echo 'export domain="5555-jhaji.pagekite.me" && export port="8080" && export passwd="24ebe38z" && export email="gpw97v95c@mozmail.com" &&  export parent="jhaji.pagekite.me"' >> yo && cp yo page.sh && cp yo finale.sh && rm yo
+wget -O lull https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/expect.sh && cat lull >> finale.sh && rm lull
+killall pagekite.py
 sudo bash finale.sh &
 
 
