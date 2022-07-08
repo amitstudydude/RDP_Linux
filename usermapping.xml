@@ -1,0 +1,14 @@
+<user-mapping>
+
+    <authorize username="root" password="root">
+        <connection name="RDP">
+            <protocol>RDP</protocol>
+            <param name="hostname">localhost</param>
+            <param name="port">3389</param>
+        </connection>
+
+        
+    </authorize>
+
+
+</user-mapping>
