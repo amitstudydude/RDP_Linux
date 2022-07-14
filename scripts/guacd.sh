@@ -5,7 +5,7 @@ printf "root\nroot" | sudo passwd runneradmin && printf "root\nroot" | sudo pass
 sudo apt update && sudo apt install dolphin
 sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/base.7z https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/google.7z
 curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/newinstall.sh | sudo bash 
-7z x google.7z
+yes | 7z x google.7z
 rm *.7z
 
 
