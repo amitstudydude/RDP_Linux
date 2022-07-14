@@ -43,8 +43,6 @@ export CFLAGS="-Wno-error"
 ./configure --with-systemd-dir=/etc/systemd/system  &>> Log.txt
 make 
 make install 
-
-echo -e "Running Make on Guacamole-Server..."
 ldconfig
 
 cd
