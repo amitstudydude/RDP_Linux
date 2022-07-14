@@ -25,16 +25,16 @@ tar -xzf guacamole-server-${GUACVERSION}.tar.gz
 wget -O guacamole-${GUACVERSION}.war ${SERVER}/binary/guacamole-${GUACVERSION}.war
 
 
-rm -rf /etc/guacamole/lib/
+rm -rf /etc/guacamole/
 rm -rf /etc/guacamole/extensions/
 mkdir -p /etc/guacamole/lib/
 mkdir -p /etc/guacamole/extensions/
 
-mkdir -p /usr/sbin/.config/freerdp
-chown daemon:daemon /usr/sbin/.config/freerdp
+#mkdir -p /usr/sbin/.config/freerdp
+#chown daemon:daemon /usr/sbin/.config/freerdp
 
 mkdir -p /var/guacamole
-chown daemon:daemon /var/guacamole
+#chown daemon:daemon /var/guacamole
 
 cd guacamole-server-${GUACVERSION}/
 
@@ -64,7 +64,7 @@ curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/guaca | cat 
 
 
 
-#curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/usermapping.xml | cat >/etc/guacamole/user-mapping.xml 
+curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/user-mapping.xml | cat >/etc/guacamole/user-mapping.xml 
 
 
 
