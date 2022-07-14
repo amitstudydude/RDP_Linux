@@ -52,7 +52,7 @@ cd
 mv -f guacamole-${GUACVERSION}.war /etc/guacamole/guacamole.war
 
 ln -sf /etc/guacamole/guacamole.war /var/lib/tomcat9/webapps/
-
+ln -s /etc/guacamole/ /usr/share/tomcat9/.guacamole
 sudo mkdir /etc/guacamole/{extensions,lib}
 
 sudo echo "GUACAMOLE_HOME=/etc/guacamole" >> /etc/default/tomcat9
