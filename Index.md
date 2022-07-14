@@ -1,7 +1,6 @@
 
 **run commands as custom user (here - root)**
-printf "root\nroot" | sudo passwd root
-printf "root" | su - root -c " "
+printf "root\nroot" | sudo passwd root && printf "root" | su - root -c " "
 
 
 
