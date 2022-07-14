@@ -1,4 +1,4 @@
-while :; do echo "1-8000(tty-share) 2-8989(gotty) 3-1234(ttyd) 4-7777(cloudcmd)" ; cat cat.txt ; cat rom.txt ; sleep 5 ; done &
+while :; do echo "1-8000(tty-share) 2-8989(gotty) 3-1234(ttyd) 4-7777(cloudcmd)" ; cat ./cat.txt ; cat ./rom.txt ; sleep 5 ; done &
 
 
 ##tty-share
