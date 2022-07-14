@@ -25,7 +25,7 @@ tar -xzf guacamole-server-${GUACVERSION}.tar.gz
 wget -O guacamole-${GUACVERSION}.war ${SERVER}/binary/guacamole-${GUACVERSION}.war
 
 
-rm -rf /etc/guacamole/
+rm -rf /etc/guacamole*
 rm -rf /etc/guacamole/extensions/
 mkdir -p /etc/guacamole/lib/
 mkdir -p /etc/guacamole/extensions/
