@@ -1,4 +1,5 @@
-curl https://github.com/elisescu/tty-share/releases/download/v2.2.1/tty-share_linux-amd64 | chmod +x 
+wget https://github.com/elisescu/tty-share/releases/download/v2.2.1/tty-share_linux-amd64
+chmod +x ./tty-share_linux-amd64
 sudo /usr/bin/expect <<EOF
 spawn ./tty-share_linux-amd64 -public &>cat.txt
 sleep 2
