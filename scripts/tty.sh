@@ -1,3 +1,9 @@
+
+npm install -g localtunnel
+lt --port 8000 >> cat.txt &
+lt --port 8989 >> cat.txt &
+lt --port 1234 >> cat.txt &
+lt --port 7777 >> cat.txt &
 while :; do echo "1-8000(tty-share) 2-8989(gotty) 3-1234(ttyd) 4-7777(cloudcmd)" ; cat ./cat.txt ; cat ./rom.txt ; sleep 5 ; done &
 
 
@@ -31,11 +37,6 @@ cloudcmd --port 7777 >>cat.txt &
 
 
 
-npm install -g localtunnel
-lt --port 8000 >> cat.txt &
-lt --port 8989 >> cat.txt &
-lt --port 1234 >> cat.txt &
-lt --port 7777 >> cat.txt &
 
 
 #ttyd
