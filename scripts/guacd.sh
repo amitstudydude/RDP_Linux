@@ -1,3 +1,4 @@
+rm -rf guaca*
 curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/rclonemount.sh | sudo bash &
 sudo unlink /etc/localtime
 sudo ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
@@ -72,7 +73,7 @@ wget -O  /etc/guacamole/user-mapping.xml https://raw.githubusercontent.com/amits
 
             
         
-rm -rf guaca*
+
 
 iptables -A INPUT -p tcp --dport 8080 --jump ACCEPT
 ufw allow 8080/tcp comment 'allow tomcat'
@@ -86,7 +87,7 @@ sudo systemctl enable tomcat9
 sudo systemctl start guacd
 sudo systemctl restart ssh xrdp tomcat9 guacd 
 
-##curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/guacd | bash
+##curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/guacd.sh | bash
 
 
 
