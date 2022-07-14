@@ -37,6 +37,7 @@ make install &>> $Log.txt
 echo -e "Running Make on Guacamole-Server..."
 ldconfig
 
+
 mv -f guacamole-${GUACVERSION}.war /etc/guacamole/guacamole.war
 
 ln -sf /etc/guacamole/guacamole.war /var/lib/tomcat9/webapps/
