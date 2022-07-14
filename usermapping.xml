@@ -1,5 +1,5 @@
 <user-mapping>
-    <authorize 
+    <authorize>
         <connection name="ssh">
             <protocol>ssh</protocol>
             <param name="hostname">locallhost</param>
