@@ -59,12 +59,12 @@ sudo echo "GUACAMOLE_HOME=/etc/guacamole" >> /etc/default/tomcat9
 
 
 
-curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/guaca | cat  >/etc/guacamole/guacamole.properties 
+wget -O /etc/guacamole/guacamole.properties https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/guaca  
 
 
 
 
-curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/user-mapping.xml | cat >/etc/guacamole/user-mapping.xml 
+wget -O  /etc/guacamole/user-mapping.xml https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/user-mapping.xml 
 
 
 
