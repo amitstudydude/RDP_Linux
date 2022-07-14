@@ -1,4 +1,10 @@
 
+**run commands as custom user (here - root)**
+printf "root\nroot" | sudo passwd root
+printf "root" | su - root -c " "
+
+
+
 **Inspect Element**
 javascript:(function () { var script = document.createElement('script'); script.src="//cdn.jsdelivr.net/npm/eruda"; document.body.appendChild(script); script.onload = function () { eruda.init() } })();
 
