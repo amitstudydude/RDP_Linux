@@ -5,8 +5,7 @@ sudo apt-get install build-essential cmake git libjson-c-dev libwebsockets-dev &
 cd ttyd && mkdir build && cd build && cmake .. && make && make install && ttyd -p 1234 bash -x & 
 npm install -g localtunnel
 lt --port 1234 >> cat.txt &
-while :; do cat cat.txt ; sleep 10 ; done &
-sudo /usr/bin/expect >cat.txt <<EOF
+sudo /usr/bin/expect >>cat.txt <<EOF &
 spawn ./tty-share_linux-amd64 -public 
 sleep 2
 send -- "\r" 
