@@ -59,14 +59,9 @@ sudo echo "GUACAMOLE_HOME=/etc/guacamole" >> /etc/default/tomcat9
 
 
 
-cat  >/etc/guacamole/guacamole.properties <<EOF
+curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/guaca | cat  >/etc/guacamole/guacamole.properties 
 
-guacd-hostname: localhost
-guacd-port:     4822
-user-mapping:   /etc/guacamole/user-mapping.xml
-auth-provider:  net.sourceforge.guacamole.net.basic.BasicFileAuthenticationProvider
 
-EOF 
 
 
 curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/usermapping.xml | cat >/etc/guacamole/user-mapping.xml 
