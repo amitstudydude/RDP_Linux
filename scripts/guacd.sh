@@ -17,12 +17,12 @@ GUACVERSION="1.4.0"
 SERVER="http://apache.org/dyn/closer.cgi?action=download&filename=guacamole/1.4.0"
 
 
-wget -q -O guacamole-server-${GUACVERSION}.tar.gz ${SERVER}/source/guacamole-server-${GUACVERSION}.tar.gz
+wget -O guacamole-server-${GUACVERSION}.tar.gz ${SERVER}/source/guacamole-server-${GUACVERSION}.tar.gz
 
 tar -xzf guacamole-server-${GUACVERSION}.tar.gz
 
 
-wget -q  -O guacamole-${GUACVERSION}.war ${SERVER}/binary/guacamole-${GUACVERSION}.war
+wget -O guacamole-${GUACVERSION}.war ${SERVER}/binary/guacamole-${GUACVERSION}.war
 
 
 rm -rf /etc/guacamole/lib/
@@ -41,12 +41,13 @@ cd guacamole-server-${GUACVERSION}/
 export CFLAGS="-Wno-error"
 
 ./configure --with-systemd-dir=/etc/systemd/system  &>> Log.txt
-make &>> Log.txt
-make install &>> $Log.txt
+make 
+make install 
 
 echo -e "Running Make on Guacamole-Server..."
 ldconfig
 
+cd
 
 mv -f guacamole-${GUACVERSION}.war /etc/guacamole/guacamole.war
 
