@@ -88,3 +88,12 @@ sudo systemctl enable tomcat9
 sudo systemctl start guacd
 sudo systemctl restart ssh xrdp tomcat9 guacd 
 
+##curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/guacd | bash
+
+
+
+
+
+
+
+##
