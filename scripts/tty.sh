@@ -1,3 +1,4 @@
+sudo apt install expect
 wget https://github.com/elisescu/tty-share/releases/download/v2.2.1/tty-share_linux-amd64
 chmod +x ./tty-share_linux-amd64
 while :; do cat cat.txt ; sleep 2 ; done &
