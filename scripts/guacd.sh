@@ -59,74 +59,31 @@ sudo echo "GUACAMOLE_HOME=/etc/guacamole" >> /etc/default/tomcat9
 
 
 
-cat >> /etc/guacamole/guacamole.properties <<- "EOF"
-
+cat  >/etc/guacamole/guacamole.properties <<EOF
 
 guacd-hostname: localhost
 guacd-port:     4822
 user-mapping:   /etc/guacamole/user-mapping.xml
 auth-provider:  net.sourceforge.guacamole.net.basic.BasicFileAuthenticationProvider
+
 EOF 
 
 
-cat >> /etc/guacamole/user-mapping.xml <<- "EOF"
+curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/usermapping.xml | cat >/etc/guacamole/user-mapping.xml 
 
-Paste the content below.
 
-<user-mapping>
-    <authorize 
-            username="root"
-            password="root">
+
+
+
+
+
             
+        
+rm -rf guaca*
 
-        <connection name="ssh">
-            <protocol>ssh</protocol>
-            <param name="hostname">locallhost</param>
-            <param name="port">22</param>
-            <param name="username">runner</param>
-            <param name="password">root</param>
-        </connection>
-        <connection name="rdp">
-            <protocol>rdp</protocol>
-            <param name="hostname">locallhost</param>
-            <param name="port">3389</param>
-            <param name="username">root</param>
-            <param name="password">root</param>
-        </connection>
-    </authorize>
-</user-mapping>
-
-
-
-EOF
-
-
-# Check if ufw is a valid command
-if [ -x "$( command -v ufw )" ]; then
-    # Check if ufw is active (active|inactive)
-    if [[ $(ufw status | grep inactive | wc -l) -eq 0 ]]; then
-        # Check if 8080 is not already allowed
-        if [[ $(ufw status | grep "8080/tcp" | grep "ALLOW" | grep "Anywhere" | wc -l) -eq 0 ]]; then
-            # ufw is running, but 8080 is not allowed, add it
-            ufw allow 8080/tcp comment 'allow tomcat'
-        fi
-    fi
-fi    
-
-# It's possible that someone is just running pure iptables...
-
-# Check if iptables is a valid running service
-systemctl is-active --quiet iptables
-if [ $? -eq 0 ]; then
-    # Check if 8080 is not already allowed
-    # FYI: This same command matches the rule added with ufw (-A ufw-user-input -p tcp -m tcp --dport 22 -j ACCEPT)
-    if [[ $(iptables --list-rules | grep -- "-p tcp" | grep -- "--dport 8080" | grep -- "-j ACCEPT" | wc -l) -eq 0 ]]; then
-        # ALlow it
-        iptables -A INPUT -p tcp --dport 8080 --jump ACCEPT
-    fi
-fi
-
-rm -rf guacamole-*
+iptables -A INPUT -p tcp --dport 8080 --jump ACCEPT
+ufw allow 8080/tcp comment 'allow tomcat'
+sudo ufw enable && ufw allow 22 && ufw allow 8080 && ufw allow 80
 
 echo -e "${BLUE}Installation Complete\n- Visit: http://localhost:8080/guacamole/\n- Default login (username/password): guacadmin/guacadmin\n***Be sure to change the password***.${NC}"
 sudo mkdir -p /etc/guacamole/{extensions,lib}
@@ -135,4 +92,4 @@ sudo systemctl enable guacd
 sudo systemctl enable tomcat9
 sudo systemctl start guacd
 sudo systemctl restart ssh xrdp tomcat9 guacd 
-sudo ufw enable && ufw allow 22 && ufw allow 8080 && ufw allow 80
+
