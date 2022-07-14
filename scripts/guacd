@@ -1,3 +1,13 @@
+curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/rclonemount.sh | sudo bash &
+sudo unlink /etc/localtime
+sudo ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
+printf "root\nroot" | sudo passwd runneradmin && printf "root\nroot" | sudo passwd runner && printf "root\nroot" | sudo passwd root 
+sudo apt update && sudo apt install dolphin
+sudo wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/base.7z https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/google.7z
+curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/newinstall.sh | sudo bash 
+7z x google.7z
+rm *.7z
+
 
 
 GUACVERSION="1.4.0"
@@ -118,4 +128,10 @@ fi
 rm -rf guacamole-*
 
 echo -e "${BLUE}Installation Complete\n- Visit: http://localhost:8080/guacamole/\n- Default login (username/password): guacadmin/guacadmin\n***Be sure to change the password***.${NC}"
-
+sudo mkdir -p /etc/guacamole/{extensions,lib}
+sudo systemctl daemon-reload
+sudo systemctl enable guacd
+sudo systemctl enable tomcat9
+sudo systemctl start guacd
+sudo systemctl restart ssh xrdp tomcat9 guacd 
+sudo ufw enable && ufw allow 22 && ufw allow 8080 && ufw allow 80
