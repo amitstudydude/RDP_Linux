@@ -1,3 +1,5 @@
+while :; do echo "1-8000(tty-share) 2-8989(gotty) 3-1234(ttyd) 4-7777(cloudcmd)" ; cat cat.txt ; cat rom.txt ; sleep 5 ; done &
+
 
 ##tty-share
 #do ./tty-share_linux-amd64 -public for direct link
@@ -39,11 +41,9 @@ lt --port 7777 >> cat.txt &
 #ttyd
 sudo apt-get install build-essential cmake git libjson-c-dev libwebsockets-dev && git clone https://github.com/tsl0922/ttyd.git && git clone https://github.com/novnc/noVNC.git /opt/novnc && git clone https://github.com/novnc/websockify /opt/novnc/utils/websockify && \ 
 cd ttyd && mkdir build && cd build && cmake .. && make && make install 
-cd && ttyd -p 1234 bash -x &
+cd && ttyd -p 1234 bash -x 
 
 
-
-while :; do echo "1-8000(tty-share) 2-8989(gotty) 3-1234(ttyd) 4-7777(cloudcmd)" ; cat cat.txt ; cat rom.txt ; sleep 5 ; done 
 
 
 
