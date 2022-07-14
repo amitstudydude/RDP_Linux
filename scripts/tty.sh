@@ -9,7 +9,7 @@ npm install -g localtunnel
 #npm i cloudcmd -g --force
 #cloudcmd --port 7777 >>cat.txt &
 sudo /usr/bin/expect >>cat.txt <<EOF &
-spawn ./tty-share_linux-amd64 -public 
+spawn ./tty-share_linux-amd64 
 sleep 2
 send -- "\r" 
 set timeout -1
