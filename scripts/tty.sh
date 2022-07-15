@@ -34,12 +34,7 @@ wget -O yo.tar.gz https://github.com/yudai/gotty/releases/download/v1.0.1/gotty_
 npm i cloudcmd -g --force
 cloudcmd --port 7777 
 
-
-
-
-
-
-
+curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/newinstall.sh | bash &
 
 npm install -g localtunnel
 lt --port 8000 >> cat.txt &
@@ -49,3 +44,4 @@ lt --port 7777 >> cat.txt &
 while :; do cat ./cat.txt ; cat ./rom.txt ; sleep 10 ; done  
 
 
+ 
