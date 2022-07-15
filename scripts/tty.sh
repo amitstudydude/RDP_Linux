@@ -27,7 +27,7 @@ echo 'termpair share --host "https://chadsmith.dev/termpair/" --port 443' >>cat.
 #gotty
 wget -O yo.tar.gz https://github.com/yudai/gotty/releases/download/v1.0.1/gotty_linux_amd64.tar.gz
 7z x *.gz && 7z x *.tar && chmod +x ./gotty && rm yo*
-./gotty  -p 8989 -w bash &
+./gotty --width 100 --height 100 -p 8989 -w bash &
 
 
 #cloudcmd
