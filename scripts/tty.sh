@@ -1,10 +1,9 @@
 
-npm install -g localtunnel
-lt --port 8000 >> cat.txt &
-lt --port 8989 >> cat.txt &
-lt --port 1234 >> cat.txt &
-lt --port 7777 >> cat.txt &
-while :; do echo "1-8000(tty-share) 2-8989(gotty) 3-1234(ttyd) 4-7777(cloudcmd)" ; cat ./cat.txt ; cat ./rom.txt ; sleep 10 ; done &
+
+#ttyd
+sudo apt-get install build-essential cmake git libjson-c-dev libwebsockets-dev && git clone https://github.com/tsl0922/ttyd.git && git clone https://github.com/novnc/noVNC.git /opt/novnc && git clone https://github.com/novnc/websockify /opt/novnc/utils/websockify && \ 
+cd ttyd && mkdir build && cd build && cmake .. && make && make install 
+cd && ttyd -p 1234 bash -x &
 
 
 ##tty-share
@@ -39,14 +38,14 @@ cloudcmd --port 7777
 
 
 
-#ttyd
-sudo apt-get install build-essential cmake git libjson-c-dev libwebsockets-dev && git clone https://github.com/tsl0922/ttyd.git && git clone https://github.com/novnc/noVNC.git /opt/novnc && git clone https://github.com/novnc/websockify /opt/novnc/utils/websockify && \ 
-cd ttyd && mkdir build && cd build && cmake .. && make && make install 
-cd && ttyd -p 1234 bash -x 
 
 
 
-
-
+npm install -g localtunnel
+lt --port 8000 >> cat.txt &
+lt --port 8989 >> cat.txt &
+lt --port 1234 >> cat.txt &
+lt --port 7777 >> cat.txt &
+while :; do cat ./cat.txt ; cat ./rom.txt ; sleep 10 ; done  
 
 
