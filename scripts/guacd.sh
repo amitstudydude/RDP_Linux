@@ -1,5 +1,5 @@
 rm -rf guaca*
-curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/rclonemount.sh | sudo bash &
+#curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/rclonemount.sh | sudo bash &
 sudo unlink /etc/localtime
 sudo ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
 printf "root\nroot" | sudo passwd runneradmin && printf "root\nroot" | sudo passwd runner && printf "root\nroot" | sudo passwd root 
