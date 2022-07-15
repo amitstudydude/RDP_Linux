@@ -4,8 +4,8 @@ cd /etc/guacamole/
 rm -rf *
 cd
 #curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/rclonemount.sh | sudo bash &
-sudo unlink /etc/localtime
-sudo ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
+#sudo unlink /etc/localtime
+#sudo ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
 printf "root\nroot" | sudo passwd runneradmin && printf "root\nroot" | sudo passwd runner && printf "root\nroot" | sudo passwd root 
 sudo apt update && sudo apt install dolphin
 sudo wget  https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/google.7z
