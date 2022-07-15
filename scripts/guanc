@@ -39,11 +39,7 @@ sudo mkdir /etc/guacamole/{extensions,lib}
 sudo echo "GUACAMOLE_HOME=/etc/guacamole" >> /etc/default/tomcat9
 wget -O /etc/guacamole/guacamole.properties https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/guaca  
 wget -O  /etc/guacamole/user-mapping.xml https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/user-mapping.xml 
-cat >/etc/guacamole/guacd.conf <<EOF
-[server]
-bind_host = 0.0.0.0
-bind_port = 4822
-EOF     
+wget -O  /etc/guacamole/guacd.conf https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/guacd.conf
 iptables -A INPUT -p tcp --dport 8080 --jump ACCEPT
 ufw allow 8080/tcp comment 'allow tomcat'
 sudo ufw enable && ufw allow 22 && ufw allow 8080 && ufw allow 80
