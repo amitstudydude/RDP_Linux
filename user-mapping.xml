@@ -2,14 +2,14 @@
     <authorize username="root"  password="root">
         <connection name="ssh">
             <protocol>ssh</protocol>
-            <param name="hostname">locallhost</param>
+            <param name="hostname">localhost</param>
             <param name="port">22</param>
             <param name="username">runner</param>
             <param name="password">root</param>
         </connection>
         <connection name="rdp">
             <protocol>rdp</protocol>
-            <param name="hostname">locallhost</param>
+            <param name="hostname">localhost</param>
             <param name="port">3389</param>
             <param name="username">root</param>
             <param name="password">root</param>
