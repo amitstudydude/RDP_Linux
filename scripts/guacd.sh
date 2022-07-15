@@ -1,4 +1,8 @@
-rm -rf guaca*
+rm -rf guac*
+rm -rf /etc/guacamole/*
+cd /etc/guacamole/
+rm -rf *
+cd
 #curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/rclonemount.sh | sudo bash &
 sudo unlink /etc/localtime
 sudo ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
@@ -86,6 +90,7 @@ sudo systemctl enable guacd
 sudo systemctl enable tomcat9
 sudo systemctl start guacd
 sudo systemctl restart ssh xrdp tomcat9 guacd 
+rm -rf guaca* 
 
 ##curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/guacd.sh | bash
 
