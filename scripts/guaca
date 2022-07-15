@@ -52,7 +52,7 @@ sudo systemctl start guacd
 sudo systemctl restart ssh xrdp tomcat9 guacd 
 rm -rf guaca* 
 
-##curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/guo | bash
+##curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/guaca | bash
 
 
 
