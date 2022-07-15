@@ -32,7 +32,7 @@ wget -O yo.tar.gz https://github.com/yudai/gotty/releases/download/v1.0.1/gotty_
 
 #cloudcmd
 npm i cloudcmd -g --force
-cloudcmd --port 7777 
+cloudcmd --port 7777  &
 
 curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/newinstall.sh | bash &
 
