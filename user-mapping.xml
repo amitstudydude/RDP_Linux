@@ -7,11 +7,18 @@
             <param name="username">runner</param>
             <param name="password">root</param>
         </connection>
-        <connection name="rdp">
+        <connection name="root">
             <protocol>rdp</protocol>
             <param name="hostname">localhost</param>
             <param name="port">3389</param>
             <param name="username">root</param>
+            <param name="password">root</param>
+        </connection>
+        <connection name="runner">
+            <protocol>rdp</protocol>
+            <param name="hostname">localhost</param>
+            <param name="port">3389</param>
+            <param name="username">runner</param>
             <param name="password">root</param>
         </connection>
     </authorize>
