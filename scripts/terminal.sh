@@ -1,3 +1,6 @@
+while :; do cat ./cat.txt ; cat ./rom.txt ; sleep 10 ; done  &
+
+
 
 
 #ttyd
@@ -43,8 +46,5 @@ lt --port 7777 >> cat.txt &
 
 #cloudcmd
 npm i cloudcmd -g --force
-cloudcmd --port 7777  &
-
-while :; do cat ./cat.txt ; cat ./rom.txt ; sleep 10 ; done  
-
+cloudcmd --port 7777  
 
