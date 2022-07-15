@@ -50,10 +50,10 @@ sudo systemctl restart ssh xrdp tomcat9 guacd
 rm -rf guaca* 
 EOF
 
-bash new.sh > /dev/null
+bash new.sh
 cd && rm new.sh
 
-##curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/guaca | bash
+##curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/guacol | bash
 
 
 
