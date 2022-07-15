@@ -1,0 +1,6 @@
+git clone https://github.com/krishnasrinivas/wetty
+cd wetty
+npm install wetty --force
+wetty -p 3333 &
+lt -p 3333 >>cat.txt &
+while :; do cat cat.txt ; sleep 2 ; done
