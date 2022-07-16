@@ -1,4 +1,4 @@
-while :; do cat cat.txt ; sleep 2 ; done &           
+while :; do cat cat.txt ; sleep 10 ; done &           
 sudo apt install ssh openssh-server -y 
 echo "PasswordAuthentication yes" >>sshd_config
 echo "PermitUserEnvironment yes" >>sshd_config
