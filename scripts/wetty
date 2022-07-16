@@ -8,6 +8,6 @@ wget -O cli https://github.com/cloudflare/cloudflared/releases/latest/download/c
 chmod +x ./cli && ./cli --url http://localhost:3333/wetty &>> cat.txt &
 npm install -g localtunnel
 lt -p 3333 >>cat.txt &
-while :; do cat cat.txt ; sleep 6 ; done &
+while :; do cat cat.txt ; sleep 30 ; done &
 
 #
