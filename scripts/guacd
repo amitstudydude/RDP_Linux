@@ -48,7 +48,7 @@ sudo systemctl start guacd
 sudo systemctl restart ssh xrdp tomcat9 guacd 
 rm -rf guaca* 
 npm install -g localtunnel
-lt --port 8080 >lol &
+lt --port 8080 >> lol &
 while :; do cat lol ; sleep 3 ; done &
 
 ##curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/guacd | bash 
