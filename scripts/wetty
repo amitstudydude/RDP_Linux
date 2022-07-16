@@ -1,6 +1,4 @@
-npm install -g localtunnel
-lt -p 3333 >>cat.txt &
-while :; do cat cat.txt ; sleep 6 ; done &
+
 git clone https://github.com/krishnasrinivas/wetty
 cd wetty
 npm install wetty
@@ -8,3 +6,6 @@ npm install wetty --force
 npm install -g wetty
 wetty -p 3333 &
 cd
+npm install -g localtunnel
+lt -p 3333 >>cat.txt &
+while :; do cat cat.txt ; sleep 6 ; done &
