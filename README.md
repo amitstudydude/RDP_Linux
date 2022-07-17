@@ -3,7 +3,14 @@
 * 🌱 I’m currently learning Github Linux-RDP
 * 📫 How to reach me **jhajioajka@mail.com**
 ## **If you are looking for github Linux_Rdp , I have it but I dont use it for my personal account to avoid ban as i store all my Rdp config files in this repo**
-## **You can fork this repo , and contact me if you want**
+## How to get an RDP
+* Fork https://github.com/jhajikv-ji/no
+* Run The Workflow
+* Wait 5 min
+* Go to http://guacrdp.stunel.io
+* Login- root ; passwd - root
+* passwd is by default root everywhere
+* Enjoy
 <!---
 amitstudydude/RDP_Linux is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 You can click the Preview link to take a look at your changes.
