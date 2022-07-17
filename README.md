@@ -10,12 +10,16 @@
 * Go to http://guacrdp.stunel.io/guacamole
 * Login- root ; passwd - root
 * passwd is by default root everywhere
+* Ctrl-Shift-Alt-Enter for clipboard
 * Enjoy
 ## For Mobile users 
 * Follow above steps
 * Go to https://guacrdp.stunel.io/guacamole/#/settings/preferences
-* Do the following settings => ![alt text](https://github.com/jhajikv-ji/no/blob/main/image.jpg?raw=true)
+* Do the following settings => Select text-input && Drag mouse [right]
+* ![alt text](https://github.com/jhajikv-ji/no/blob/main/image.jpg?raw=true)
+* Use Hackers' keyboard [play store]
 * Go to http://guacrdp.stunel.io/guacamole
+* Ctrl-Shift-Alt-Enter for clipboard
 * Enjoy
 <!---
 amitstudydude/RDP_Linux is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
