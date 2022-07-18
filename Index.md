@@ -1,4 +1,11 @@
 
+**Cloudfared**
+wget -O cli https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
+chmod +x ./cli && ./cli --url http://localhost:8080/wetty &>> cat.txt &
+
+
+
+
 **run commands as custom user (here - root)**
 printf "root\nroot" | sudo passwd root && printf "root" | su - root -c " "
 
