@@ -15,7 +15,6 @@ sleep 2
 send -- "cd ..\r"
 sleep 2
 send -- "bash ./*sh -s\r"
-sleep 120
 send -- "pulseaudio -k\r"
 sleep 2
 send -- "pulseaudio --start\r"
