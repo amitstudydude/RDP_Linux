@@ -1,8 +1,24 @@
-#as runner
+sudo apt install expect
 wget xrdp.zip https://c-nergy.be/downloads/xRDP/xrdp-installer-1.4.2.zip
 7z x *zip
-bash ./*sh -s
-pulseaudio -k
-pulseaudio --start
-#as root
-pulseaudio &
+mv *sh /home
+rm *zip
+sudo /usr/bin/expect <<EOF
+set timeout -1
+spawn login
+sleep 2
+send -- "runner\r"
+sleep 2
+send -- "root\r"
+sleep 2
+send -- "bash ./*sh -s\r"
+sleep 30
+send -- "pulseaudio -k\r"
+sleep 2
+send -- "pulseaudio --start\r"
+sleep 2
+send -- "exit"
+sleep 2
+send -- "pulseaudio &\k"
+expect eof
+EOF
