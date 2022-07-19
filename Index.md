@@ -1,6 +1,11 @@
 
+**Rclone**
+curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/rclonemount.sh | sudo bash
+
+
+
 **Cloudfared**
-wget -O cli https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
+wget -O cli https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 && \ 
 chmod +x ./cli && ./cli --url http://localhost:8080/wetty &>> cat.txt &
 
 
