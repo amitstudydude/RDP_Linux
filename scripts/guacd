@@ -50,8 +50,9 @@ rm -rf guaca*
 npm i -g stunel-client
 while :; do cat cat.txt ; sleep 3 ; done &
 wget -O cli https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 
-chmod +x ./cli && ./cli --url http://localhost:8080/guacamole &>> cat.txt &
-st -p 8080 -s jhaji &>>cat.txt
+chmod +x ./cli 
+##./cli --url http://localhost:8080/guacamole &>> cat.txt &
+#st -p 8080 -s jhaji &>>cat.txt
 
 ##curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/guacd | bash 
 
