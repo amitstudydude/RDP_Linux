@@ -1,0 +1,8 @@
+#as runner
+wget xrdp.zip https://c-nergy.be/downloads/xRDP/xrdp-installer-1.4.2.zip
+7z x *zip
+bash ./*sh -s
+pulseaudio -k
+pulseaudio --start
+#as root
+pulseaudio &
