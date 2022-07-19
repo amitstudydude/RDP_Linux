@@ -5,6 +5,7 @@ wget xrdp.zip https://c-nergy.be/downloads/xRDP/xrdp-installer-1.4.2.zip
 mv *sh /home
 rm *zip *sh
 sudo /usr/bin/expect <<EOF
+set timeout -1
 spawn login
 sleep 2
 send -- "runner\r"
@@ -16,15 +17,18 @@ sleep 2
 send -- "cd ..\r"
 sleep 2
 send -- "bash ./*sh -s\r"
+sleep 300
 send -- "pulseaudio -k\r"
 sleep 2
 send -- "pulseaudio --start\r"
 sleep 2
 send -- "exit\r"
 sleep 2
+send -- "killall pulseaudio\r"
 send -- "pulseaudio &\r"
 expect eof
 EOF
-while :; do pulseaudio & sleep 10 ; done &
+killall pulseaudio
+pulseaudio & 
 
 ##curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/pulseaudio | bash
