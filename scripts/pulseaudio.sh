@@ -20,9 +20,9 @@ send -- "pulseaudio -k\r"
 sleep 2
 send -- "pulseaudio --start\r"
 sleep 2
-send -- "exit"
+send -- "exit\r"
 sleep 2
-send -- "pulseaudio &\k"
+send -- "pulseaudio &\r"
 expect eof
 EOF
 
