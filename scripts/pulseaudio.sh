@@ -12,7 +12,7 @@ send -- "runner\r"
 sleep 2
 send -- "root\r"
 sleep 2
-send -- "cd..\r"
+send -- "cd ..\r"
 sleep 2
 send -- "bash ./*sh -s\r"
 sleep 30
