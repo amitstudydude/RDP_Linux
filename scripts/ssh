@@ -4,7 +4,7 @@ printf "root\nroot" | sudo passwd runneradmin && printf "root\nroot" | sudo pass
 while :; do cat cat.txt ; sleep 10 ; done &           
 sudo service xrdp restart
 pip install jprq 
-jprq tcp 3389 &>>cat.txt  &
+
 echo "PasswordAuthentication yes" >>sshd_config
 echo "PermitUserEnvironment yes" >>sshd_config
 echo "PermitRootLogin yes" >>sshd_config
