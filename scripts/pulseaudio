@@ -12,6 +12,8 @@ sleep 2
 send -- "runner\r"
 sleep 2
 send -- "root\r"
+send -- "\r"
+send -- "\r"
 sleep 2
 send -- "cd ..\r"
 sleep 2
