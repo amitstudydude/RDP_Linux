@@ -7,3 +7,8 @@ killall pulseaudio
 pulseaudio & 
 
 ##curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/pulseaudio | bash
+
+
+
+
+##
