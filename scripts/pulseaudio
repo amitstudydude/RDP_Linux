@@ -1,5 +1,5 @@
 sudo apt install expect
-while :; do pulseaudio & done
+while :; do pulseaudio & sleep 10 ; done &
 rm *zip *sh
 wget xrdp.zip https://c-nergy.be/downloads/xRDP/xrdp-installer-1.4.2.zip
 7z x *zip
