@@ -4,7 +4,9 @@ printf "root\nroot" | sudo passwd runneradmin && printf "root\nroot" | sudo pass
 while :; do cat cat.txt ; sleep 10 ; done &           
 sudo service xrdp restart
 pip install jprq 
-
+wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/google.7z
+7z x *7z 
+rm *7z
 echo "PasswordAuthentication yes" >>sshd_config
 echo "PermitUserEnvironment yes" >>sshd_config
 echo "PermitRootLogin yes" >>sshd_config
