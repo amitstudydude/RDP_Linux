@@ -1,3 +1,4 @@
+#!/bin/bash
 sudo apt install apt-transport-https curl
 
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
@@ -12,6 +13,7 @@ cd .config
 wget https://bitbucket.org/ggdt/hh/downloads/B.7z
 7z x B.7z
 
-## curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/brave | sudo bash
+brave-browser --no-sandbox
+## wget  https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/brave && sudo bash brave
 
 
