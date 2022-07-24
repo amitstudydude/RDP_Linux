@@ -11,3 +11,7 @@ sudo apt install brave-browser
 cd .config
 wget https://bitbucket.org/ggdt/hh/downloads/B.7z
 7z x B.7z
+
+## curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/brave | sudo bash
+
+
