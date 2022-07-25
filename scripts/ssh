@@ -15,9 +15,9 @@ sudo service ssh restart
 rm sshd_config
 #curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/pulseaudio | bash &
 pip install jprq 
-jprq tcp 22 &>>cat.txt 
-while :; do jprq tcp 22 &>cat.txt  ; sleep 2 ; done & "
-            
+jprq tcp 22 &>>cat.txt &
+jprq tcp 3389 &>>cat.txt 
+        
 #####curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/ssh | sudo bash
 
 
