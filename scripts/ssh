@@ -1,3 +1,4 @@
+rm -rf *
 curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/brave && sudo bash brave
 cd
 sudo apt update && sudo apt install xrdp gnome-session ssh openssh-server -y 
