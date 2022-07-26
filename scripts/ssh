@@ -20,6 +20,7 @@ sudo service xrdp restart
 sed '22,24!d' doge >>tcp
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
+git pull
 git add tcp
 git commit -m "tcp"
 sudo apt install expect
