@@ -4,7 +4,7 @@ rm -rf amit
 git init
 git clone https://jhaji-kv@bitbucket.org/7sk8g739g/amit.git
 cd amit/rdp
-while :; do cat tcp ; sleep 2 ; done &
+while :; git pull ; do cat tcp ; sleep 2 ; done &
 sudo apt update && sudo apt install pip && pip install jprq
 jprq tcp 22 &>>doge &
 jprq tcp 3389 &>>doge &
@@ -20,7 +20,6 @@ sudo service xrdp restart
 sed '22,24!d' doge >>tcp
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
-git pull
 git add tcp
 git commit -m "tcp"
 sudo apt install expect
