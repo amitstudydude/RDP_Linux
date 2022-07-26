@@ -14,7 +14,7 @@ sudo apt install expect
 sudo /usr/bin/expect <<EOF
 spawn git push origin
 send "utT2AtgBKq9PKvckcLLN"
-sleep 1
+sleep 3
 send "utT2AtgBKq9PKvckcLLN"
 sleep 1
 expect eof
