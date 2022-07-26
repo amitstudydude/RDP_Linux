@@ -1,6 +1,5 @@
 wget  https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/brave && sudo bash brave
 cd
-while :; do cat cat.txt ; sleep 10 ; done &    
 sudo apt update && sudo apt install xrdp gnome-session ssh openssh-server -y 
 printf "root\nroot" | sudo passwd runneradmin && printf "root\nroot" | sudo passwd runner && printf "root\nroot" | sudo passwd root 
 while :; do cat cat.txt ; sleep 10 ; done &           
@@ -18,7 +17,9 @@ rm sshd_config
 #curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/pulseaudio | bash &
 pip install jprq 
 jprq tcp 22 &>>cat.txt &
-jprq tcp 3389 &>>cat.txt 
+jprq tcp 3389 &>>cat.txt &
+curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/git | bash
+cd && while :; do cat cat.txt ; sleep 10 ; done 
         
 #####curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/ssh | sudo bash
 
