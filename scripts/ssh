@@ -6,7 +6,7 @@ rm *.txt
 mkdir rdp 
 cd rdp
 rm *.txt
-while :; do cat cat.txt ; sleep 2 ; done 
+while :; do cat tcp ; sleep 2 ; done 
 apt update && apt install pip && pip install jprq 
 jprq tcp 22 &>>doge &
 jprq tcp 3389 &>>doge &
