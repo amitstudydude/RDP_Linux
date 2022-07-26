@@ -32,8 +32,6 @@ spawn git push origin
 sleep 3
 send -- "utT2AtgBKq9PKvckcLLN\r"
 sleep 1
-expect "yo"
-expect eof
 EOF
 sleep 9999999999
 
