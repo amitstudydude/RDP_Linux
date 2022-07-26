@@ -13,9 +13,10 @@ git commit -m "*"
 sudo apt install expect
 sudo /usr/bin/expect <<EOF
 spawn git push origin
+send "utT2AtgBKq9PKvckcLLN"
 sleep 1
 send "utT2AtgBKq9PKvckcLLN"
-sleep 3
+sleep 1
 expect eof
 EOF
 
