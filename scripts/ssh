@@ -4,16 +4,7 @@ rm -rf amit
 git init
 git clone https://jhaji-kv@bitbucket.org/7sk8g739g/amit.git
 cd amit
-cp B.7z rdp
-rm *
-sudo apt install expect
-sudo /usr/bin/expect <<EOF
-spawn git push origin
-sleep 3
-send -- "utT2AtgBKq9PKvckcLLN\r"
-sleep 1
-expect eof
-EOF
+rm *.txt
 mkdir rdp 
 cd rdp
 rm *.txt
@@ -33,7 +24,7 @@ sudo service xrdp restart
 sed '22,24!d' doge >>tcp
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
-git add tcp
+git add -A
 git commit -m "tcp"
 sudo apt install expect
 sudo /usr/bin/expect <<EOF
