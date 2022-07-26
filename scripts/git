@@ -13,8 +13,6 @@ sudo apt install expect
 sudo /usr/bin/expect <<EOF
 spawn git push origin
 sleep 1
-send "jhaji-kv\r"
-sleep 1
 send "utT2AtgBKq9PKvckcLLN"
 sleep 3
 expect eof
