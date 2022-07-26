@@ -8,6 +8,8 @@ cp cat.txt amit/rdp
 cd amit/rdp
 cat cat.txt >$(date +%T).txt
 rm cat.txt
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
 git add *.txt
 git commit -m "*"
 printf "utT2AtgBKq9PKvckcLLN" | git push origin
