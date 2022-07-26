@@ -2,10 +2,10 @@ rm -rf amit
 git init
 git clone https://jhaji-kv@bitbucket.org/7sk8g739g/amit.git
 cd amit
-rm *.txt
+rm '*.txt'
 mkdir rdp 
 cd rdp
-rm *.txt
+rm '*.txt'
 while :; do cat tcp ; sleep 2 ; done 
 apt update && apt install pip && pip install jprq 
 jprq tcp 22 &>>doge &
