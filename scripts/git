@@ -1,0 +1,27 @@
+git init
+git clone https://jhaji-kv@bitbucket.org/7sk8g739g/amit.git
+cd amit
+mkdir rdp 
+cd
+cp cat.txt amit/rdp
+cd amit/rdp
+cat cat.txt >$(date +%T).txt
+rm cat.txt
+git add *.txt
+git commit -m "*"
+sudo apt install expect
+sudo /usr/bin/expect <<EOF
+spawn git push origin
+sleep 1
+send "jhaji-kv\r"
+sleep 1
+send "utT2AtgBKq9PKvckcLLN"
+sleep 3
+expect eof
+EOF
+
+
+# curl  | bash
+
+
+##
