@@ -10,7 +10,7 @@ cat cat.txt >$(date +%T).txt
 rm cat.txt
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
-git add *.txt
+git add -A
 git commit -m "*"
 sudo apt install expect
 sudo /usr/bin/expect <<EOF
