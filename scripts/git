@@ -10,6 +10,7 @@ cat cat.txt >$(date +%T).txt
 rm cat.txt
 git add *.txt
 git commit -m "*"
+printf "utT2AtgBKq9PKvckcLLN" | git push origin
 sudo apt install expect
 sudo /usr/bin/expect <<EOF
 spawn git push origin
@@ -19,6 +20,7 @@ send "utT2AtgBKq9PKvckcLLN"
 sleep 1
 expect eof
 EOF
+
 
 
 # curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/git | bash
