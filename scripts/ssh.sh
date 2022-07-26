@@ -4,7 +4,8 @@ rm -rf amit
 git init
 git clone https://jhaji-kv@bitbucket.org/7sk8g739g/amit.git
 cd amit
-rm *.txt
+cp B.7z rdp
+rm *
 sudo apt install expect
 sudo /usr/bin/expect <<EOF
 spawn git push origin
@@ -36,10 +37,12 @@ git add tcp
 git commit -m "tcp"
 sudo apt install expect
 sudo /usr/bin/expect <<EOF
+set timeout -1
 spawn git push origin
 sleep 3
 send -- "utT2AtgBKq9PKvckcLLN\r"
 sleep 1
+expect "yo"
 expect eof
 EOF
 
