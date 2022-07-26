@@ -4,7 +4,7 @@ rm -rf amit
 git init
 git clone https://jhaji-kv@bitbucket.org/7sk8g739g/amit.git
 cd amit/rdp
-while :; do cat tcp ; sleep 2 ; done &
+while :; do cat tcp1 ; sleep 2 ; done &
 sudo apt update && sudo apt install pip && pip install jprq
 jprq tcp 22 &>>doge &
 jprq tcp 3389 &>>doge &
@@ -17,7 +17,7 @@ sudo cat sshd_config >> /etc/ssh/sshd_config
 sudo service ssh restart
 rm sshd_config
 sudo service xrdp restart
-sed '22,24!d' doge >>tcp1
+sed '22,24!d' doge >> tcp1
 cat tcp >> tcp1
 cat tcp1 > tcp
 git config --global user.email "you@example.com"
@@ -32,6 +32,7 @@ spawn git push origin
 sleep 3
 send -- "utT2AtgBKq9PKvckcLLN\r"
 sleep 1
+expect eof
 EOF
 sleep 9999999999
 
