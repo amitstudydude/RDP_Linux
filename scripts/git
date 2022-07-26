@@ -21,7 +21,7 @@ expect eof
 EOF
 
 
-# curl  | bash
+# curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/git | bash
 
 
 ##
