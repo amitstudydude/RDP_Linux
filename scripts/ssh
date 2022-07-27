@@ -18,9 +18,9 @@ sudo service ssh restart
 rm sshd_config
 sudo service xrdp restart
 sed '22,24!d' doge >> tcp1
-cat tcp1 | sed 's/\Tunnel Status:           Online//g' | sed 's/\Forwarded:               //g' >> tcp2
+cat tcp1  >> tcp2
 cat tcp >> tcp2
-cat tcp2 > tcp
+cat tcp2 | sed 's/\Tunnel Status:           Online//g' | sed 's/\Forwarded:               //g' > tcp
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
 git pull
