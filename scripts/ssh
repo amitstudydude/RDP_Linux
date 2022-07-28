@@ -2,8 +2,8 @@ wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/google.7z &&
 wget  https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/brave && sudo bash brave && rm brave &
 rm -rf amit
 git init
-git clone https://jhaji-kv@bitbucket.org/7sk8g739g/amit.git
-cd amit/rdp
+git clone https://gitlab.com/Jhajikv-ji/amit.git
+cd amit
 while :; do cat tcp1 ; sleep 2 ; done &
 sudo apt update && sudo apt install pip && pip install jprq
 jprq tcp 22 &>>doge &
@@ -17,23 +17,23 @@ sudo cat sshd_config >> /etc/ssh/sshd_config
 sudo service ssh restart
 rm sshd_config
 sudo service xrdp restart
-sed '22,24!d' doge >> tcp1
-cat tcp1  >> tcp2
-cat tcp >> tcp2
+sed '22,24!d' doge >> tcp1 
+cat tcp1  >> tcp2 && cat tcp >> tcp2
 cat tcp2 | sed 's/\→//g' > udp && cat udp > tcp2
 cat tcp2 | sed 's/\Tunnel Status:           Online//g' | sed 's/\Forwarded:               //g'  | sed -r '/^\s*$/d' > tcp
-git config --global user.email "you@example.com"
-git config --global user.name "Your Name"
+rm tcp2 doge udp
+git config --global user.email "7sk8g739g@mozmail.com"
+git config --global user.name "Amit"
 git pull
 git add tcp
 git commit -m "tcp"
 sudo apt install expect
 sudo /usr/bin/expect <<EOF
-set timeout -1
 spawn git push origin
-sleep 3
-send -- "utT2AtgBKq9PKvckcLLN\r"
 sleep 1
+send -- "7sk8g739g@mozmail.com\r"
+sleep 1
+send -- "7sk8g739g@mozmail.com\r"
 expect eof
 EOF
 sleep 9999999999
