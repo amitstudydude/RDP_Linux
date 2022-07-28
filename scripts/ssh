@@ -20,7 +20,7 @@ sudo service xrdp restart
 sed '22,24!d' doge >> tcp1
 cat tcp1  >> tcp2
 cat tcp >> tcp2
-cat tcp2 | sed 's/\→//g' | sed 's/\Tunnel Status:           Online//g' | sed 's/\Forwarded:               //g'  | sed -r '/^\s*$/d' > tcp
+cat tcp2 | sed 's/\Tunnel Status:           Online//g' | sed 's/\Forwarded:               //g'  | sed -r '/^\s*$/d' > tcp
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
 git pull
