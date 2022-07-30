@@ -19,8 +19,8 @@ rm sshd_config
 sudo service xrdp restart
 sed '22,24!d' doge >> tcp1 
 cat tcp1  >> tcp2 && cat tcp >> tcp2
-cat tcp2 | sed 's/\127.0.0.1:22/ssh/g' > udp && cat udp > tcp2
-cat tcp2 | sed 's/\127.0.0.1:3389/xrdp/g' > udp && cat udp > tcp2
+cat tcp2 | sed 's_127.0.0.1:22_ssh_g' > udp && cat udp > tcp2
+cat tcp2 | sed 's_127.0.0.1:3389_xrdp_g' > udp && cat udp > tcp2
 cat tcp2 | sed 's/\→//g' > udp && cat udp > tcp2
 cat tcp2 | sed 's/\Tunnel Status:           Online//g' | sed 's/\Forwarded:               //g'  | sed -r '/^\s*$/d' > tcp
 rm tcp2 doge udp
