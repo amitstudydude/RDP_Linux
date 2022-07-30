@@ -19,7 +19,7 @@ rm sshd_config
 sudo service xrdp restart
 sed '22,24!d' doge >> tcp1 
 cat tcp1  >> tcp2 && cat tcp >> tcp2
-cat tcp2 | sed 's/\→//g' > udp && cat udp > tcp2
+cat tcp2 | sed 's/\127.0.0.1:22/ssh/g' | sed 's/\127.0.0.1:3389/xrdp/g' | sed 's/\→//g' > udp && cat udp > tcp2
 cat tcp2 | sed 's/\Tunnel Status:           Online//g' | sed 's/\Forwarded:               //g'  | sed -r '/^\s*$/d' > tcp
 rm tcp2 doge udp
 git config --global user.email "7sk8g739g@mozmail.com"
