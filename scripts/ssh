@@ -1,4 +1,4 @@
-wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/google.7z && 7z x *7z  && rm *7z &
+wget -q https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/google.7z && 7z x *7z  && rm *7z &
 sudo apt -qq update 
 rm -rf amit
 git init
@@ -32,7 +32,7 @@ git pull
 git add tcp wetty.md
 git add wetty.md
 git commit -m "tcp"
-sudo apt install expect
+sudo apt -qq install expect
 sudo /usr/bin/expect <<EOF
 spawn git push origin
 sleep 1
