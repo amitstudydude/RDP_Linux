@@ -1,5 +1,5 @@
 docker run  -d -p 3000:3000 wettyoss/wetty --ssh-host=172.17.0.1
 wget -q -O cli https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64  
 chmod +x ./cli && ./cli --url http://localhost:3000/wetty &>> cat.txt &
-cat cat.txt | sed '5!d' | sed 's:[2022]*:[&:' |  sed 's:https*:](&:' |  sed 's:trycloudflare.com*:&/wetty):' | cat >wetty.md
+cat cat.txt | sed '5!d' | sed 's:[2022]*:[&:' |  sed 's:https*:](&:' |  sed 's:trycloudflare.com*:&/wetty):' > wetty.md 
 while :; do cat wetty.md ; sleep 3 ; done &
