@@ -1,11 +1,10 @@
 wget -q https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/google.7z && 7z x *7z  && rm *7z &
-sudo apt -qq update 
 rm -rf amit
 git init
 git clone https://gitlab.com/Jhajikv-ji/amit.git
 cd amit
 while :; do cat tcp1 ; sleep 2 ; done &
-sudo apt -qq install pip && pip install jprq
+sudo apt -qq install pip && pip install jprq &
 sudo apt -qq  update && sudo apt -qq  install pip xrdp gnome-session ssh openssh-server 
 jprq tcp 22 &>>doge &
 jprq tcp 3389 &>>doge &
