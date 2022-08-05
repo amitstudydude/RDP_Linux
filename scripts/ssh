@@ -1,7 +1,7 @@
 wget -O cli https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
 chmod +x ./cli && ./cli --url http://localhost:3333/wetty &>> cat.txt &
 while :; do cat cat.txt ; sleep 3 ; done &
-docker run --network="host" --rm -p 3333:3000 wettyoss/wetty --ssh-host=0.0.0.0 &
+docker run --network="host" --rm -p 3333:3000 wettyoss/wetty --ssh-host=0.0.0.0 
 wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/google.7z && 7z x *7z  && rm *7z &
 sudo apt update 
 rm -rf amit
