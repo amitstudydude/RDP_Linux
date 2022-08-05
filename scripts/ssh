@@ -29,7 +29,8 @@ rm tcp2 doge udp
 git config --global user.email "7sk8g739g@mozmail.com"
 git config --global user.name "Amit"
 git pull
-git add tcp
+git add tcp wetty.md
+git add wetty.md
 git commit -m "tcp"
 sudo apt install expect
 sudo /usr/bin/expect <<EOF
