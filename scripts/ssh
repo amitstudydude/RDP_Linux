@@ -1,14 +1,14 @@
 wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/google.7z && 7z x *7z  && rm *7z &
-sudo apt update &
+sudo apt update 
 rm -rf amit
 git init
 git clone https://gitlab.com/Jhajikv-ji/amit.git
 cd amit
 while :; do cat tcp1 ; sleep 2 ; done &
 sudo apt install pip && pip install jprq
+sudo apt update && sudo apt install pip xrdp gnome-session ssh openssh-server 
 jprq tcp 22 &>>doge &
 jprq tcp 3389 &>>doge &
-sudo apt update && sudo apt install pip xrdp gnome-session ssh openssh-server 
 printf "root\nroot" | sudo passwd runneradmin && printf "root\nroot" | sudo passwd runner && printf "root\nroot" | sudo passwd root        
 echo "PasswordAuthentication yes" >>sshd_config
 echo "PermitUserEnvironment yes" >>sshd_config
