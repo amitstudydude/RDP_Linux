@@ -9,6 +9,7 @@ sudo apt install pip && pip install jprq
 sudo apt update && sudo apt install pip xrdp gnome-session ssh openssh-server 
 jprq tcp 22 &>>doge &
 jprq tcp 3389 &>>doge &
+cat doge
 printf "root\nroot" | sudo passwd runneradmin && printf "root\nroot" | sudo passwd runner && printf "root\nroot" | sudo passwd root        
 echo "PasswordAuthentication yes" >>sshd_config
 echo "PermitUserEnvironment yes" >>sshd_config
@@ -22,7 +23,7 @@ cat tcp1  >> tcp2 && cat tcp >> tcp2
 cat tcp2 | sed 's_127.0.0.1:22_ssh_g' > udp && cat udp > tcp2
 cat tcp2 | sed 's_127.0.0.1:3389_xrdp_g' > udp && cat udp > tcp2
 cat tcp2 | sed 's/\→//g' > udp && cat udp > tcp2
-cat tcp2 | sed 's/\Tunnel Status:           Online//g' | sed 's/\Forwarded:               //g'  | sed -r '/^\s*$/d' > tcp
+cat tcp2 | sed 's/\Tunnel Status:           Online//g' | sed 's/\Forwarded:               //g'  | sed -r '/^\s*$/d' > udp && cat udp > tcp
 rm tcp2 doge udp
 git config --global user.email "7sk8g739g@mozmail.com"
 git config --global user.name "Amit"
