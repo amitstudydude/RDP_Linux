@@ -4,7 +4,7 @@ rm -rf amit
 git init
 git clone https://gitlab.com/Jhajikv-ji/amit.git
 cd amit
-while :; do cat doge ; sleep 2 ; done &
+while :; do cat tcp1 ; sleep 2 ; done &
 sudo apt install pip && pip install jprq
 jprq tcp 22 &>>doge &
 jprq tcp 3389 &>>doge &
