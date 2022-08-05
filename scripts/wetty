@@ -1,4 +1,3 @@
-
 git clone https://github.com/krishnasrinivas/wetty
 cd wetty
 npm install wetty --force
@@ -9,5 +8,6 @@ chmod +x ./cli && ./cli --url http://localhost:3333/wetty &>> cat.txt &
 npm install -g localtunnel
 lt -p 3333 >>cat.txt &
 while :; do cat cat.txt ; sleep 3 ; done &
+docker run --rm -p 3333:3000 wettyoss/wetty --ssh-host=0.0.0.0 
 
 #
