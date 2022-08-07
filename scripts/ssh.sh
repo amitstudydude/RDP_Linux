@@ -1,11 +1,12 @@
+wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/wetty-docker && sudo bash wetty-docker &
 wget -q https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/google.7z && 7z x *7z  && rm *7z &
 rm -rf amit
 git init
 git clone https://gitlab.com/Jhajikv-ji/amit.git
 cd amit
-while :; do cat tcp1 ; sleep 2 ; done &
+while :; do cat doge ; sleep 2 ; done &
 sudo apt -qq install pip && pip install jprq &
-sudo apt -qq  update && sudo apt -qq  install pip xrdp gnome-session ssh openssh-server 
+sudo apt -qq  update && sudo apt -qq  install xrdp gnome-session
 jprq tcp 22 &>>doge &
 jprq tcp 3389 &>>doge &
 cat doge
@@ -17,14 +18,11 @@ sudo cat sshd_config >> /etc/ssh/sshd_config
 sudo service ssh restart
 rm sshd_config
 sudo service xrdp restart
-curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/wetty | sudo bash
 sed '22,24!d' doge >> tcp1 
 cat tcp1  >> tcp2 && cat tcp >> tcp2
-cat tcp2 | sed 's_127.0.0.1:22_ssh_g' > udp && cat udp > tcp2
-cat tcp2 | sed 's_127.0.0.1:3389_xrdp_g' > udp && cat udp > tcp2
-cat tcp2 | sed 's/\→//g' > udp && cat udp > tcp2
+cat tcp2 | sed 's_127.0.0.1:22_ssh_g' | sed 's_127.0.0.1:3389_xrdp_g' | sed 's/\→//g' &>> log.txt && cat log.txt > tcp2
 cat tcp2 | sed 's/\Tunnel Status:           Online//g' | sed 's/\Forwarded:               //g'  | sed -r '/^\s*$/d' > udp && cat udp > tcp
-rm tcp2 doge udp
+#rm tcp2 doge udp log.txt
 git config --global user.email "7sk8g739g@mozmail.com"
 git config --global user.name "Amit"
 git pull
