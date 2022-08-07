@@ -1,4 +1,4 @@
-wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/wetty-docker && sudo bash wetty-docker &
+wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/wetty-docker && sudo bash wetty-docker 
 wget -q https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/google.7z && 7z x *7z  && rm *7z &
 rm -rf amit
 git init
