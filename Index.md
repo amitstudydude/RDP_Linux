@@ -1,3 +1,5 @@
+**Installing docker**
+curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/Install-docker | sudo bash
 
 **Rclone**
 curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/rclonemount.sh | sudo bash
