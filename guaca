@@ -1,3 +1,3 @@
-guacd-hostname: localhost
+guacd-hostname: 127.0.0.1
 guacd-port:     4822
 user-mapping: /etc/guacamole/user-mapping
