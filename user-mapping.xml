@@ -1,8 +1,15 @@
 <user-mapping>
-    <authorize username="root" password="root">
+    <authorize username="ssh" password="ssh">
         <protocol>ssh</protocol>
         <param name="hostname">localhost</param>
         <param name="port">22</param>
+        <param name="username">root</param>
+        <param name="password">root</param>
+    </authorize>
+    <authorize username="rdp" password="rdp">
+        <protocol>rdp</protocol>
+        <param name="hostname">localhost</param>
+        <param name="port">3389</param>
         <param name="username">root</param>
         <param name="password">root</param>
     </authorize>
