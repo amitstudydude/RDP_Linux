@@ -5,6 +5,8 @@
         <param name="port">22</param>
         <param name="username">root</param>
         <param name="password">root</param>
+        <param name="font-size">10</param>
+        <param name="color-scheme">black-white</param>
     </authorize>
     <authorize username="rdp" password="rdp">
         <protocol>rdp</protocol>
