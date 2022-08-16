@@ -4,7 +4,6 @@ sudo apt update
 sudo apt install protonvpn expect
 apt remove gnome-keyring
 sudo /usr/bin/expect <<EOF
-set timeout -1
 spawn protonvpn-cli login lol8909
 match_max 100000
 expect -exact "Are you sure that you want to proceed (y/N): "
