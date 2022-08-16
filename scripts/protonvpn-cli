@@ -1,8 +1,8 @@
-wget https://protonvpn.com/download/protonvpn-stable-release_1.0.1-1_all.deb
-apt install ./*deb && rm *deb
-apt update 
-apt install protonvpn expect
-/usr/bin/expect <<EOF
+sudo wget https://protonvpn.com/download/protonvpn-stable-release_1.0.1-1_all.deb
+sudo apt install ./*deb && sudo rm *deb
+sudo apt update 
+sudo apt install protonvpn expect
+sudo /usr/bin/expect <<EOF
 spawn protonvpn-cli login lol8909
 sleep 1
 send -- "y\r"
