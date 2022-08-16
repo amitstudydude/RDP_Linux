@@ -2,6 +2,7 @@ sudo wget https://protonvpn.com/download/protonvpn-stable-release_1.0.1-1_all.de
 sudo apt install ./*deb && sudo rm *deb
 sudo apt update 
 sudo apt install protonvpn expect
+apt remove gnome-keyring
 sudo /usr/bin/expect <<EOF
 spawn protonvpn-cli login lol8909
 sleep 1
