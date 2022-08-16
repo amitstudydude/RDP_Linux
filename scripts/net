@@ -1,0 +1,3 @@
+touch /etc/NetworkManager/conf.d/10-globally-managed-devices.conf
+sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
+service network-manager restart
