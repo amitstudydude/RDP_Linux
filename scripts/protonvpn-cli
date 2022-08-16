@@ -5,6 +5,8 @@ apt install protonvpn expect
 /usr/bin/expect <<EOF
 spawn protonvpn-cli login lol8909
 sleep 1
+send -- "y\r"
+sleep 1
 send -- "hepepix887@safe-cart.com\r"
 expect "Nani"
 EOF
