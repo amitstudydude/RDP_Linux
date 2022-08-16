@@ -4,11 +4,11 @@ sudo apt update
 sudo apt install protonvpn expect
 apt remove gnome-keyring
 sudo /usr/bin/expect <<EOF
+set timeout -1
 spawn protonvpn-cli login lol8909
-sleep 1
-send -- "y\r"
-sleep 1
+match_max 100000
+expect -exact "Enter your Proton VPN password: "
 send -- "hepepix887@safe-cart.com\r"
-expect "Nani"
+expect eof
 EOF
 protonvpn-cli c -f
