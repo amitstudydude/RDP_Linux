@@ -3,4 +3,4 @@ apt install ./*deb && rm *deb
 apt update 
 apt install protonvpn
 printf "hepepix887@safe-cart.com" | protonvpn login lol8909
-protonvpn connect 
+protonvpn-cli c -f
