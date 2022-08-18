@@ -1,5 +1,4 @@
 killall rclone
-rm -rf drives 
 su - root -c "mkdir -p /root/.config/rclone/ && wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/rclone.conf && mv rclone.conf /root/.config/rclone "
 curl https://rclone.org/install.sh | sudo bash > /dev/null 2>&1
 mkdir /drives && cd /drives && mkdir Mega Teamdrive Drive cache 
