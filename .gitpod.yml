@@ -2,6 +2,6 @@ image: gitpod/workspace-full
 ports:
 - port: 0-65535
   onOpen: ignore
-workspaceLocation: "."
+workspaceLocation: "/"
 tasks:
-- command: cd ../../../../../.. && sudo apt update && sudo apt install -y docker.io && docker run -it -p 6080:6080 ghcr.io/amitstudydude/gitpod-ubuntu-20.04:latest
+- command: printf "root\nroot" | sudo passwd root && printf "root" | su - root -c " curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/gitpod.io | sudo bash " 
