@@ -1,3 +1,7 @@
+**aria2c**
+aria2c --dir=/drives/Teamdrive/ --allow-overwrite=true  https://nya.iss.one/download/1225621.torrent
+
+
 **Download to fake**
 curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/download%20to%20fake | bash 
 
