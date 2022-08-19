@@ -1,7 +1,9 @@
+apt update -y >>/dev/null
+apt install -y dbus-x11
+service dbus restart
 DEBIAN_FRONTEND=noninteractive apt install -y tzdata keyboard-configuration xdotool xfce4 xrdp ssh openssh-server docker.io firefox &
 printf "root\nroot" | passwd root  
 cd /
-apt update -y >>/dev/null
  run -d  -p 4822:4822 guacamole/guacd
 docker run -dit -p 8080:8080 ghcr.io/amitstudydude/guacamole
 DEBIAN_FRONTEND=noninteractive apt install -y tzdata keyboard-configuration xdotool xrdp ssh openssh-server docker.io icewm firefox >>/dev/null 
