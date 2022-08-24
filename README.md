@@ -4,27 +4,28 @@
 * 📫 How to reach me **jhajioajka@mail.com**
 ## **If you are looking for github Linux_Rdp , I have it but I dont use it On my personal account to avoid ban as i store all my Rdp config files in this repo**
 
+# **I am using Apache-Guacamole here . If you know about it , you are a pro**
 ## How to get an RDP
-**Disclaimer: Proceed on your own . I ensure that this RDP will run for full 6hrs & your account will not get banned , but I can't take any responsibility**
 * Fork https://github.com/jhajikv-ji/no
 * Run The Workflow
-* Wait 5 min
-* Go to http://guacrdp.stunel.io/guacamole
-* Login- root ; passwd - root
-* passwd is by default root everywhere
+* Wait 2 min
+* You can see 2 links
+
+## For Desktop users 
+* Read login:passwd details given below the link
+* Click 1st link
 * Ctrl-Shift-Alt-Enter for clipboard
 * Enjoy
 
-**If Something fails , create an issue , I will try to solve it**
-
 ## For Mobile users 
-* Follow above steps
-* Go to https://guacrdp.stunel.io/guacamole/#/settings/preferences
+* Read login:passwd details given below the link
+* Click 2nd link [it's the same link , but just a faster way to access guacamole settings ]
 * Do the following settings => Select text-input && Drag mouse [right]
 * ![alt text](https://github.com/jhajikv-ji/no/blob/main/image.jpg?raw=true)
 * Use Hackers' keyboard [play store]
-* Go to http://guacrdp.stunel.io/guacamole
-* Ctrl-Shift-Alt-Enter for clipboard
+* Now pro user can click on upper-right button and click on default .
+* But for new users - Click 1st link [ obviously from workflow output ]
+* Ctrl-Shift-Alt-Enter [ or swipe left ] - for clipboard 
 * Enjoy
 
 
