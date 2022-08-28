@@ -1,4 +1,5 @@
 export owner="amitstudydude"
+ls
 rm -rf *
 git clone https://github.com/$owner/$repo.git
 rsync -a "$repo"/* . 
