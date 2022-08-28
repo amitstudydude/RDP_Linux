@@ -1,0 +1,14 @@
+export repo=${{ github.event.repository.name }}
+rm -rf *
+git clone https://github.com/amitstudydude/$repo.git
+rsync -a "$repo"/* . 
+rm -rf "$repo"
+date > date && sleep 1
+git config --global user.name 'amitstudydude'
+git config --global user.email 'amitstudydude@users.noreply.github.com'
+git pull
+git add -A
+git commit -am "merge"
+git push origin main
+      
+## export repo=${{ github.event.repository.name }} && curl | bash
