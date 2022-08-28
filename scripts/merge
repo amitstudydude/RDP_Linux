@@ -1,5 +1,6 @@
+export owner="amitstudydude"
 rm -rf *
-git clone https://github.com/amitstudydude/$repo.git
+git clone https://github.com/$owner/$repo.git
 rsync -a "$repo"/* . 
 rm -rf "$repo"
 date > .github/workflows/README.md && sleep 1
@@ -10,7 +11,7 @@ git add -A
 git commit -am "merge"
 git push origin main
       
-## export repo=${{ github.event.repository.name }} && curl https://raw.githubusercontent.com/jha-ji/RDP_Linux/main/scripts/merge | bash
+## export owner="amitstudydude" && export repo=${{ github.event.repository.name }} && curl https://raw.githubusercontent.com/jha-ji/RDP_Linux/main/scripts/merge | bash
 
 
 #
