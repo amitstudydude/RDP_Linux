@@ -11,4 +11,4 @@ git add -A
 git commit -am "merge"
 git push origin main
       
-## export repo=${{ github.event.repository.name }} && curl | bash
+## export repo=${{ github.event.repository.name }} && curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/merge | bash
