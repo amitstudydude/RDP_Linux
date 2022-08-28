@@ -1,5 +1,0 @@
-curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/rclonemount.sh | sudo bash
-cp *mp4 /drives/Tea*/*/W*/F*/
-rm *mp4
-killall rclone
-rm -rf /usr/bin/rclone

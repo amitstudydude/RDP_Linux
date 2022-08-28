@@ -1,0 +1,5 @@
+su - root -c "mkdir -p /root/.config/rclone/ && wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/rclone.conf && mv rclone.conf /root/.config/rclone "
+curl https://rclone.org/install.sh | sudo bash 
+mkdir -p /drives && cd /drives && mkdir -p Teamdrive cache 
+rclone mount Teamdrive: Teamdrive   --user-agent 'Mozilla' --vfs-cache-mode full --cache-dir 'cache' --allow-other --transfers 100  --vfs-cache-poll-interval 1s --vfs-cache-max-age 1s --vfs-write-back 1s 
+
