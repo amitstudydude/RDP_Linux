@@ -1,0 +1,11 @@
+export repo=amitstudydude
+git clone https://github.com/amitstudydude/$repo.git
+cp -r $repo/* .
+export token=${{ secrets.GITHUB_TOKEN }} && export ref=${GITHUB_REF:11} && export repo=$GITHUB_REPOSITORY          
+git config --global user.name 'amitstudydude'         
+git config --global user.email 'amitstudydude@users.noreply.github.com'         
+git remote set-url origin https://x-access-token:$token@github.com/$repo          
+git checkout "$ref"          
+git add -A          
+git commit -am "Automated report"         
+git push origin main
