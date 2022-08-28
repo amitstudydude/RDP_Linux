@@ -1,6 +1,7 @@
 while :; do cat ./cat.txt ; cat ./rom.txt ; sleep 10 ; done  &
 
-
+#wetty-docker
+docker run  -dit -p 3000:3000 wettyoss/wetty --ssh-host=172.17.0.1
 
 
 #ttyd
@@ -34,7 +35,6 @@ wget -O yo.tar.gz https://github.com/yudai/gotty/releases/download/v1.0.1/gotty_
 
 
 
-curl https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/newinstall.sh | bash &
 
 
 npm install -g localtunnel
