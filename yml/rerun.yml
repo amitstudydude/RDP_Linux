@@ -1,0 +1,14 @@
+name: rerun
+on:
+  workflow_run:
+    workflows: [merge]
+    types: [completed]
+  workflow_dispatch:
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion != 'success' }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Merge upstream
+        run: export owner=${{ github.actor }} && export repo=${{ github.event.repository.name }} && curl https://raw.githubusercontent.com/jha-ji/RDP_Linux/main/scripts/merge | sed '1d' | bash
