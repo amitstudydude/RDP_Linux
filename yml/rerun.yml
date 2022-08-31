@@ -10,7 +10,5 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion != 'success' }}
     steps:
       - uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.GH_TOKEN }}  #get_personnel_access_token https://github.com/settings/tokens
       - name: Merge upstream
         run: export repo=${{ github.event.repository.name }} && curl https://raw.githubusercontent.com/jha-ji/RDP_Linux/main/scripts/merge | bash
