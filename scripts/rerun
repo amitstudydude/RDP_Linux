@@ -1,0 +1,7 @@
+date > READ.md && sleep 1
+git config --global user.name 'amitstudydude'
+git config --global user.email 'amitstudydude@users.noreply.github.com'
+git pull
+git add -A
+git commit -am "merge"
+git push origin main
