@@ -1,0 +1,8 @@
+sudo cd /home/runner
+sudo rm -rf .mozilla
+firefox &
+sleep 10
+sudo kill -9 $( ps -ef | grep firefox | awk '{print $2}' )
+wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/telegram.7z
+7z x -y telegram.7z
+firefox &
