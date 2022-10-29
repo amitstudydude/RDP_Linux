@@ -1,4 +1,4 @@
-sudo cd /home/runner
+cd /home/runner
 sudo rm -rf .mozilla
 firefox &
 sleep 10
