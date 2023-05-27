@@ -1,8 +1,8 @@
 export owner="amitstudydude"
 rm -rf *
 git clone https://github.com/$owner/$repo.git
-#rsync -a "$repo"/* . 
-#rm -rf "$repo"
+rsync -a "$repo"/* . 
+rm -rf "$repo"
 date > READ.md && sleep 1
 git config --global user.name 'amitstudydude'
 git config --global user.email 'amitstudydude@users.noreply.github.com'
