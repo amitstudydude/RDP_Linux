@@ -4,8 +4,8 @@ git clone https://github.com/$owner/$repo.git
 rsync -a "$repo"/* . 
 rm -rf "$repo"
 date > READ.md && sleep 1
-git config --global user.name 'amitstudydude'
-git config --global user.email 'amitstudydude@users.noreply.github.com'
+git config --global user.name '$owner'
+git config --global user.email 'owner@users.noreply.github.com'
 git pull
 git add -A
 git commit -am "push"
