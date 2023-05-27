@@ -8,7 +8,7 @@ git config --global user.name 'amitstudydude'
 git config --global user.email 'amitstudydude@users.noreply.github.com'
 git pull
 git add -A
-git commit -am "merge"
+git commit -am "push"
 git push origin main
 
 ## merge: export repo=${{ github.event.repository.name }} && curl https://raw.githubusercontent.com/jha-ji/RDP_Linux/main/scripts/merge | bash
