@@ -1,4 +1,4 @@
 cd /etc
-rm resolv.conf
+echo "Nameserver 8.8.8.8" > resolv.conf && echo "Nameserver 8.8.4.4" >> resolv.conf
 wget https://github.com/amitstudydude/RDP_Linux/blob/main/resolv.conf
 sudo apt reinstall network-manager
