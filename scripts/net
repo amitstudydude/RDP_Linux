@@ -1,3 +1,2 @@
-cd /etc
-echo "Nameserver 8.8.8.8" > resolv.conf && echo "Nameserver 8.8.4.4" >> resolv.conf
+echo "Nameserver 8.8.8.8" >/etc/resolv.conf || echo "Nameserver 8.8.4.4" >>/etc/resolv.conf
 sudo apt reinstall network-manager
