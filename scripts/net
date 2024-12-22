@@ -1,3 +1,4 @@
-touch /etc/NetworkManager/conf.d/10-globally-managed-devices.conf
-sed -i 's/false/true/g' /etc/NetworkManager/NetworkManager.conf
-service network-manager restart
+cd /etc
+rm resolv.conf
+wget https://github.com/amitstudydude/RDP_Linux/blob/main/resolv.conf
+sudo apt reinstall network-manager
