@@ -15,8 +15,6 @@
 <param name="port">3389</param>
 <param name="username">root</param>
 <param name="password">root</param>
-<param name="width">1440</param>
-<param name="height">2560</param>
 </connection>
 <connection name="runner">
 <protocol>rdp</protocol>
@@ -24,8 +22,6 @@
 <param name="port">3389</param>
 <param name="username">runner</param>
 <param name="password">root</param>
-<param name="width">1440</param>
-<param name="height">2560</param>
 </connection>
 </authorize>
 <authorize username="ssh" password="ssh">
@@ -43,8 +39,6 @@
 <param name="port">3389</param>
 <param name="username">root</param>
 <param name="password">root</param>
-<param name="width">1440</param>
-<param name="height">2560</param>
 </authorize>
 <authorize username="runner" password="runner">
 <protocol>rdp</protocol>
@@ -52,7 +46,5 @@
 <param name="port">3389</param>
 <param name="username">runner</param>
 <param name="password">root</param>
-<param name="width">1440</param>
-<param name="height">2560</param>
 </authorize>
 </user-mapping>
