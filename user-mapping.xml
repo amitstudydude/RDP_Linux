@@ -53,6 +53,6 @@
 <param name="username">runner</param>
 <param name="password">root</param>
 <param name="width">1440</param>
-<param name="height">2560</param>
+#<param name="height">2560</param>
 </authorize>
 </user-mapping>
