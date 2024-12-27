@@ -24,7 +24,7 @@
 <param name="password">root</param>
 </connection>
 </authorize>
-<authorize username="ssh" password="ssh">
+<authorize username="ssh" password="ssh"> 
 <protocol>ssh</protocol>
 <param name="hostname">localhost</param>
 <param name="port">22</param>
