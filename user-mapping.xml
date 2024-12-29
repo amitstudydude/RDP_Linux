@@ -15,6 +15,8 @@
 <param name="port">3389</param>
 <param name="username">root</param>
 <param name="password">root</param>
+<param name="width">7680</param>
+<param name="height">7680</param>
 <param name="enable-touch">true</param>
 </connection>
 <connection name="runner">
