@@ -15,8 +15,8 @@
 <param name="port">3389</param>
 <param name="username">root</param>
 <param name="password">root</param>
-<param name="width">2560</param>
-<param name="height">1440</param>
+<param name="width">1080</param>
+<param name="height">720</param>
 <param name="enable-touch">true</param>
 </connection>
 <connection name="runner">
@@ -25,8 +25,8 @@
 <param name="port">3389</param>
 <param name="username">runner</param>
 <param name="password">root</param>
-<param name="width">2560</param>
-<param name="height">1440</param>
+<param name="width">1080</param>
+<param name="height">720</param>
 <param name="enable-touch">true</param>
 </connection>
 </authorize>
@@ -45,8 +45,8 @@
 <param name="port">3389</param>
 <param name="username">root</param>
 <param name="password">root</param>
-<param name="width">2560</param>
-<param name="height">1440</param>
+<param name="width">1080</param>
+<param name="height">720</param>
 <param name="enable-touch">true</param>
 </authorize>
 <authorize username="runner" password="runner">
