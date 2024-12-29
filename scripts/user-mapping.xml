@@ -1,0 +1,58 @@
+<user-mapping>
+<authorize username="root" password="root">
+<connection name="ssh">
+<protocol>ssh</protocol>
+<param name="hostname">localhost</param>
+<param name="port">22</param>
+<param name="username">root</param>
+<param name="password">root</param>
+<param name="font-size">10</param>
+<param name="color-scheme">black-white</param>
+</connection>
+<connection name="rdp">
+<protocol>rdp</protocol>
+<param name="hostname">localhost</param>
+<param name="port">3389</param>
+<param name="username">root</param>
+<param name="password">root</param>
+<param name="width">1440</param>
+<param name="height">2560</param>
+</connection>
+<connection name="runner">
+<protocol>rdp</protocol>
+<param name="hostname">localhost</param>
+<param name="port">3389</param>
+<param name="username">runner</param>
+<param name="password">root</param>
+<param name="width">1440</param>
+<param name="height">2560</param>
+</connection>
+</authorize>
+<authorize username="ssh" password="ssh">
+<protocol>ssh</protocol>
+<param name="hostname">localhost</param>
+<param name="port">22</param>
+<param name="username">root</param>
+<param name="password">root</param>
+<param name="font-size">10</param>
+<param name="color-scheme">black-white</param>
+</authorize>
+<authorize username="rdp" password="rdp">
+<protocol>rdp</protocol>
+<param name="hostname">localhost</param>
+<param name="port">3389</param>
+<param name="username">root</param>
+<param name="password">root</param>
+<param name="width">1440</param>
+<param name="height">2560</param>
+</authorize>
+<authorize username="runner" password="runner">
+<protocol>rdp</protocol>
+<param name="hostname">localhost</param>
+<param name="port">3389</param>
+<param name="username">runner</param>
+<param name="password">root</param>
+<param name="width">1440</param>
+<param name="height">2560</param>
+</authorize>
+</user-mapping>
