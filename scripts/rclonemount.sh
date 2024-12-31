@@ -1,2 +1,2 @@
 mkdir -p ~/.config/rclone/ && wget https://raw.githubusercontent.com/amitstudydude/RDP_Linux/main/scripts/rclone.conf && mv rclone.conf ~/.config/rclone && curl https://rclone.org/install.sh | sudo bash
-mkdir -p drives && rclone mount onedrive: ./drives --vfs-cache-mode full 
+mkdir -p drives && rclone mount onedrive: ./drives  --user-agent 'Mozilla' --vfs-cache-mode full --cache-dir 'cache' --allow-other  --transfers 100 --daemon --vfs-cache-poll-interval 1s --vfs-cache-max-age 1s --vfs-write-back 1s
