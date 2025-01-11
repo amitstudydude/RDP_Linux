@@ -69,4 +69,4 @@ download_chunks() {
   local end_chunk=$2
   local byte_offset=$((start_chunk * CHUNK_SIZE))
 
-  echo "Downloading chunks $start_ch
+  echo "Downloading chunks $start_ch"
