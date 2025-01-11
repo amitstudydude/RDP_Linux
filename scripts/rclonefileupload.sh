@@ -1,24 +1,26 @@
 #!/bin/bash
 
-# Script to download a large file and upload it to Google Drive using rclone
+# Script to stream a large file from a URL and upload it to Google Drive using rclone and wget
 
-echo "=== Download and Upload Script ==="
+echo "=== Stream Download and Upload Script ==="
 
 # Prompt the user for the download link
 read -p "Enter the download URL: " FILE_URL
 
-# Prompt the user for the Google Drive remote name
-read -p "Enter the rclone remote name (default: onedrive): " REMOTE_NAME
-REMOTE_NAME=${REMOTE_NAME:-onedrive}  # Default to "onedrive" if not provided
+# Set default rclone remote name to "onedrive"
+DEFAULT_REMOTE="onedrive"
+read -p "Enter the rclone remote name (default: $DEFAULT_REMOTE): " REMOTE_NAME
+REMOTE_NAME=${REMOTE_NAME:-$DEFAULT_REMOTE}  # Use default if not provided
 
-# Prompt the user for the Google Drive path
-read -p "Enter the Google Drive folder path (default: backups): " REMOTE_PATH
-REMOTE_PATH=${REMOTE_PATH:-backups}  # Default to "backups" if not provided
+# Prompt the user for the Google Drive path (relative to the remote)
+DEFAULT_PATH="backups"
+read -p "Enter the Google Drive folder path (default: $DEFAULT_PATH): " REMOTE_PATH
+REMOTE_PATH=${REMOTE_PATH:-$DEFAULT_PATH}  # Use default if not provided
 
 # Extract the file name from the URL
 FILE_NAME=$(basename "$FILE_URL")
 
-# Confirm the inputs with the user
+# Confirm the details with the user
 echo "You have entered the following details:"
 echo "Download URL: $FILE_URL"
 echo "Google Drive Remote Name: $REMOTE_NAME"
@@ -36,22 +38,25 @@ if ! command -v rclone &> /dev/null; then
   exit 1
 fi
 
-# Check if curl or wget is installed
-if ! command -v curl &> /dev/null && ! command -v wget &> /dev/null; then
-  echo "Error: Neither curl nor wget is installed. Please install one and try again."
+# Check if wget is installed
+if ! command -v wget &> /dev/null; then
+  echo "Error: wget is not installed. Please install it and try again."
   exit 1
 fi
+
+# Test the rclone remote and folder path
+echo "Testing rclone remote and path..."
+rclone lsf "$REMOTE_NAME:$REMOTE_PATH" &> /dev/null
+if [ $? -ne 0 ]; then
+  echo "Error: Remote '$REMOTE_NAME' or path '$REMOTE_PATH' is invalid. Please check your rclone configuration."
+  exit 1
+fi
+echo "Remote and path are valid."
 
 # Start the download and upload process
 echo "Starting download from $FILE_URL and uploading to Google Drive ($REMOTE_NAME:$REMOTE_PATH/$FILE_NAME)..."
 
-if command -v curl &> /dev/null; then
-  # Use curl if available
-  curl -L "$FILE_URL" | rclone rcat --progress "$REMOTE_NAME:$REMOTE_PATH/$FILE_NAME"
-elif command -v wget &> /dev/null; then
-  # Use wget if available
-  wget -O - "$FILE_URL" | rclone rcat --progress "$REMOTE_NAME:$REMOTE_PATH/$FILE_NAME"
-fi
+wget -O - "$FILE_URL" | rclone rcat --progress "$REMOTE_NAME:$REMOTE_PATH/$FILE_NAME"
 
 # Check the result
 if [ $? -eq 0 ]; then
