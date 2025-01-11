@@ -2,7 +2,7 @@
 
 # Default remote and directory on Google Drive
 REMOTE="onedrive:"
-REMOTE_DIR="test"
+REMOTE_DIR="backups"
 
 # Temporary directory for storing chunks
 TEMP_DIR="/mnt/chunks"
