@@ -1,0 +1,110 @@
+#!/bin/bash
+
+# Default remote and directory on Google Drive
+REMOTE="onedrive:"
+REMOTE_DIR="test"
+
+# Temporary directory for storing chunks
+TEMP_DIR="/mnt/chunks"
+mkdir -p "$TEMP_DIR"
+
+# Prompt the user for the download link
+read -p "Enter the download link for the file: " DOWNLOAD_LINK
+
+# Validate the download link
+if [[ -z "$DOWNLOAD_LINK" ]]; then
+  echo "Error: Download link cannot be empty."
+  exit 1
+fi
+
+# Extract the file name from the download link or use a default name
+FILENAME=$(basename "$DOWNLOAD_LINK")
+if [[ -z "$FILENAME" || "$FILENAME" == "/" ]]; then
+  FILENAME="downloaded_file"
+fi
+
+# Define the remote destination file
+REMOTE_PATH="${REMOTE}${REMOTE_DIR}/${FILENAME}"
+
+# Define chunk size (e.g., 100MB = 104857600 bytes)
+CHUNK_SIZE=$((100 * 1024 * 1024)) # 100MB chunks
+
+# Max concurrent uploads per batch
+MAX_UPLOADS=10
+
+# Cleanup function
+cleanup() {
+  echo "Cleaning up temporary files..."
+  rm -rf "$TEMP_DIR"
+}
+trap cleanup EXIT
+
+# Function to upload a chunk
+upload_chunk() {
+  local chunk="$1"
+  local remote_chunk_path="$REMOTE_PATH.$(basename "$chunk")"
+
+  echo "Uploading chunk: $chunk to $remote_chunk_path..."
+  rclone copyto "$chunk" "$remote_chunk_path" --progress
+  if [[ $? -eq 0 ]]; then
+    echo "Uploaded chunk: $chunk successfully. Deleting it locally."
+    rm -f "$chunk"
+  else
+    echo "Error: Failed to upload chunk: $chunk. Retrying..."
+    upload_chunk "$chunk" # Retry logic
+  fi
+}
+
+# Function to process a batch of chunks
+process_batch() {
+  local batch=("$@")
+
+  # Start uploading chunks in parallel
+  for chunk in "${batch[@]}"; do
+    upload_chunk "$chunk" &
+  done
+
+  # Wait for all uploads in the batch to complete
+  wait
+}
+
+# Start downloading and processing chunks
+echo "Starting batch download, upload, and delete process..."
+CHUNK_INDEX=0
+while true; do
+  # Download the next batch of chunks
+  echo "Downloading batch starting at chunk index: $CHUNK_INDEX..."
+  wget -q --show-progress --continue -O - "$DOWNLOAD_LINK" | \
+  split --bytes="$CHUNK_SIZE" - "$TEMP_DIR/${FILENAME}_chunk_" -n $((CHUNK_INDEX + 10))
+
+  # Collect the chunks in the batch
+  BATCH=()
+  for chunk in "$TEMP_DIR"/"${FILENAME}_chunk_"*; do
+    BATCH+=("$chunk")
+    if [[ ${#BATCH[@]} -ge 10 ]]; then
+      break
+    fi
+  done
+
+  # Exit if no more chunks are generated
+  if [[ ${#BATCH[@]} -eq 0 ]]; then
+    echo "No more chunks to process. Exiting."
+    break
+  fi
+
+  # Process the batch
+  process_batch "${BATCH[@]}"
+
+  # Update chunk index for the next batch
+  CHUNK_INDEX=$((CHUNK_INDEX + 10))
+done
+
+# Merge chunks on the remote drive
+echo "Merging chunks into a single file on the remote drive..."
+rclone cat "${REMOTE_DIR}/${FILENAME}_chunk_*" | rclone rcat "$REMOTE_PATH"
+
+# Cleanup remote chunks
+echo "Cleaning up remote chunks..."
+rclone delete "${REMOTE_DIR}/${FILENAME}_chunk_*"
+
+echo "File successfully uploaded and merged at $REMOTE_PATH."
