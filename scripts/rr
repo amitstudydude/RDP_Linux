@@ -1,76 +1,48 @@
 #!/bin/bash
 
-# Default remote and directory on Google Drive
 REMOTE="onedrive:"
 REMOTE_DIR="test"
-
-# Temporary directory for storing chunks
 TEMP_DIR="/mnt/chunks"
-mkdir -p "$TEMP_DIR"
-
-# Prompt the user for the download link
-read -p "Enter the download link for the file: " DOWNLOAD_LINK
-
-# Validate the download link
-if [[ -z "$DOWNLOAD_LINK" ]]; then
-  echo "Error: Download link cannot be empty."
-  exit 1
-fi
-
-# Extract the file name from the download link or use a default name
-FILENAME=$(basename "$DOWNLOAD_LINK")
-if [[ -z "$FILENAME" || "$FILENAME" == "/" ]]; then
-  FILENAME="downloaded_file"
-fi
-
-# Define the remote destination file
-REMOTE_PATH="${REMOTE}${REMOTE_DIR}/${FILENAME}"
-
-# Define chunk size (e.g., 100MB = 104857600 bytes)
-CHUNK_SIZE=$((100 * 1024 * 1024)) # 100MB chunks
-
-# Max chunks to download before uploading
+CHUNK_SIZE=$((100 * 1024 * 1024)) # 100MB
 CHUNKS_BATCH=10
 
-# Ensure the remote directory exists
-echo "Ensuring remote directory exists: ${REMOTE}${REMOTE_DIR}"
-rclone mkdir "${REMOTE}${REMOTE_DIR}" -vv
-if [[ $? -ne 0 ]]; then
-  echo "Error: Failed to create or verify remote directory."
-  exit 1
-fi
+mkdir -p "$TEMP_DIR"
+rclone mkdir "${REMOTE}${REMOTE_DIR}" || { echo "Error: Remote directory creation failed."; exit 1; }
 
-# Cleanup function
-cleanup() {
-  echo "Cleaning up temporary files..."
-  rm -rf "$TEMP_DIR"
+read -p "Enter the download link: " DOWNLOAD_LINK
+FILENAME=$(basename "$DOWNLOAD_LINK")
+REMOTE_PATH="${REMOTE}${REMOTE_DIR}/${FILENAME}"
+
+download_chunk() {
+  local chunk=$1 range_start=$2 range_end=$3
+  wget --header="Range: bytes=$range_start-$range_end" "$DOWNLOAD_LINK" -O "$chunk" --quiet || { echo "Error: Failed to download chunk $chunk."; exit 1; }
 }
-trap cleanup EXIT
 
-# Function to upload a chunk
 upload_chunk() {
-  local chunk="$1"
-  local remote_chunk_path="$REMOTE_PATH.$(basename "$chunk")"
-
-  echo "Uploading chunk: $chunk to $remote_chunk_path"
-  rclone copyto "$chunk" "$remote_chunk_path" -vv --progress
-  if [[ $? -eq 0 ]]; then
-    echo "Uploaded chunk: $chunk successfully. Deleting it locally."
-    rm -f "$chunk"
-  else
-    echo "Error: Failed to upload chunk: $chunk. Retrying..."
-    upload_chunk "$chunk" # Retry logic
-  fi
+  local chunk=$1 remote_chunk_path="${REMOTE_PATH}.$(basename "$chunk")"
+  rclone copyto "$chunk" "$remote_chunk_path" --progress && rm -f "$chunk"
 }
 
-# Function to download a batch of chunks
-download_chunks() {
-  local start_chunk=$1
-  local end_chunk=$2
-  local byte_offset=$((start_chunk * CHUNK_SIZE))
+chunk_counter=0
+while true; do
+  for i in $(seq 0 $((CHUNKS_BATCH - 1))); do
+    start=$(( (chunk_counter + i) * CHUNK_SIZE ))
+    end=$(( start + CHUNK_SIZE - 1 ))
+    chunk="$TEMP_DIR/${FILENAME}_chunk_$((chunk_counter + i))"
+    download_chunk "$chunk" "$start" "$end" &
+  done
+  wait
 
-  echo "Downloading chunks $start_ch"
+  for chunk in "$TEMP_DIR/${FILENAME}_chunk_"*; do
+    upload_chunk "$chunk" &
+  done
+  wait
 
+  chunk_counter=$((chunk_counter + CHUNKS_BATCH))
+  [[ ! -s "$TEMP_DIR/${FILENAME}_chunk_$chunk_counter" ]] && break
+done
 
-
-
+rclone cat "$REMOTE_DIR/${FILENAME}_chunk_*" | rclone rcat "$REMOTE_PATH"
+rclone delete "$REMOTE_DIR/${FILENAME}_chunk_*"
+rm -rf "$TEMP_DIR"
+echo "Upload complete: $REMOTE_PATH"
