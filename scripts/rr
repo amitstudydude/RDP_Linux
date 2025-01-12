@@ -21,15 +21,7 @@ fi
 # Optimize transfer by adjusting various rclone settings for faster uploads
 echo "Uploading file from $DOWNLOAD_URL to OneDrive:$FOLDER..."
 
-rclone copyurl "$DOWNLOAD_URL" "$REMOTE:$FOLDER/$(basename $DOWNLOAD_URL)" \
-    -P \
-    --transfers=16 \                  
-    --checkers=8 \                    
-    --buffer-size=512M \              
-    --onedrive-chunk-size=640M \      
-    --tpslimit=10 \                   
-    --low-level-retries=10 \          
-    --retries=5                       
+rclone copyurl "$DOWNLOAD_URL" "$REMOTE:$FOLDER/$(basename $DOWNLOAD_URL)" -P --transfers=1 --checkers=8 --buffer-size=512M  --onedrive-chunk-size=640M  --tpslimit=10  --low-level-retries=10  --retries=5                       
 
 # Confirm upload success
 if [ $? -eq 0 ]; then
