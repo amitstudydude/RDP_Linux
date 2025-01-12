@@ -1,64 +1,39 @@
-#!/bin/bash
+ #!/bin/bash
 
-REMOTE="onedrive:"
-REMOTE_DIR="test"
-TEMP_DIR="/mnt/chunks"
-CHUNK_SIZE=$((100 * 1024 * 1024)) # 100MB
-CHUNKS_BATCH=10
+# Set your remote name and folder path
+REMOTE="onedrive"
+FOLDER="backups"
 
-mkdir -p "$TEMP_DIR"
-rclone mkdir "${REMOTE}${REMOTE_DIR}" || { echo "Error: Failed to create remote directory."; exit 1; }
+# Ask for the download URL
+echo "Enter the download URL for the file:"
+read DOWNLOAD_URL
 
-read -p "Enter the download link: " DOWNLOAD_LINK
-FILENAME=$(basename "$DOWNLOAD_LINK")
-REMOTE_PATH="${REMOTE}${REMOTE_DIR}/${FILENAME}"
+# Check if the "backups" folder exists, if not create it
+echo "Checking if '$FOLDER' folder exists in OneDrive..."
+rclone ls "$REMOTE:$FOLDER" >/dev/null 2>&1
+if [ $? -ne 0 ]; then
+    echo "Folder '$FOLDER' does not exist. Creating it now..."
+    rclone mkdir "$REMOTE:$FOLDER"
+else
+    echo "Folder '$FOLDER' already exists."
+fi
 
-# Function to download a chunk
-download_chunk() {
-  local chunk=$1 start=$2 end=$3
-  echo "Downloading chunk $chunk (bytes $start-$end)..."
-  wget --header="Range: bytes=$start-$end" "$DOWNLOAD_LINK" -O "$TEMP_DIR/$chunk" --quiet --show-progress || {
-    echo "Error: Failed to download chunk $chunk."; exit 1;
-  }
-}
+# Optimize transfer by adjusting various rclone settings for faster uploads
+echo "Uploading file from $DOWNLOAD_URL to OneDrive:$FOLDER..."
 
-# Function to upload and delete a chunk
-upload_chunk() {
-  local chunk=$1
-  echo "Uploading chunk $chunk..."
-  rclone copyto "$TEMP_DIR/$chunk" "${REMOTE_PATH}.$chunk" --progress && rm -f "$TEMP_DIR/$chunk" || {
-    echo "Error: Failed to upload chunk $chunk."; exit 1;
-  }
-}
+rclone copyurl "$DOWNLOAD_URL" "$REMOTE:$FOLDER/$(basename $DOWNLOAD_URL)" \
+    -P \
+    --transfers=16 \                  
+    --checkers=8 \                    
+    --buffer-size=512M \              
+    --onedrive-chunk-size=640M \      
+    --tpslimit=10 \                   
+    --low-level-retries=10 \          
+    --retries=5                       
 
-# Main process loop
-chunk_counter=0
-while true; do
-  # Download a batch of chunks
-  for i in $(seq 0 $((CHUNKS_BATCH - 1))); do
-    start=$(( (chunk_counter + i) * CHUNK_SIZE ))
-    end=$(( start + CHUNK_SIZE - 1 ))
-    chunk="${FILENAME}_chunk_$((chunk_counter + i))"
-    download_chunk "$chunk" "$start" "$end" &
-  done
-  wait # Wait for all downloads in the batch to complete
-
-  # Upload the downloaded chunks
-  for chunk in "${FILENAME}_chunk_"*; do
-    upload_chunk "$chunk" &
-  done
-  wait # Wait for all uploads in the batch to complete
-
-  # Increment chunk counter for the next batch
-  chunk_counter=$((chunk_counter + CHUNKS_BATCH))
-
-  # Exit the loop if the last chunk is smaller than CHUNK_SIZE
-  [[ ! -s "$TEMP_DIR/${FILENAME}_chunk_$chunk_counter" ]] && break
-done
-
-# Merge chunks on the remote
-echo "Merging chunks on the remote..."
-rclone cat "${REMOTE}${REMOTE_DIR}/${FILENAME}_chunk_*" | rclone rcat "$REMOTE_PATH" && \
-rclone delete "${REMOTE}${REMOTE_DIR}/${FILENAME}_chunk_*"
-
-echo "File successfully uploaded and merged: $REMOTE_PATH"
+# Confirm upload success
+if [ $? -eq 0 ]; then
+    echo "File uploaded successfully to OneDrive:$FOLDER"
+else
+    echo "Error uploading file."
+fi
