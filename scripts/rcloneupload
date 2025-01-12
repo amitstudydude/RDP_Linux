@@ -23,13 +23,13 @@ echo "Uploading file from $DOWNLOAD_URL to OneDrive:$FOLDER..."
 
 rclone copyurl "$DOWNLOAD_URL" "$REMOTE:$FOLDER/$(basename $DOWNLOAD_URL)" \
     -P \
-    --transfers=16 \                 # Increase the number of concurrent file transfers
-    --checkers=8 \                   # Increase the number of checkers (to check for file integrity concurrently)
-    --buffer-size=512M \             # Set buffer size to handle large file chunks more efficiently
-    --onedrive-chunk-size=640M \     # Set OneDrive chunk size to 640MB
-    --tpslimit=10 \                  # Set TPS (transactions per second) limit to avoid throttling
-    --low-level-retries=10 \         # Retry on failures (useful for unstable connections)
-    --retries=5                      # Number of retries for the whole operation
+    --transfers=16 \                  
+    --checkers=8 \                    
+    --buffer-size=512M \              
+    --onedrive-chunk-size=640M \      
+    --tpslimit=10 \                   
+    --low-level-retries=10 \          
+    --retries=5                       
 
 # Confirm upload success
 if [ $? -eq 0 ]; then
