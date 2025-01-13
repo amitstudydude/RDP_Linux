@@ -10,10 +10,14 @@ chmod +x ./cli
 docker run -d -p 5800:5800 -p 5900:5900 --name firefox-vnc jlesage/firefox
 
 # Step 3: Start Cloudflare Tunnel to expose localhost:5800
-TUNNEL_URL=$(./cli tunnel --url http://localhost:5800)
+./cli tunnel --url http://localhost:5800 > tunnel_output.txt &
 
-# Step 4: Extract the URL from the output (this assumes the URL is returned as part of the cloudflared output)
-TUNNEL_URL=$(echo "$TUNNEL_OUTPUT" | awk '/https:\/\/.*\.trycloudflare\.com/ {print $1}')
+# Step 4: Wait for the tunnel to establish and output the URL from the logs
+sleep 5  # Wait a few seconds for the tunnel to initialize
+
+# Step 5: Extract the URL from the tunnel output logs
+TUNNEL_URL=$(grep -o 'https://[a-z0-9.-]*\.trycloudflare\.com' tunnel_output.txt)
+
 
 # Step 5: Output only the URL
 echo "Access Firefox via: $TUNNEL_URL"
