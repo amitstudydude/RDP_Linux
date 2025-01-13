@@ -1,62 +1,67 @@
 #!/bin/bash
 
-# Variables (modify as needed)
-VM_NAME="MyVM"
-VM_DISK="./${VM_NAME}_disk.qcow2"  # Virtual disk in the current directory
-ISO_PATH="./ubuntu.iso"  # Change to the relative path for the ISO
-RAM="1024"  # 1GB RAM for the VM
-CPU="2"     # Number of CPU cores
-DISK_SIZE="20G"  # Virtual disk size
-QEMU_BINARY="qemu-system-x86_64"  # Change if using a different architecture
+# Variables (customize these as needed)
+VM_NAME="UbuntuVM"  # Name of the virtual machine
+ISO_PATH="./ubuntu.iso"  # Path to the ISO (ensure this file exists)
+RAM="2048"  # 2GB of RAM for the VM
+CPU="2"     # 2 CPU cores
+DISK_SIZE="20G"  # Virtual disk size (20GB)
+VIRTUALBOX_BINARY="virtualbox"  # Command for VirtualBox (could be virtualbox or VBoxManage)
 
-# Function to install QEMU
-install_qemu() {
-    echo "Checking if QEMU is installed..."
-    if ! command -v qemu-system-x86_64 &> /dev/null; then
-        echo "QEMU not found. Installing QEMU..."
-        if [[ "$(uname)" == "Linux" ]]; then
-            if [[ -f /etc/debian_version ]]; then
-                # For Debian/Ubuntu-based systems
-                sudo apt update
-                sudo apt install -y qemu qemu-kvm qemu-system
-            elif [[ -f /etc/redhat-release ]]; then
-                # For RHEL/CentOS/Fedora systems
-                sudo dnf install -y qemu qemu-kvm
-            else
-                echo "Unsupported Linux distribution."
-                exit 1
-            fi
-        elif [[ "$(uname)" == "Darwin" ]]; then
-            # For macOS
-            brew install qemu
-        else
-            echo "Unsupported OS. Please install QEMU manually."
-            exit 1
-        fi
+# Check if VirtualBox is installed, and install it if necessary
+install_virtualbox() {
+    echo "Checking if VirtualBox is installed..."
+    if ! command -v $VIRTUALBOX_BINARY &> /dev/null; then
+        echo "VirtualBox not found. Installing VirtualBox..."
+        sudo apt update
+        sudo apt install -y virtualbox
     else
-        echo "QEMU is already installed."
+        echo "VirtualBox is already installed."
     fi
 }
 
-# Step 1: Install QEMU if not installed
-install_qemu
+# Function to create and configure a new virtual machine
+create_vm() {
+    echo "Creating virtual machine '$VM_NAME'..."
 
-# Step 2: Create the virtual disk image
-echo "Creating virtual disk image..."
-qemu-img create -f qcow2 "$VM_DISK" "$DISK_SIZE"
+    # Create the VM
+    VBoxManage createvm --name "$VM_NAME" --register
+    
+    # Set up VM settings (RAM, CPUs, etc.)
+    VBoxManage modifyvm "$VM_NAME" --memory "$RAM" --cpus "$CPU" --ostype Ubuntu_64 --vram 128
+    
+    # Create a virtual disk for the VM
+    VBoxManage createhd --filename "${VM_NAME}.vdi" --size ${DISK_SIZE//G/000}  # Disk size in MB
+    
+    # Set up the storage controller (SATA)
+    VBoxManage storagectl "$VM_NAME" --name "SATA Controller" --add sata --controller IntelAHCI
+    
+    # Attach the virtual disk
+    VBoxManage storageattach "$VM_NAME" --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium "${VM_NAME}.vdi"
+    
+    # Attach the ISO for OS installation (Ubuntu ISO)
+    VBoxManage storageattach "$VM_NAME" --storagectl "SATA Controller" --port 1 --device 0 --type dvddrive --medium "$ISO_PATH"
+    
+    echo "VM '$VM_NAME' created successfully!"
+}
 
-# Step 3: Start the VM and install OS from ISO
-echo "Starting the virtual machine..."
-$QEMU_BINARY \
-  -m "$RAM" \
-  -cpu host \
-  -smp "$CPU" \
-  -drive file="$VM_DISK",format=qcow2 \
-  -cdrom "$ISO_PATH" \
-  -boot d \
-  -net nic \
-  -net user \
-  -display gtk \
-  -enable-kvm
+# Start the VM
+start_vm() {
+    echo "Starting virtual machine '$VM_NAME'..."
+    VBoxManage startvm "$VM_NAME" --type gui
+}
 
-# Optional: If you want to change `-display` to `sdl` or other options, modify it above.
+# Main function to execute the script
+main() {
+    # Step 1: Install VirtualBox if not installed
+    install_virtualbox
+
+    # Step 2: Create the virtual machine
+    create_vm
+
+    # Step 3: Start the VM
+    start_vm
+}
+
+# Run the main function
+main
