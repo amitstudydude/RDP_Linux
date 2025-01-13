@@ -3,8 +3,8 @@
 # Variables (customize these as needed)
 VM_NAME="UbuntuVM"  # Name of the virtual machine
 ISO_PATH="./ubuntu.iso"  # Path to the ISO (ensure this file exists)
-RAM="2048"  # 2GB of RAM for the VM
-CPU="2"     # 2 CPU cores
+RAM="4096"  # 2GB of RAM for the VM
+CPU="8"     # 2 CPU cores
 DISK_SIZE="20G"  # Virtual disk size (20GB)
 VIRTUALBOX_BINARY="virtualbox"  # Command for VirtualBox (could be virtualbox or VBoxManage)
 
