@@ -33,11 +33,11 @@ VBoxManage modifyvm "$VM_NAME" --memory "$VM_MEMORY" --cpus "$VM_CPUS" --ostype 
 VBoxManage createhd --filename "$VM_NAME.vdi" --size "$VM_DISK_SIZE"  # Set size in MB
 VBoxManage storagectl "$VM_NAME" --name "SATA Controller" --add sata --controller IntelAhci
 VBoxManage storageattach "$VM_NAME" --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium "$VM_NAME.vdi"
+# Attach the ISO
 VBoxManage storagectl "$VM_NAME" --name "IDE Controller" --add ide
 VBoxManage storageattach "$VM_NAME" --storagectl "IDE Controller" --port 0 --device 0 --type dvddrive --medium "$ALPINE_ISO_PATH"
 # Networking
 VBoxManage modifyvm "$VM_NAME" --nic1 nat
-# Start the VM
-VBoxManage startvm "$VM_NAME"  --type gui
-
-echo "Started VM: $VM_NAME. Please complete the Alpine installation manually."
+# Start the VM in GUI mode
+VBoxManage startvm "$VM_NAME" --type gui
+echo "Started VM: $VM_NAME in GUI mode. Please complete the Alpine installation manually."
