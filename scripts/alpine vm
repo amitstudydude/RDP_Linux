@@ -1,14 +1,20 @@
 #!/bin/bash
-# Update package index and install required dependencies
+# Remove existing VM if it exists
+VM_NAME="AlpineLinux"
+if VBoxManage list vms | grep -q "$VM_NAME"; then
+    echo "Removing existing VM: $VM_NAME"
+    VBoxManage controlvm "$VM_NAME" poweroff   # Power off the VM if it's running
+    VBoxManage unregistervm "$VM_NAME" --delete  # Unregister and delete the VM
+else
+    echo "No existing VM found."
+fi
+# Install VirtualBox (Debian/Ubuntu)
 sudo apt update
 sudo apt install -y software-properties-common
-# Add VirtualBox repository
 sudo add-apt-repository -y multiverse
 sudo apt update
-# Install VirtualBox
 sudo apt install -y virtualbox
-# Variables
-VM_NAME="AlpineLinux"
+# Variables for VM creation
 VM_MEMORY="1024"  # MB
 VM_CPUS="2"
 VM_DISK_SIZE="8G"  # Disk size
@@ -24,7 +30,7 @@ fi
 # Create the VM
 VBoxManage createvm --name "$VM_NAME" --register
 VBoxManage modifyvm "$VM_NAME" --memory "$VM_MEMORY" --cpus "$VM_CPUS" --ostype "Linux_64"
-VBoxManage createhd --filename "$VM_NAME.vdi" --size 10G
+VBoxManage createhd --filename "$VM_NAME.vdi" --size "$VM_DISK_SIZE"
 VBoxManage storagectl "$VM_NAME" --name "SATA Controller" --add sata --controller IntelAhci
 VBoxManage storageattach "$VM_NAME" --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium "$VM_NAME.vdi"
 VBoxManage storagectl "$VM_NAME" --name "IDE Controller" --add ide
