@@ -1,0 +1,28 @@
+ #!/bin/bash
+# Variables
+VM_NAME="AlpineLinux"
+VM_MEMORY="1024"  # MB
+VM_CPUS="2"
+VM_DISK_SIZE="8G"  # Disk size
+ALPINE_ISO="https://dl-cdn.alpinelinux.org/alpine/v3.21/releases/armv7/alpine-virt-3.21.2-armv7.iso"
+ALPINE_ISO_PATH="./alpine-virt-3.21.2-armv7.iso"  # Local path for the downloaded ISO
+# Download Alpine ISO
+if [ ! -f "$ALPINE_ISO_PATH" ]; then
+    echo "Downloading Alpine Linux ISO..."
+    curl -o "$ALPINE_ISO_PATH" "$ALPINE_ISO"
+else
+    echo "Alpine Linux ISO already downloaded."
+fi
+# Create the VM
+VBoxManage createvm --name "$VM_NAME" --register
+VBoxManage modifyvm "$VM_NAME" --memory "$VM_MEMORY" --cpus "$VM_CPUS" --ostype "Linux_64"
+VBoxManage createhd --filename "$VM_NAME.vdi" --size "$VM_DISK_SIZE"
+VBoxManage storagectl "$VM_NAME" --name "SATA Controller" --add sata --controller IntelAhci
+VBoxManage storageattach "$VM_NAME" --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium "$VM_NAME.vdi"
+VBoxManage storagectl "$VM_NAME" --name "IDE Controller" --add ide
+VBoxManage storageattach "$VM_NAME" --storagectl "IDE Controller" --port 0 --device 0 --type dvddrive --medium "$ALPINE_ISO_PATH"
+# Networking
+VBoxManage modifyvm "$VM_NAME" --nic1 nat
+# Start the VM
+VBoxManage startvm "$VM_NAME" --type headless
+echo "Started VM: $VM_NAME. Please complete the Alpine installation manually."
