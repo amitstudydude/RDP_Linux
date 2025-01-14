@@ -24,7 +24,7 @@ fi
 # Create the VM
 VBoxManage createvm --name "$VM_NAME" --register
 VBoxManage modifyvm "$VM_NAME" --memory "$VM_MEMORY" --cpus "$VM_CPUS" --ostype "Linux_64"
-VBoxManage createhd --filename "$VM_NAME.vdi" --size "$VM_DISK_SIZE"
+VBoxManage createhd --filename "$VM_NAME.vdi" --size 10G
 VBoxManage storagectl "$VM_NAME" --name "SATA Controller" --add sata --controller IntelAhci
 VBoxManage storageattach "$VM_NAME" --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium "$VM_NAME.vdi"
 VBoxManage storagectl "$VM_NAME" --name "IDE Controller" --add ide
