@@ -1,4 +1,12 @@
- #!/bin/bash
+#!/bin/bash
+# Update package index and install required dependencies
+sudo apt update
+sudo apt install -y software-properties-common
+# Add VirtualBox repository
+sudo add-apt-repository -y multiverse
+sudo apt update
+# Install VirtualBox
+sudo apt install -y virtualbox
 # Variables
 VM_NAME="AlpineLinux"
 VM_MEMORY="1024"  # MB
