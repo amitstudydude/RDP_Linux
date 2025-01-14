@@ -38,5 +38,6 @@ VBoxManage storageattach "$VM_NAME" --storagectl "IDE Controller" --port 0 --dev
 # Networking
 VBoxManage modifyvm "$VM_NAME" --nic1 nat
 # Start the VM
-VBoxManage startvm "$VM_NAME" --type headless
+VBoxManage startvm "$VM_NAME"  --type gui
+
 echo "Started VM: $VM_NAME. Please complete the Alpine installation manually."
