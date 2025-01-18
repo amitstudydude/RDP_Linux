@@ -1,24 +1,6 @@
-#!/bin/bash
-
-# This script automates the process of running Firefox in Docker and exposing it via Cloudflare Tunnel.
-
-# Step 1: Download and install cloudflared (Cloudflare Tunnel)
-wget -q -O cli https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
-chmod +x ./cli
-
-# Step 2: Run the Docker container for Firefox with VNC
+wget -q -O cli https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 
+chmod +x ./cli && ./cli tunnel --url http://localhost:5800 &>>tunnel.txt &
 docker run -d -p 5800:5800 -p 5900:5900 --name firefox-vnc jlesage/firefox
-
-# Step 3: Start Cloudflare Tunnel to expose localhost:5800
-./cli tunnel --url http://localhost:5800 &>>tunnel.txt &
-
-# Step 4: Wait for the tunnel to establish and output the URL from the logs
-sleep 5  # Wait a few seconds for the tunnel to initialize
-
-# Step 5: Extract the URL from the tunnel output logs
-TUNNEL_URL=$(grep -o 'https://[a-z0-9.-]*\.trycloudflare\.com' tunnel_output.txt)
-
-./cli tunnel --url http://localhost:5800 | grep 'https://[a-z0-9.-]*\.trycloudflare\.com' 
-
-# Step 5: Output only the URL
+TUNNEL_URL=$(grep -o 'https://[a-z0-9.-]*\.trycloudflare\.com' tunnel.txt)
+cat tunnel.txt | grep 'https://[a-z0-9.-]*\.trycloudflare\.com' &>>url
 echo "Access Firefox via: $TUNNEL_URL"
