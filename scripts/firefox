@@ -18,6 +18,7 @@ sleep 5  # Wait a few seconds for the tunnel to initialize
 # Step 5: Extract the URL from the tunnel output logs
 TUNNEL_URL=$(grep -o 'https://[a-z0-9.-]*\.trycloudflare\.com' tunnel_output.txt)
 
+./cli tunnel --url http://localhost:5800 | grep 'https://[a-z0-9.-]*\.trycloudflare\.com' 
 
 # Step 5: Output only the URL
 echo "Access Firefox via: $TUNNEL_URL"
