@@ -1,7 +1,7 @@
 #!/bin/bash
 FROM ubuntu
 
-RUN apt-get update && apt-get install -y firefox x11vnc xvfb sudo && rm -rf /var/lib/apt/lists/* && useradd -ms /bin/bash firefoxuser &&  printf "root/nroot" | passwd firefoxuser && adduser firefoxuser sudo  && mkdir -p /root/.vnc && echo "root" | x11vnc -storepasswd -f /root/.vnc/passwd
+RUN apt-get update && apt-get install -y firefox x11vnc xvfb sudo && rm -rf /var/lib/apt/lists/* && useradd firefoxuser && adduser firefoxuser sudo  && mkdir -p /root/.vnc && echo "root" | x11vnc -storepasswd -f /root/.vnc/passwd
 
 EXPOSE 5900
 
