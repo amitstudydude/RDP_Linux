@@ -1,3 +1,4 @@
+docker rm --kill firefox-vnc
 wget -q -O cli https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 
 chmod +x ./cli && ./cli tunnel --url http://localhost:5800 &>>tunnel.txt &
 docker run -d -p 5800:5800 -p 5900:5900 --name firefox-vnc jlesage/firefox
