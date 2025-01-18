@@ -1,10 +1,20 @@
 #!/bin/bash
 FROM ubuntu
 
-RUN apt-get update && apt-get install -y firefox x11vnc xvfb sudo && rm -rf /var/lib/apt/lists/* && useradd firefoxuser && adduser firefoxuser sudo  && mkdir -p /root/.vnc && echo "root" | x11vnc -storepasswd -f /root/.vnc/passwd
+RUN apt-get update && apt-get install -y firefox x11vnc xvfb novnc websockify sudo && rm -rf /var/lib/apt/lists/* && useradd firefoxuser && adduser firefoxuser sudo  && mkdir -p /root/.vnc && echo "root" | x11vnc -storepasswd -f /root/.vnc/passwd
 
 EXPOSE 5900
+EXPOSE 8080
 
 USER firefoxuser
 
-CMD ["sh", "-c", "xvfb-run -n 99 -s '-screen 0 1024x768x24' x11vnc -forever -usepw -create"]
+CMD ["sh", "-c", "xvfb-run -n 99 -s '-screen 0 1024x768x24' x11vnc -forever -usepw -create & websockify --web=/usr/share/novnc 8080 localhost:5900"]
+
+
+
+
+
+
+
+
+
