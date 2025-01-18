@@ -1,12 +1,10 @@
 #!/bin/bash
-docker login
-docker pull jlesage/firefox
-docker run -d --name temp -p 5800:5800 jlesage/firefox
-read -p "Access the Firefox container at http://localhost:5800. Log in and configure Firefox. Press Enter once done."
-docker commit temp firefox
-docker stop temp
-docker rm temp
-docker tag firefox amitstudydude/firefox:latest
-docker push amitstudydude/firefox:latest
+FROM ubuntu
 
-docker run -d --name temp -p 5800:5800 amitstudydude/firefox:latest
+RUN apt-get update && apt-get install -y firefox x11vnc xvfb sudo && rm -rf /var/lib/apt/lists/* && useradd -ms /bin/bash firefoxuser &&  printf "root/nroot" | passwd firefoxuser && adduser firefoxuser sudo  && mkdir -p /root/.vnc && echo "root" | x11vnc -storepasswd -f /root/.vnc/passwd
+
+EXPOSE 5900
+
+USER firefoxuser
+
+CMD ["sh", "-c", "xvfb-run -n 99 -s '-screen 0 1024x768x24' x11vnc -forever -usepw -create"]
