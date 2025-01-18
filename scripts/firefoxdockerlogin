@@ -1,4 +1,5 @@
 #!/bin/bash
+docker login
 docker pull jlesage/firefox
 docker run -d --name temp -p 5800:5800 jlesage/firefox
 read -p "Access the Firefox container at http://localhost:5800. Log in and configure Firefox. Press Enter once done."
@@ -7,3 +8,5 @@ docker stop temp
 docker rm temp
 docker tag firefox amitstudydude/firefox:latest
 docker push amitstudydude/firefox:latest
+
+docker run -d --name temp -p 5800:5800 amitstudydude/firefox:latest
